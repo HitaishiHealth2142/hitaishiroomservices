@@ -1,0 +1,774 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Explore famous places near Hitaishi Rooms and Services in Bangalore with examples of airports, bus stands, parks, railways, shopping malls, D-Marts, movie theaters, and more.">
+    <meta name="keywords" content="Hitaishi Rooms and Services, famous places in Bangalore, nearby attractions, Bangalore travel guide, hotels near Bidadi">
+    <meta name="author" content="Travel Guide">
+    <title>Famous Places Near Hitaishi Rooms and Services</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body style="margin: 0; font-family: Arial, sans-serif; line-height: 1.6; color: #333;">
+    <!-- Header -->
+   <!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+<div style="position: relative; width: 100%; max-width: 100%; height: 450px; background-image: url('https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=1600&q=80'); background-size: cover; background-position: center; border-bottom: 5px solid #004d99; box-sizing: border-box;">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.4); display: flex; flex-direction: column; justify-content: center; align-items: center; color: white; text-align: center; padding: 20px; box-sizing: border-box;">
+        <h1 style="font-size: 36px; margin: 0;">Hitaishi Rooms & Services</h1>
+        <p style="font-size: 18px; margin-top: 10px; max-width: 600px;">
+            Comfortable, affordable, and premium stays for your every need — discover your next home away from home.
+        </p>
+        <a href="properties.html" style="margin-top: 20px; padding: 10px 25px; background-color: #004d99; color: white; text-decoration: none; border-radius: 5px; font-weight: bold;">
+            Book Now
+        </a>
+    </div>
+</div><br>
+
+<div style="display: flex; align-items: center; justify-content: center; margin: 40px 0; width: 100%;">
+    <span style="position: relative; display: inline-flex; align-items: center; gap: 20px; font-family: Arial, sans-serif;">
+        <span style="content: ''; flex: 0 0 100px; height: 3px; background: linear-gradient(to right, transparent, #004d99);"></span>
+        <h2 style="font-size: 32px; font-weight: bold; color: #003d4d; margin: 0; text-shadow: 1px 1px 2px rgba(0,0,0,0.1); text-transform: uppercase; letter-spacing: 1px;">
+            Famous Places Nearby
+        </h2>
+        <span style="content: ''; flex: 0 0 100px; height: 3px; background: linear-gradient(to left, transparent, #004d99);"></span>
+    </span>
+</div>
+<!--    
+ <div style="border-radius: 12px; padding: 25px; background: linear-gradient(to bottom, #e6f3fa, #d9e8f0); color: #1a2b33; font-family: Arial, sans-serif; max-width: 1200px; margin: 20px auto; box-shadow: 0 6px 12px rgba(0,0,0,0.15); display: flex; gap: 20px; align-items: stretch;">
+    
+    <div style="flex: 1; min-width: 0;">
+        <h2 style="margin-top: 0; color: #003d4d; text-align: center; font-size: 28px;">Welcome to Hitaishi Rooms & Services</h2>
+        <p style="font-size: 16px; line-height: 1.6;">
+            <strong>Hitaishi Rooms & Services</strong> offers premium, budget-friendly accommodation with modern amenities for a comfortable stay.
+        </p>
+        <ul style="list-style-type: disc; padding-left: 20px; font-size: 16px;">
+            <li style="margin-bottom: 8px;">Fully furnished AC/non-AC rooms</li>
+            <li style="margin-bottom: 8px;">Daily cleaning and maintenance</li>
+            <li style="margin-bottom: 8px;">Free Wi-Fi and 24x7 water supply</li>
+            <li style="margin-bottom: 8px;">On-demand room service and laundry</li>
+            <li style="margin-bottom: 8px;">Near metro, market, hospitals & offices</li>
+        </ul>
+        <p style="font-size: 16px;">
+            Book today for affordable luxury with <strong>Hitaishi Rooms & Services</strong>.
+        </p>
+        <div style="text-align: center; margin-top: 20px;">
+            <span style="display: inline-block; transition: all 0.3s ease;">
+              
+            </span>
+        </div>
+    </div>
+  
+    <div style="flex: 0 0 400px; display: flex; align-items: center;">
+        <img src="images/hitaishiroom.png" alt="Hitaishi Rooms" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1);">
+    </div>
+</div> -->
+    <!-- Main Content -->
+ <main style="max-width: 1200px; margin: 20px auto; padding: 0 20px; font-family: Arial, sans-serif;">
+    <!-- Navigation Buttons -->
+    <div style="margin-bottom: 30px; display: flex; flex-direction: column; gap: 15px; align-items: center;">
+    <!-- First Row: 5 Buttons -->
+    <div style="display: flex; flex-wrap: nowrap; gap: 15px; justify-content: center;">
+        <button onclick="toggleSection('airports')" style="background: linear-gradient(to bottom, #e6f3fa, #ffffff); color: #1a5276; border: 2px solid #1a5276; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to bottom, #d1e9f5, #f0f8ff)'; this.style.borderColor='#12465e'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to bottom, #e6f3fa, #ffffff)'; this.style.borderColor='#1a5276'; this.style.transform='scale(1)';">Airports</button>
+        <button onclick="toggleSection('bus-stands')" style="background: linear-gradient(to right, #fef9e7, #ffffff); color: #7d6608; border: 2px solid #f1c40f; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to right, #fdf3c8, #f0f8ff)'; this.style.borderColor='#d4a307'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to right, #fef9e7, #ffffff)'; this.style.borderColor='#f1c40f'; this.style.transform='scale(1)';">Bus Stands</button>
+        <button onclick="toggleSection('parks')" style="background: linear-gradient(to top, #e8f5e9, #ffffff); color: #196f3d; border: 2px solid #27ae60; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to top, #d4f0d6, #f0f8ff)'; this.style.borderColor='#1e874c'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to top, #e8f5e9, #ffffff)'; this.style.borderColor='#27ae60'; this.style.transform='scale(1)';">Parks</button>
+        <button onclick="toggleSection('railways')" style="background: linear-gradient(to left, #fce4ec, #ffffff); color: #7b1fa2; border: 2px solid #9c27b0; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to left, #f8d3df, #f0f8ff)'; this.style.borderColor='#7b1e8a'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to left, #fce4ec, #ffffff)'; this.style.borderColor='#9c27b0'; this.style.transform='scale(1)';">Railways</button>
+        <button onclick="toggleSection('shopping-malls')" style="background: linear-gradient(to bottom, #fff3e0, #ffffff); color: #d35400; border: 2px solid #e67e22; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to bottom, #ffebcc, #f0f8ff)'; this.style.borderColor='#c6691d'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to bottom, #fff3e0, #ffffff)'; this.style.borderColor='#e67e22'; this.style.transform='scale(1)';">Shopping Malls</button>
+    </div>
+    <!-- Second Row: 4 Buttons -->
+    <div style="display: flex; flex-wrap: nowrap; gap: 15px; justify-content: center;">
+        <button onclick="toggleSection('movie-theaters')" style="background: linear-gradient(to right, #e3f2fd, #ffffff); color: #1565c0; border: 2px solid #2196f3; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to right, #cce7fa, #f0f8ff)'; this.style.borderColor='#1a75c2'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to right, #e3f2fd, #ffffff)'; this.style.borderColor='#2196f3'; this.style.transform='scale(1)';">Movie Theaters</button>
+        <button onclick="toggleSection('unique-stays')" style="background: linear-gradient(to top, #fce4ec, #ffffff); color: #ad1457; border: 2px solid #e91e63; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to top, #f8d3df, #f0f8ff)'; this.style.borderColor='#c11753'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to top, #fce4ec, #ffffff)'; this.style.borderColor='#e91e63'; this.style.transform='scale(1)';">Unique Stays</button>
+        <button onclick="toggleSection('reviews')" style="background: linear-gradient(to bottom, #f3e5f5, #ffffff); color: #6a1b9a; border: 2px solid #8e24aa; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to bottom, #e8d3eb, #f0f8ff)'; this.style.borderColor='#711c87'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to bottom, #f3e5f5, #ffffff)'; this.style.borderColor='#8e24aa'; this.style.transform='scale(1)';">Reviews</button>
+        <button onclick="toggleSection('monthly-stays')" style="background: linear-gradient(to right, #e0f7fa, #ffffff); color: #006064; border: 2px solid #00bcd4; padding: 10px 20px; border-radius: 5px; cursor: pointer; font-weight: bold; transition: all 0.3s; transform: scale(1);" onmouseover="this.style.background='linear-gradient(to right, #c8eff5, #f0f8ff)'; this.style.borderColor='#0097a7'; this.style.transform='scale(1.05)';" onmouseout="this.style.background='linear-gradient(to right, #e0f7fa, #ffffff)'; this.style.borderColor='#00bcd4'; this.style.transform='scale(1)';">Monthly Stays</button>
+    </div>
+</div>
+    <!-- Airports -->
+    <section id="airports" style="margin-bottom: 40px; background: linear-gradient(to bottom, #e6f3fa, #ffffff); padding: 20px; border-radius: 10px; display: none;">
+        <h2 style="text-align: center; color: #1a5276; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#12465e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1a5276'; this.style.textDecoration='none';">Airports</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #3498db; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); overflow: hidden; background-color: #f0f9ff; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.15)';">
+                <img src="images/kempogouda.png" alt="Kempegowda International Airport Bangalore" style="width: 100%; height: 140px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 8px; font-size: 1.1em; color: #1a5276; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#12465e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1a5276'; this.style.textDecoration='none';">Kempegowda International</h3>
+                    <p style="margin: 0; font-size: 0.85em; color: #34495e;">Main airport, 40 km from Bidadi, serving domestic and international flights.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #3498db; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); overflow: hidden; background-color: #f0f9ff; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.15)';">
+                <img src="images/hal.png" alt="HAL Airport Bangalore" style="width: 100%; height: 140px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 8px; font-size: 1.1em; color: #1a5276; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#12465e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1a5276'; this.style.textDecoration='none';">HAL Airport</h3>
+                    <p style="margin: 0; font-size: 0.85em; color: #34495e;">Secondary airport, 30 km away, used for private and cargo flights.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #3498db; border-radius: 12px; box-shadow: 0 6px 12px rgba(0,0,0,0.15); overflow: hidden; background-color: #f0f9ff; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 8px 16px rgba(0,0,0,0.25)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.15)';">
+                <img src="images/yelahenka.png" alt="Yelahanka Airbase Bangalore" style="width: 100%; height: 140px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 8px; font-size: 1.1em; color: #1a5276; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#12465e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1a5276'; this.style.textDecoration='none';">Yelahanka Airbase</h3>
+                    <p style="margin: 0; font-size: 0.85em; color: #34495e;">Military airbase, 35 km away, occasionally hosts air shows.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Bus Stands -->
+    <section id="bus-stands" style="margin-bottom: 40px; background:过多; padding: 20px; border-radius: 10px; display: none;">
+        <h2 style="text-align: center; color: #7d6608; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5c4b06'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7d6608'; this.style.textDecoration='none';">Bus Stands</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 2px solid #f1c40f; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fffde7; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/magestic.png" alt="Majestic Bus Stand Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #7d6608; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5c4b06'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7d6608'; this.style.textDecoration='none';">Majestic Bus Stand</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #5c4033;">Central hub, 25 km away, for intercity and interstate buses.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 2px solid #f1c40f; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fffde7; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/shivajinagar.png" alt="Shivajinagar Bus Stand Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #7d6608; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5c4b06'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7d6608'; this.style.textDecoration='none';">Shivajinagar Bus Stand</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #5c4033;">Major terminal, 27 km away, for local and regional buses.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 2px solid #f1c40f; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fffde7; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/mysure.png" alt="Mysore Road Bus Stand Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #7d6608; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5c4b06'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7d6608'; this.style.textDecoration='none';">Mysore Road Bus Stand</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #5c4033;">Local hub, 15 km away, serving routes to Mysore.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Parks -->
+    <section id="parks" style="margin-bottom: 40px; background: linear-gradient(to top, #e8f5e9, #ffffff); padding: 25px; border-radius: 15px; display: none;">
+        <h2 style="text-align: center; color: #196f3d; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#125429'; this.style.textDecoration='underline';" onmouseout="this.style.color='#196f3d'; this.style.textDecoration='none';">Parks</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #27ae60; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; background-color: #e8f5e9; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 7px 18px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+                <img src="images/cubban.png" alt="Cubbon Park Bangalore" style="width: 100%; height: 145px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.15em; color: #196f3d; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#125429'; this.style.textDecoration='underline';" onmouseout="this.style.color='#196f3d'; this.style.textDecoration='none';">Cubbon Park</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #2e7d32;">Green oasis, 25 km away, ideal for walks and picnics.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #27ae60; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; background-color: #e8f5e9; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 7px 18px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+                <img src="images/lalbahdur botanical.png" alt="Lalbagh Botanical Garden Bangalore" style="width: 100%; height: 145px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.15em; color: #196f3d; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#125429'; this.style.textDecoration='underline';" onmouseout="this.style.color='#196f3d'; this.style.textDecoration='none';">Lalbagh Botanical Garden</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #2e7d32;">Historic garden, 23 km away, known for its glasshouse.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #27ae60; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); overflow: hidden; background-color: #e8f5e9; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 7px 18px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+                <img src="images/baneergatta.png" alt="Bannerghatta National Park Bangalore" style="width: 100%; height: 145px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.15em; color: #196f3d; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#125429'; this.style.textDecoration='underline';" onmouseout="this.style.color='#196f3d'; this.style.textDecoration='none';">Bannerghatta National Park</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #2e7d32;">Wildlife park, 20 km away, with a zoo and safari.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Railways -->
+    <section id="railways" style="margin-bottom: 40px; background: linear-gradient(to left, #fce4ec, #ffffff); padding: 20px; border-radius: 12px; display: none;">
+        <h2 style="text-align: center; color: #7b1fa2; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5e177b'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7b1fa2'; this.style.textDecoration='none';">Railways</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #9c27b0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #f3e5f5; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/ksr.png" alt="KSR Bengaluru Railway Station" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #7b1fa2; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5e177b'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7b1fa2'; this.style.textDecoration='none';">KSR Bengaluru City</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #4a148c;">Main railway station, 25 km away, for major routes.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #9c27b0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #f3e5f5; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/yashwanthpur.png" alt="Yeshwantpur Railway Station Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #7b1fa2; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5e177b'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7b1fa2'; this.style.textDecoration='none';">Yeshwantpur Junction</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #4a148c;">Key station, 28 km away, for northern routes.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #9c27b0; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #f3e5f5; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/kengeri.png" alt="Kengeri Railway Station Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #7b1fa2; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#5e177b'; this.style.textDecoration='underline';" onmouseout="this.style.color='#7b1fa2'; this.style.textDecoration='none';">Kengeri Station</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #4a148c;">Local station, 10 km away, for suburban trains.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Shopping Malls -->
+    <section id="shopping-malls" style="margin-bottom: 40px; background: linear-gradient(to bottom, #fff3e0, #ffffff); padding: 20px; border-radius: 10px; display: none;">
+        <h2 style="text-align: center; color: #d35400; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#a04000'; this.style.textDecoration='underline';" onmouseout="this.style.color='#d35400'; this.style.textDecoration='none';">Shopping Malls</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #e67e22; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fef5e7; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/orion.png" alt="Orion Mall Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #d35400; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#a04000'; this.style.textDecoration='underline';" onmouseout="this.style.color='#d35400'; this.style.textDecoration='none';">Orion Mall</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #7f3300;">Premium mall, 30 km away, with top brands and dining.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #e67e22; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fef5e7; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/mantrisqure.png" alt="Mantri Square Mall Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #d35400; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#a04000'; this.style.textDecoration='underline';" onmouseout="this.style.color='#d35400'; this.style.textDecoration='none';">Mantri Square</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #7f3300;">Popular mall, 25 km away, with shops and a food court.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #e67e22; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fef5e7; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/ubcity.png" alt="UB City Mall Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #d35400; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#a04000'; this.style.textDecoration='underline';" onmouseout="this.style.color='#d35400'; this.style.textDecoration='none';">UB City</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #7f3300;">Luxury mall, 26 km away, for high-end shopping.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Movie Theaters -->
+    <section id="movie-theaters" style="margin-bottom: 40px; background: linear-gradient(to right, #e3f2fd, #ffffff); padding: 20px; border-radius: 10px; display: none;">
+        <h2 style="text-align: center; color: #1565c0; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#0f4587'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1565c0'; this.style.textDecoration='none';">Movie Theaters</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #2196f3; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #e3f2fd; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/pvrorion.png" alt="PVR Orion Mall Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #1565c0; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#0f4587'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1565c0'; this.style.textDecoration='none';">PVR Orion Mall</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #0d47a1;">Premium cinema, 30 km away, with multiple screens.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #2196f3; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #e3f2fd; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/inox mastri.png" alt="INOX Mantri Square Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #1565c0; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#0f4587'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1565c0'; this.style.textDecoration='none';">INOX Mantri Square</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #0d47a1;">Popular theater, 25 km away, for latest movies.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #2196f3; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #e3f2fd; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/cinepolice eta.png" alt="Cinepolis ETA Mall Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #1565c0; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#0f4587'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1565c0'; this.style.textDecoration='none';">Cinepolis ETA Mall</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #0d47a1;">Modern cinema, 28 km away, with comfy seats.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Unique Places to Stay -->
+    <section id="unique-stays" style="margin-bottom: 40px; background: linear-gradient(to top, #fce4ec, #ffffff); padding: 20px; border-radius: 10px; display: none;">
+        <h2 style="text-align: center; color: #ad1457; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#820e41'; this.style.textDecoration='underline';" onmouseout="this.style.color='#ad1457'; this.style.textDecoration='none';">Unique Stays</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #e91e63; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fce4ec; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/stayvista.png" alt="StayVista Ananta Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #ad1457; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#820e41'; this.style.textDecoration='underline';" onmouseout="this.style.color='#ad1457'; this.style.textDecoration='none';">StayVista Ananta</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #880e4f;">Luxury villa, 20 km away, with a private pool. <a href="#reviews" style="color: #e91e63; text-decoration: none;">See Reviews</a></p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #e91e63; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fce4ec; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/sufrounstay.png" alt="SaffronStays Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #ad1457; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#820e41'; this.style.textDecoration='underline';" onmouseout="this.style.color='#ad1457'; this.style.textDecoration='none';">SaffronStays</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #880e4f;">Boutique stay, 22 km away, with scenic views.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #e91e63; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #fce4ec; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/thetamara.png" alt="The Tamara Coorg Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #ad1457; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#820e41'; this.style.textDecoration='underline';" onmouseout="this.style.color='#ad1457'; this.style.textDecoration='none';">The Tamara Coorg</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #880e4f;">Eco-friendly resort, 100 km away, for a getaway.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews" style="margin-bottom: 40px; background: linear-gradient(to bottom, #f3e5f5, #ffffff); padding: 20px; border-radius: 10px; display: none;">
+        <h2 style="text-align: center; color: #6a1b9a; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#4c126e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#6a1b9a'; this.style.textDecoration='none';">Reviews</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #8e24aa; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #f3e5f5; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/family trip.png" alt="Guest Review Hitaishi Rooms" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #6a1b9a; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#4c126e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#6a1b9a'; this.style.textDecoration='none';">Family Trip</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #4a148c;">"Great stay near Wonderla! Staff was very helpful." - Priya</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #8e24aa; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #f3e5f5; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/bussinessbackground.png" alt="Guest Review Hitaishi Rooms Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #6a1b9a; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#4c126e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#6a1b9a'; this.style.textDecoration='none';">Business Stay</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #4a148c;">"Clean rooms and excellent service!" - Rajesh</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #8e24aa; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); overflow: hidden; background-color: #f3e5f5; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+                <img src="images/weekend.png" alt="Traveler Review Hitaishi Rooms" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #6a1b9a; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#4c126e'; this.style.textDecoration='underline';" onmouseout="this.style.color='#6a1b9a'; this.style.textDecoration='none';">Weekend Getaway</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #4a148c;">"Perfect location for a quick trip!" - Anjali</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Discover Monthly Stays -->
+    <section id="monthly-stays" style="margin-bottom: 40px; background: linear-gradient(to right, #e0f7fa, #ffffff); padding: 20px; border-radius: 10px; display: none;">
+        <h2 style="text-align: center; color: #006064; margin-bottom: 20px; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#003c40'; this.style.textDecoration='underline';" onmouseout="this.style.color='#006064'; this.style.textDecoration='none';">Monthly Stays</h2>
+        <div style="display: flex; flex-wrap: nowrap; gap: 20px; justify-content: center;">
+            <!-- Card 1 -->
+            <div style="width: 280px; border: 1px solid #00bcd4; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #e0f7fa; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/standad package.png" alt="Monthly Stay Hitaishi Rooms Bangalore" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #006064; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#003c40'; this.style.textDecoration='underline';" onmouseout="this.style.color='#006064'; this.style.textDecoration='none';">Standard Package</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #004d40;">Affordable monthly stay with basic amenities.</p>
+                </div>
+            </div>
+            <!-- Card 2 -->
+            <div style="width: 280px; border: 1px solid #00bcd4; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #e0f7fa; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/primium.png" alt="Premium Monthly Stay Hitaishi Rooms" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #006064; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#003c40'; this.style.textDecoration='underline';" onmouseout="this.style.color='#006064'; this.style.textDecoration='none';">Premium Package</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #004d40;">Luxury stay with Wi-Fi and housekeeping.</p>
+                </div>
+            </div>
+            <!-- Card 3 -->
+            <div style="width: 280px; border: 1px solid #00bcd4; border-radius: 10px; box-shadow: 0 4px 10px rgba(0,0,0,0.1); overflow: hidden; background-color: #e0f7fa; transition: transform 0.3s, box-shadow 0.3s;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 14px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 10px rgba(0,0,0,0.1)';">
+                <img src="images/family.png" alt="Family Monthly Stay Hitaishi Rooms" style="width: 100%; height: 150px; object-fit: cover;">
+                <div style="padding: 15px;">
+                    <h3 style="margin: 0 0 10px; font-size: 1.2em; color: #006064; transition: all 0.3s; cursor: pointer;" onmouseover="this.style.color='#003c40'; this.style.textDecoration='underline';" onmouseout="this.style.color='#006064'; this.style.textDecoration='none';">Family Package</h3>
+                    <p style="margin: 0; font-size: 0.9em; color: #004d40;">Spacious rooms for families, with kitchen access.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        function toggleSection(sectionId) {
+            // Hide all sections first
+            const sections = document.querySelectorAll('main > section');
+            sections.forEach(section => {
+                section.style.display = 'none';
+            });
+            
+            // Show the selected section
+            const sectionToShow = document.getElementById(sectionId);
+            if (sectionToShow) {
+                sectionToShow.style.display = 'block';
+            }
+        }
+        
+        // Show the first section by default
+        document.addEventListener('DOMContentLoaded', function() {
+            toggleSection('airports');
+        });
+    </script>
+</main>
+
+<div style="border-radius: 12px; padding: 25px; background: linear-gradient(to bottom, #e6f3fa, #d9e8f0); color: #1a2b33; font-family: Arial, sans-serif; max-width: 90%; margin: 20px auto; box-shadow: 0 6px 12px rgba(0,0,0,0.15); display: flex; gap: 20px; align-items: stretch;">
+  
+    <div style="flex: 1; min-width: 0;">
+        <h2 style="margin-top: 0; color: #003d4d; text-align: center; font-size: 28px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#002a36'; this.style.textDecoration='underline';" onmouseout="this.style.color='#003d4d'; this.style.textDecoration='none';">Welcome to Hitaishi Rooms & Services</h2>
+        <p style="font-size: 16px; line-height: 1.6; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#0f1e24';" onmouseout="this.style.color='#1a2b33';">
+            <strong style="transition: all 0.3s ease;" onmouseover="this.style.color='#007a99';" onmouseout="this.style.color='#1a2b33';">Hitaishi Rooms & Services</strong> offers premium, budget-friendly accommodation with modern amenities for a comfortable stay.
+        </p>
+        <ul style="list-style-type: disc; padding-left: 20px; font-size: 16px;">
+            <li style="margin-bottom: 8px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#007a99'; this.style.transform='translateX(5px)';" onmouseout="this.style.color='#1a2b33'; this.style.transform='translateX(0)';">Fully furnished AC/non-AC rooms</li>
+            <li style="margin-bottom: 8px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#007a99'; this.style.transform='translateX(5px)';" onmouseout="this.style.color='#1a2b33'; this.style.transform='translateX(0)';">Daily cleaning and maintenance</li>
+            <li style="margin-bottom: 8px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#007a99'; this.style.transform='translateX(5px)';" onmouseout="this.style.color='#1a2b33'; this.style.transform='translateX(0)';">Free Wi-Fi and 24x7 water supply</li>
+            <li style="margin-bottom: 8px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#007a99'; this.style.transform='translateX(5px)';" onmouseout="this.style.color='#1a2b33'; this.style.transform='translateX(0)';">On-demand room service and laundry</li>
+            <li style="margin-bottom: 8px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#007a99'; this.style.transform='translateX(5px)';" onmouseout="this.style.color='#1a2b33'; this.style.transform='translateX(0)';">Near metro, market, hospitals & offices</li>
+        </ul>
+        <p style="font-size: 16px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#0f1e24';" onmouseout="this.style.color='#1a2b33';">
+            Book today for affordable luxury with <strong style="transition: all 0.3s ease;" onmouseover="this.style.color='#007a99';" onmouseout="this.style.color='#1a2b33';">Hitaishi Rooms & Services</strong>.
+        </p>
+        <div style="text-align: center; margin-top: 20px;">
+            <span style="display: inline-block; transition: all 0.3s ease;">
+                <!-- Uncomment and modify the Contact Us button if needed -->
+                <!-- <a href="contact.html" style="text-decoration: none; background-color: #007a99; color: white; padding: 12px 24px; border-radius: 6px; font-weight: bold; display: inline-block; transition: all 0.3s ease;" onmouseover="this.parentNode.style.transform='scale(1.05)'; this.style.backgroundColor='#005b73';" onmouseout="this.parentNode.style.transform='scale(1)'; this.style.backgroundColor='#007a99';">Contact Us Now</a> -->
+            </span>
+        </div>
+    </div>
+    <!-- Image -->
+    <div style="flex: 0 0 400px; display: flex; align-items: center;">
+        <img src="images/hitaishiroom.png" alt="Hitaishi Rooms" style="width: 100%; height: auto; border-radius: 8px; object-fit: cover; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.03)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+    </div>
+</div>
+
+<div style="width: 80%; margin: 0 auto; padding: 40px; background-color: #ffffff; font-family: Arial, sans-serif; border-top: 2px solid #ccc;">
+    <h2 style="color: #1a1a1a; font-size: 28px; margin-bottom: 15px; text-align: center; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#007a99'; this.style.textDecoration='underline';" onmouseout="this.style.color='#1a1a1a'; this.style.textDecoration='none';">Why Choose Hitaishi Rooms and Services?</h2>
+    <p style="color: #333; font-size: 16px; line-height: 1.6; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#007a99';" onmouseout="this.style.color='#333';">
+        At Hitaishi, we prioritize your comfort and satisfaction. Our dedicated team ensures every guest receives personalized attention — from smooth check-ins to timely service requests. 
+    </p>
+    <div style="display: flex; flex-wrap: nowrap; margin-top: 30px; gap: 20px;">
+        <!-- Card 1 -->
+        <div style="flex: 1; min-width: 200px; background-color: #e8f5e9; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+            <h4 style="color: #2e7d32; font-size: 18px; margin-bottom: 10px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#1b5e20';" onmouseout="this.style.color='#2e7d32';">🔒 Safety First</h4>
+            <p style="font-size: 15px; color: #2e2e2e; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#1b5e20';" onmouseout="this.style.color='#2e2e2e';">24/7 security, CCTV surveillance, and sanitized rooms for your peace of mind.</p>
+        </div>
+        <!-- Card 2 -->
+        <div style="flex: 1; min-width: 200px; background-color: #e3f2fd; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+            <h4 style="color: #1565c0; font-size: 18px; margin-bottom: 10px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#0d47a1';" onmouseout="this.style.color='#1565c0';">🕒 Timely Service</h4>
+            <p style="font-size: 15px; color: #2e2e2e; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#0d47a1';" onmouseout="this.style.color='#2e2e2e';">Responsive staff ready to assist you any time of the day or night.</p>
+        </div>
+        <!-- Card 3 -->
+        <div style="flex: 1; min-width: 200px; background-color: #fff3e0; padding: 20px; border-radius: 10px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); transition: all 0.3s ease;" onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0,0,0,0.2)';" onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0,0,0,0.1)';">
+            <h4 style="color: #ef6c00; font-size: 18px; margin-bottom: 10px; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#d84315';" onmouseout="this.style.color='#ef6c00';">💰 Value for Money</h4>
+            <p style="font-size: 15px; color: #2e2e2e; transition: all 0.3s ease; cursor: pointer;" onmouseover="this.style.color='#d84315';" onmouseout="this.style.color='#2e2e2e';">Enjoy luxury-level features at pocket-friendly prices with no hidden charges.</p>
+        </div>
+    </div>
+</div>
+    <!-- Footer -->
+     <!-- post footer -->
+    <footer style="background-color: #333; padding: 20px 0; border-top: 1px solid #ddd;">
+        <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <p style="margin-bottom: 10px; color: #fff;">Download  HRS app for exciting offers.</p>
+                <div>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/012/871/374/small/app-store-download-button-in-white-colors-download-on-the-apple-app-store-free-png.png" alt="App Store" style="width: 120px; margin-right: 10px;"></a>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png" alt="Google Play" style="width: 120px;"></a>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Teams/Careers</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Blogs</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Support</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Official  HRS Blog</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Investor Relations</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;"> HRS Circle</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;"> HRS Frames</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Terms and conditions</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Guest Policies</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Trust And Safety</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security Awareness</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Responsible Disclosure</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Advertise your Homes</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr style="margin-top: 20px; border: none; height: 1px; background-color: #ddd;">
+
+
+        <div style="background-color: #333; padding: 20px 0;">
+            <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center;">
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 14px; color: #fff;">2025 © Hitaishi Rooms & Service Limited. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+       
+       
+    </footer>
+   
+
+    <!-- Responsive Design -->
+    <style>
+        @media (max-width: 768px) {
+            h1 { font-size: 2em; }
+            h2 { font-size: 1.5em; }
+            h3 { font-size: 1.1em; }
+            p { font-size: 0.9em; }
+            div[style*="width: 300px"] { width: 100%; }
+        }
+    </style>
+</body>
+</html>

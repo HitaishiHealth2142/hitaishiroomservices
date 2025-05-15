@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Property - Hitaishio Rooms</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; background-color: #f5f5f5;">
+
+<!-- Header -->
+<!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                Login / Signup
+            </div>
+        </div>
+    </div>
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+    <!-- Main Form -->
+    <main style="max-width: 800px; margin: 100px auto 40px; padding: 20px; background-color: white; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">
+        <h2 style="color: #2c3e50; border-bottom: 2px solid #e74c3c; padding-bottom: 10px;">List Your Property</h2>
+        
+        <form id="propertyForm" enctype="multipart/form-data" style="margin-top: 30px;">
+
+            <!-- Property Name -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: block; margin-bottom: 8px; color: #34495e; font-weight: bold;">Property Name*</label>
+                <input type="text" name="propertyName" required 
+                    style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+            </div>
+
+            <!-- Location Details -->
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #34495e; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Location Details</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">Door Number*</label>
+                        <input type="text" name="doorNo" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">Floor</label>
+                        <input type="text" name="floor" 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">Street*</label>
+                        <input type="text" name="street" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">Address Line 1*</label>
+                        <input type="text" name="addressLine1" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">Address Line 2</label>
+                        <input type="text" name="addressLine2" 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">City*</label>
+                        <input type="text" name="city" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">State*</label>
+                        <select name="state" required style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                            <option value="">Select State</option>
+                            <option value="MH">Maharashtra</option>
+                            <option value="DL">Delhi</option>
+                            <option value="KA">Karnataka</option>
+                            <option value="TN">Tamil Nadu</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">District*</label>
+                        <input type="text" name="district" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">ZIP Code*</label>
+                        <input type="text" name="zipCode" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Room Specifications -->
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #34495e; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Room Specifications</h3>
+                
+                <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 15px; margin-top: 15px;">
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">Room Type*</label>
+                        <select name="roomType" required style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                            <option value="">Select Type</option>
+                            <option value="standard">Standard</option>
+                            <option value="deluxe">Deluxe</option>
+                            <option value="suite">Suite</option>
+                        </select>
+                    </div>
+                    <div>
+                        <label style="display: block; margin-bottom: 5px;">Room Size (sq.ft)*</label>
+                        <input type="number" name="roomSize" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <div style="margin-top: 15px;">
+                    <label style="display: flex; align-items: center; gap: 8px;">
+                        <input type="checkbox" name="seatingArea" style="margin: 0;">
+                        Has Separate Seating Area
+                    </label>
+                </div>
+            </div>
+
+            <!-- Amenities -->
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #34495e; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Amenities</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 15px;">
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" name="amenities" value="wifi" style="margin-right: 8px;"> WiFi
+                    </label>
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" name="amenities" value="ac" style="margin-right: 8px;"> AC
+                    </label>
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" name="amenities" value="tv" style="margin-right: 8px;"> TV
+                    </label>
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" name="amenities" value="breakfast" style="margin-right: 8px;"> Breakfast
+                    </label>
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" name="amenities" value="parking" style="margin-right: 8px;"> Parking
+                    </label>
+                    <label style="display: flex; align-items: center;">
+                        <input type="checkbox" name="amenities" value="laundry" style="margin-right: 8px;"> Laundry
+                    </label>
+                </div>
+            </div>
+
+            <!-- Photos Upload -->
+            <div style="margin-bottom: 20px;">
+                <h3 style="color: #34495e; border-bottom: 2px solid #e74c3c; padding-bottom: 5px;">Property Photos</h3>
+                <div id="photoContainer" style="margin-top: 15px;">
+                    <div class="photo-input" style="margin-bottom: 10px;">
+                        <input type="file" name="photos" accept="image/*" required 
+                            style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                    </div>
+                </div>
+                <button type="button" onclick="addPhotoField()" 
+                    style="background: #3498db; color: white; border: none; padding: 8px 15px; border-radius: 4px; cursor: pointer;">
+                    Add More Photos +
+                </button>
+            </div>
+
+            <!-- Price & Contact -->
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); gap: 20px; margin-bottom: 20px;">
+                <div>
+                    <label style="display: block; margin-bottom: 5px;">Price per Night (₹)*</label>
+                    <input type="number" name="price" required 
+                        style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 5px;">Contact Number*</label>
+                    <input type="tel" name="contactNumber" pattern="[0-9]{10}" required 
+                        style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                </div>
+                <div>
+                    <label style="display: block; margin-bottom: 5px;">Email*</label>
+                    <input type="email" name="email" required 
+                        style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                </div>
+            </div>
+
+            <!-- Terms -->
+            <div style="margin-bottom: 20px;">
+                <label style="display: flex; align-items: center;">
+                    <input type="checkbox" required style="margin-right: 8px;">
+                    I agree to the <a href="#" style="color: #e74c3c; text-decoration: none;">Terms & Conditions</a>
+                </label>
+            </div>
+
+            <!-- Submit Button -->
+            <button type="submit" 
+                style="background-color: #e74c3c; color: white; padding: 12px 25px; border: none; border-radius: 4px; cursor: pointer; width: 100%; font-size: 16px;">
+                List My Property
+            </button>
+        </form>
+    </main>
+
+
+
+    <script>
+        // Photo Upload Management
+        let photoCount = 1;
+        const MAX_PHOTOS = 10;
+
+        function addPhotoField() {
+            if(photoCount < MAX_PHOTOS) {
+                const container = document.getElementById('photoContainer');
+                const div = document.createElement('div');
+                div.className = 'photo-input';
+                div.style.marginBottom = '10px';
+                div.innerHTML = `
+                    <input type="file" name="photos" accept="image/*" 
+                        style="width: 100%; padding: 10px; border: 1px solid #bdc3c7; border-radius: 4px;">
+                `;
+                container.appendChild(div);
+                photoCount++;
+            } else {
+                alert(`Maximum ${MAX_PHOTOS} photos allowed`);
+            }
+        }
+
+        // Form Submission
+        document.getElementById('propertyForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const formData = new FormData(e.target);
+            const amenities = Array.from(document.querySelectorAll('input[name="amenities"]:checked'))
+                                .map(checkbox => checkbox.value);
+            
+            // Append additional data
+            formData.append('amenities', JSON.stringify(amenities));
+            formData.append('seatingArea', document.querySelector('[name="seatingArea"]').checked);
+
+            try {
+                const response = await fetch('YOUR_NODEJS_API_ENDPOINT', {
+                    method: 'POST',
+                    body: formData
+                });
+
+                const result = await response.json();
+                
+                if(response.ok) {
+                    alert('Property listed successfully!');
+                    window.location.reload();
+                } else {
+                    alert(`Error: ${result.message}`);
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred while submitting the form');
+            }
+        });
+    </script>
+
+
+
+
+
+
+
+<!--  Footer -->
+<div style="background-color: #333; padding: 20px 0; border-top: 1px solid #ddd; color: #fff;">
+  <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <p style="margin: 0;">Download HRS app for exciting offers.</p>
+      <div>
+        <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/012/871/374/small/app-store-download-button-in-white-colors-download-on-the-apple-app-store-free-png.png" alt="App Store" style="width: 120px; margin-right: 10px;"></a>
+        <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png" alt="Google Play" style="width: 120px; margin-right: 10px;"></a>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">About Us</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Teams/Careers</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Blogs</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Support</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Official HRS Blog</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Investor Relations</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">HRS Circle</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">HRS Frames</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Terms and conditions</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Guest Policies</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Trust And Safety</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security Awareness</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Responsible Disclosure</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Advertise your Homes</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr style="margin-top: 20px; border: none; height: 1px; background-color: #ddd;">
+  <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center;">
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-pinterest"></i></a>
+    </div>
+    <div>
+      <p style="margin: 0; font-size: 14px;">2025 © Hitaishi Rooms & Service Limited. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+</body>
+</html>

@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        .animate-slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .hover-scale {
+            transition: transform 0.2s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .modal {
+            transition: opacity 0.3s ease, transform 0.3s ease;
+        }
+        .modal.hidden {
+            opacity: 0;
+            transform: translateY(-20px);
+            pointer-events: none;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen  items-center justify-center p-4">
+
+
+        <!-- Header -->
+<!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+
+
+
+
+
+
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-md w-full animate-slide-in mx-auto mt-10">
+        <h2 class="text-2xl font-bold text-center text-gray-800 mb-6">Login</h2>
+        <form id="loginForm" class="space-y-6">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                <input type="email" id="email" required
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div>
+                <label for="password" class="block text-sm font-medium text-gray-700">Password</label>
+                <input type="password" id="password" required
+                    class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+            </div>
+            <div class="text-right">
+                Having Trouble in Login?
+                <a href="#" id="forgotPasswordLink" class="text-sm text-blue-600 hover:underline">Forgot Password?</a>
+            </div>
+            <button type="submit"
+                class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 hover-scale transition-colors">
+                Login
+            </button>
+        </form>
+
+        <div class="mt-6 text-center">
+            <div class="relative">
+                <div class="absolute inset-0 flex items-center">
+                    <div class="w-full border-t border-gray-300"></div>
+                </div>
+                <div class="relative flex justify-center text-sm">
+                    <span class="px-2 bg-white text-gray-500">Or login with</span>
+                </div>
+            </div>
+            <div class="mt-4 flex justify-center gap-4">
+                <a href="/auth/facebook"
+                    class="px-4 py-2 bg-blue-800 text-white rounded-md hover:bg-blue-900 hover-scale">
+                    Facebook
+                </a>
+                <a href="/auth/google"
+                    class="px-4 py-2 bg-red-600 text-white rounded-md hover:bg-red-700 hover-scale">
+                    Google
+                </a>
+            </div>
+        </div>
+
+        <p class="mt-6 text-center text-sm text-gray-600">
+            Don't have an account? <a href="signup.html" class="text-blue-600 hover:underline">Sign Up</a>
+        </p>
+    </div>
+
+    <!-- Forgot Password Modal -->
+    <div id="forgotPasswordModal" class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden modal">
+        <div class="bg-white p-6 rounded-lg max-w-sm w-full">
+            <h3 class="text-lg font-bold text-gray-800 mb-4"> Reset Password</h3>
+            <form id="resetPasswordForm" class="space-y-4">
+                <div>
+                    <label for="resetEmail" class="block text-sm font-medium text-gray-700">Email</label>
+                    <input type="email" id="resetEmail" required
+                        class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                </div>
+                <div class="flex justify-end gap-2">
+                    <button type="button" id="cancelReset"
+                        class="px-4 py-2 bg-gray-200 text-gray-800 rounded-md hover:bg-gray-300">
+                        Cancel
+                    </button>
+                    <button type="submit"
+                        class="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-700">
+                        Send Reset Link
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        // Login Form Submission
+        document.getElementById('loginForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const credentials = {
+                email: document.getElementById('email').value,
+                password: document.getElementById('password').value
+            };
+
+            try {
+                const response = await fetch('/api/login', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(credentials)
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    localStorage.setItem('token', data.token);
+                    alert('Login successful!');
+                    window.location.href = '/dashboard.html';
+                } else {
+                    alert(data.message || 'Login failed');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred');
+            }
+        });
+
+        // Forgot Password Modal Handling
+        const forgotPasswordLink = document.getElementById('forgotPasswordLink');
+        const forgotPasswordModal = document.getElementById('forgotPasswordModal');
+        const cancelReset = document.getElementById('cancelReset');
+        const resetPasswordForm = document.getElementById('resetPasswordForm');
+
+        forgotPasswordLink.addEventListener('click', (e) => {
+            e.preventDefault();
+            forgotPasswordModal.classList.remove('hidden');
+        });
+
+        cancelReset.addEventListener('click', () => {
+            forgotPasswordModal.classList.add('hidden');
+        });
+
+        resetPasswordForm.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            
+            const email = document.getElementById('resetEmail').value;
+
+            try {
+                const response = await fetch('/api/reset-password', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert('Password reset link sent to your email!');
+                    forgotPasswordModal.classList.add('hidden');
+                } else {
+                    alert(data.message || 'Failed to send reset link');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred');
+            }
+        });
+    </script>
+</body>
+</html>

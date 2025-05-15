@@ -1,0 +1,773 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>List Your Property | Hitaishi Services</title>
+     <meta name="theme-color" content="#d4af37">
+    <meta name="author" content="Hitaishi Services">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+   
+</head>
+<body>
+
+
+<!-- Header -->
+<!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                Login / Signup
+            </div>
+        </div>
+    </div>
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+
+
+
+
+
+
+
+
+
+
+   <section style="position:relative;height:90vh;min-height:600px;background:linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),url('https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80');background-size:cover;background-position:center;display:flex;align-items:center;justify-content:center;text-align:center;color:#fff;overflow:hidden;font-family:'Poppins',sans-serif;">
+    <div style="position:absolute;width:100%;height:100%;top:0;left:0;overflow:hidden;z-index:1;">
+      <div style="position:absolute;background:rgba(255,255,255,0.1);border-radius:50%;filter:blur(30px);width:200px;height:200px;top:10%;left:10%;animation:float 15s infinite linear;"></div>
+      <div style="position:absolute;background:rgba(255,255,255,0.1);border-radius:50%;filter:blur(30px);width:150px;height:150px;bottom:15%;right:10%;animation:float 15s infinite linear;animation-delay:2s;"></div>
+      <div style="position:absolute;background:rgba(255,255,255,0.1);border-radius:50%;filter:blur(30px);width:100px;height:100px;top:40%;right:20%;animation:float 15s infinite linear;animation-delay:4s;"></div>
+      <div style="position:absolute;background:rgba(255,255,255,0.1);border-radius:50%;filter:blur(30px);width:250px;height:250px;bottom:5%;left:20%;animation:float 15s infinite linear;animation-delay:6s;"></div>
+    </div>
+
+    <div style="max-width:900px;padding:0 20px;z-index:2;transform:translateY(20px);opacity:0;animation:fadeInUp 1s ease-out forwards;">
+      <h2 style="font-size:3.5rem;font-weight:800;margin-bottom:20px;text-shadow:2px 2px 10px rgba(255, 255, 255, 0.244);color:#ffffff;">List Your Property with Hitaishi Room Services</h2>
+      <p style="font-size:1.2rem;margin-bottom:40px;text-shadow:1px 1px 5px rgba(0,0,0,0.5);">Join India's fastest growing hospitality network and maximize your property's revenue potential with our trusted brand and technology platform.</p>
+      <div style="display:flex;gap:20px;justify-content:center;flex-wrap:wrap;">
+        <a href="listproperty.html" style="padding:15px 35px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:all 0.4s ease;display:inline-block;box-shadow:0 5px 15px rgba(0,0,0,0.2);background:#ff7e33;color:#fff;border:2px solid #ff7e33;">List Your Property Now</a>
+        <a href="#learnmore" style="padding:15px 35px;border-radius:50px;font-size:1.1rem;font-weight:600;text-decoration:none;transition:all 0.4s ease;display:inline-block;box-shadow:0 5px 15px rgba(0,0,0,0.2);background:transparent;color:#fff;border:2px solid #fff;">Learn How It Works</a>
+      </div>
+    </div>
+
+    <style>
+      @keyframes fadeInUp {
+        to {opacity:1;transform:translateY(0);}
+      }
+      @keyframes float {
+        0%{transform:translate(0,0) rotate(0deg)}
+        25%{transform:translate(50px,50px) rotate(90deg)}
+        50%{transform:translate(0,100px) rotate(180deg)}
+        75%{transform:translate(-50px,50px) rotate(270deg)}
+        100%{transform:translate(0,0) rotate(360deg)}
+      }
+      @media (max-width:768px){
+        h2 {font-size:2.5rem!important;}
+        p {font-size:1rem!important;}
+        a {padding:12px 25px!important;font-size:1rem!important;}
+      }
+    </style>
+</section>
+
+    
+  <section id="learnmore">
+        <div style="background:#fff5f5;padding:60px 20px;text-align:center;">
+          <h2 style="font-size:36px;margin-bottom:20px;">How It Works</h2>
+          <div style="display:flex;flex-wrap:wrap;justify-content:center;gap:40px;">
+            
+            <!-- Card 1 -->
+            <div style="width:250px;transition:transform 0.3s,box-shadow 0.3s;"
+              onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)';"
+              onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none';">
+              <div style="background:#D72638;color:white;width:60px;height:60px;border-radius:50%;margin:auto;font-size:24px;line-height:60px;">1</div>
+              <h4 style="margin-top:20px;">Register</h4>
+              <p>Create your free account and get started.</p>
+            </div>
+            
+            <!-- Card 2 -->
+            <div style="width:250px;transition:transform 0.3s,box-shadow 0.3s;"
+              onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)';"
+              onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none';">
+              <div style="background:#D72638;color:white;width:60px;height:60px;border-radius:50%;margin:auto;font-size:24px;line-height:60px;">2</div>
+              <h4 style="margin-top:20px;">Add Details</h4>
+              <p>Provide property info, photos, and pricing.</p>
+            </div>
+            
+            <!-- Card 3 -->
+            <div style="width:250px;transition:transform 0.3s,box-shadow 0.3s;"
+              onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 8px 16px rgba(0,0,0,0.2)';"
+              onmouseout="this.style.transform='scale(1)';this.style.boxShadow='none';">
+              <div style="background:#D72638;color:white;width:60px;height:60px;border-radius:50%;margin:auto;font-size:24px;line-height:60px;">3</div>
+              <h4 style="margin-top:20px;">Go Live</h4>
+              <p>Your property is listed and ready to book.</p>
+            </div>
+      
+          </div>
+        </div>
+  </section>
+      
+   <section>
+    <div style="max-width:1200px;margin:0 auto;position:relative;z-index:2;padding:80px 20px;background:linear-gradient(135deg,#f8f8f8 0%,#ffffff 100%);overflow:hidden">
+   <div style="text-align:center;margin-bottom:60px">
+    <h2 style="font-size:2.2rem;font-weight:700;margin-bottom:20px;background:linear-gradient(90deg,#f26522,#f26522 50%,#000 50%);background-size:200% 100%;-webkit-background-clip:text;background-clip:text;color:transparent;animation:gradientShift 8s infinite alternate">"Har host ke liye personal support – Hitaishi Room Services ka vaada!"</h2>
+    <p style="font-size:1.2rem;color:#666;max-width:700px;margin:0 auto">We ensure 24/7 assistance tailored to every property owner.</p>
+  </div>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;margin-top:50px">
+    
+    <!-- Card 1 -->
+    <div style="background:#fff;border-radius:15px;padding:40px 30px;box-shadow:0 10px 30px rgba(0,0,0,0.05);transition:transform 0.4s, box-shadow 0.4s;position:relative;overflow:hidden;z-index:1"
+         onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 15px 40px rgba(0,0,0,0.15)';"
+         onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)';">
+      <div style="width:70px;height:70px;background:linear-gradient(135deg,#f26522,#ffab00);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:25px;color:#fff;font-size:1.8rem;box-shadow:0 5px 15px rgba(242,101,34,0.3)">📈</div>
+      <div style="position:absolute;top:20px;right:20px;background:#f26522;color:#fff;padding:5px 15px;border-radius:20px;font-size:0.8rem;font-weight:600;animation:pulse 2s infinite">Fast Payments</div>
+      <h3 style="font-size:1.5rem;color:#333;margin-bottom:15px">Maximum Revenue</h3>
+      <p style="color:#666;line-height:1.6">Hitaishi Room Services uses smart pricing to boost your property’s earnings with real-time market strategies.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="background:#fff;border-radius:15px;padding:40px 30px;box-shadow:0 10px 30px rgba(0,0,0,0.05);transition:transform 0.4s, box-shadow 0.4s;position:relative;overflow:hidden;z-index:1"
+         onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 15px 40px rgba(0,0,0,0.15)';"
+         onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)';">
+      <div style="width:70px;height:70px;background:linear-gradient(135deg,#f26522,#ffab00);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:25px;color:#fff;font-size:1.8rem;box-shadow:0 5px 15px rgba(242,101,34,0.3)">💸</div>
+      <div style="position:absolute;top:20px;right:20px;background:#f26522;color:#fff;padding:5px 15px;border-radius:20px;font-size:0.8rem;font-weight:600;animation:pulse 2s infinite">Weekly Payouts</div>
+      <h3 style="font-size:1.5rem;color:#333;margin-bottom:15px">Transparent Policies</h3>
+      <p style="color:#666;line-height:1.6">With Hitaishi Room Services, you get clear agreements and assured weekly transfers to your bank account.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="background:#fff;border-radius:15px;padding:40px 30px;box-shadow:0 10px 30px rgba(0,0,0,0.05);transition:transform 0.4s, box-shadow 0.4s;position:relative;overflow:hidden;z-index:1"
+         onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 15px 40px rgba(0,0,0,0.15)';"
+         onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.05)';">
+      <div style="width:70px;height:70px;background:linear-gradient(135deg,#f26522,#ffab00);border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:25px;color:#fff;font-size:1.8rem;box-shadow:0 5px 15px rgba(242,101,34,0.3)">🌐</div>
+      <div style="position:absolute;top:20px;right:20px;background:#f26522;color:#fff;padding:5px 15px;border-radius:20px;font-size:0.8rem;font-weight:600;animation:pulse 2s infinite">Global Reach</div>
+      <h3 style="font-size:1.5rem;color:#333;margin-bottom:15px">Wider Visibility</h3>
+      <p style="color:#666;line-height:1.6">Hitaishi Room Services helps showcase your property to thousands of potential guests across major travel platforms.</p>
+    </div>
+  </div>
+
+  <div style="text-align:center;margin-top:60px">
+    <a href="listproperty.html" style="display:inline-block;background:linear-gradient(to right,#f26522,#ffab00);color:#fff;padding:15px 40px;border-radius:50px;text-decoration:none;font-weight:600;font-size:1.1rem;transition:all 0.3s ease;box-shadow:0 5px 20px rgba(242,101,34,0.3);position:relative;overflow:hidden"
+       onmouseover="this.style.transform='scale(1.05)';this.style.boxShadow='0 10px 30px rgba(0,0,0,0.2)'"
+       onmouseout="this.style.transform='scale(1)';this.style.boxShadow='0 5px 20px rgba(242,101,34,0.3)'">Join Today</a>
+  </div>
+</div>
+
+        <style>
+            @keyframes gradientShift{0%{background-position:0% 50%}100%{background-position:100% 50%}}
+            @keyframes float{0%{transform:translate(0,0) rotate(0deg)}25%{transform:translate(20px,20px) rotate(5deg)}50%{transform:translate(0,40px) rotate(0deg)}75%{transform:translate(-20px,20px) rotate(-5deg)}100%{transform:translate(0,0) rotate(0deg)}}
+            @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.05)}100%{transform:scale(1)}}
+            @media (max-width:768px){
+                .section-header h2{font-size:2rem}
+                .feature-card{padding:30px 20px}
+            }
+        </style>
+   </section>
+
+   <section style="padding:80px 20px;background:linear-gradient(135deg, #fef9f5 0%, #fff2e6 100%);text-align:center;position:relative;overflow:hidden;">
+  <!-- Decorative elements -->
+  <div style="position:absolute;top:-50px;right:-50px;width:200px;height:200px;background:#FF6B00;opacity:0.1;border-radius:50%;"></div>
+  <div style="position:absolute;bottom:-80px;left:-80px;width:300px;height:300px;background:#FF6B00;opacity:0.05;border-radius:50%;"></div>
+
+  <div style="max-width:1200px;margin:auto;display:flex;flex-wrap:wrap;align-items:center;justify-content:space-between;gap:40px;position:relative;z-index:1;">
+    <!-- Text Content -->
+    <div style="flex:1;min-width:300px;text-align:left;animation:fadeInLeft 0.8s ease;">
+      <h2 style="font-size:42px;color:#0d3b66;margin-bottom:25px;line-height:1.3;font-weight:700;">
+        <span style="color:#FF6B00;">Hitaishi Room List</span> Karein – Apka Kamra, Apki Kamai
+      </h2>
+      <p style="font-size:18px;color:#4a5568;margin-bottom:30px;line-height:1.7;">
+        Hitaishi Room Services ke saath apna room list karke paayen ek naya revenue source. Hamari premium platform par bharosa kar ke aaj hi apna property showcase karein aur desh bhar ke quality guests se judein.
+      </p>
+
+      <div style="background:#ffffff;border-radius:12px;padding:25px;box-shadow:0 5px 15px rgba(0,0,0,0.05);margin-bottom:30px;">
+        <ul style="list-style:none;padding-left:0;margin:0;">
+          <li style="margin-bottom:15px;font-size:17px;padding-left:30px;position:relative;">
+            <span style="position:absolute;left:0;color:#FF6B00;font-size:20px;">✓</span>
+            <strong>Free Property Listing</strong> - Koi registration fees nahi
+          </li>
+          <li style="margin-bottom:15px;font-size:17px;padding-left:30px;position:relative;">
+            <span style="position:absolute;left:0;color:#FF6B00;font-size:20px;">✓</span>
+            <strong>24/7 Partner Support</strong> - Dedicated relationship manager
+          </li>
+          <li style="margin-bottom:15px;font-size:17px;padding-left:30px;position:relative;">
+            <span style="position:absolute;left:0;color:#FF6B00;font-size:20px;">✓</span>
+            <strong>Smart Pricing Tools</strong> - Dynamic rate recommendations
+          </li>
+          <li style="font-size:17px;padding-left:30px;position:relative;">
+            <span style="position:absolute;left:0;color:#FF6B00;font-size:20px;">✓</span>
+            <strong>Verified Guests</strong> - ID-checked, reliable travelers
+          </li>
+        </ul>
+      </div>
+
+      <div style="display:flex;gap:15px;flex-wrap:wrap;">
+        <a href="listproperty.html" style="padding:16px 32px;background:#FF6B00;color:white;text-decoration:none;border-radius:8px;font-size:18px;font-weight:600;transition:all 0.3s;box-shadow:0 4px 6px rgba(255,107,0,0.25);">
+          Register Now <span style="margin-left:8px;">→</span>
+        </a>
+        <a href="properties.html" style="padding:16px 32px;background:white;color:#FF6B00;text-decoration:none;border-radius:8px;font-size:18px;font-weight:600;transition:all 0.3s;border:2px solid #FF6B00;">
+          See Demo
+        </a>
+      </div>
+    </div>
+
+    <!-- Image Card -->
+    <div style="flex:1;min-width:300px;position:relative;animation:fadeInRight 0.8s ease;">
+      <div style="position:relative;border-radius:16px;overflow:hidden;box-shadow:0 20px 25px -5px rgba(0,0,0,0.1),0 10px 10px -5px rgba(0,0,0,0.04);">
+        <img src="images/list-room.png" alt="List Your Room"
+             style="width:100%;height:auto;display:block;transition:transform 0.5s ease;">
+        <div style="position:absolute;bottom:0;left:0;right:0;background:linear-gradient(to top, rgba(0,0,0,0.7), transparent);padding:30px 25px;color:white;text-align:left;">
+          <h3 style="margin:0;font-size:22px;font-weight:600;">Premium Property Partners</h3>
+          <p style="margin:10px 0 0;font-size:16px;opacity:0.9;">Join 5,000+ happy hosts across India</p>
+        </div>
+      </div>
+
+      <div style="display:flex;justify-content:center;gap:15px;margin-top:25px;">
+        <div style="text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#0d3b66;">4.9/5</div>
+          <div style="font-size:14px;color:#4a5568;">Partner Rating</div>
+        </div>
+        <div style="height:40px;width:1px;background:#e2e8f0;"></div>
+        <div style="text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#0d3b66;">98%</div>
+          <div style="font-size:14px;color:#4a5568;">Satisfaction</div>
+        </div>
+        <div style="height:40px;width:1px;background:#e2e8f0;"></div>
+        <div style="text-align:center;">
+          <div style="font-size:28px;font-weight:700;color:#0d3b66;">24h</div>
+          <div style="font-size:14px;color:#4a5568;">Support</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    @keyframes fadeInLeft {
+      from { opacity:0; transform:translateX(-30px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+    @keyframes fadeInRight {
+      from { opacity:0; transform:translateX(30px); }
+      to { opacity:1; transform:translateX(0); }
+    }
+    a:hover {
+      transform:translateY(-3px);
+      box-shadow:0 10px 15px -3px rgba(255,107,0,0.3);
+    }
+  </style>
+   </section>
+
+   <section class="hitaishi-rooms" style="font-family:'Segoe UI',Tahoma,Geneva,Verdana,sans-serif;max-width:1200px;margin:0 auto;padding:40px 20px;background:linear-gradient(to bottom,#f9f9f9,#fff)">
+    <div class="section-header" style="text-align:center;margin-bottom:40px">
+      <h2 class="section-title" style="font-size:2.5rem;color:#2a3a4a;margin-bottom:10px;position:relative;display:inline-block">Hitaishi Luxury Accommodations</h2>
+      <p class="section-subtitle" style="color:#666;font-size:1.1rem;max-width:700px;margin:0 auto">Experience unparalleled comfort in our meticulously designed rooms and suites</p>
+    </div>
+    <div class="room-controls" style="display:flex;justify-content:space-between;align-items:center;margin-bottom:30px;flex-wrap:wrap;gap:15px">
+      <div class="search-box" style="position:relative;flex:1;min-width:250px">
+        <i class="fas fa-search" style="position:absolute;left:20px;top:50%;transform:translateY(-50%);color:#777"></i>
+        <input type="text" placeholder="Search rooms..." id="roomSearch" style="width:80%;padding:12px 20px 12px 45px;border:1px solid #ddd;border-radius:30px;font-size:1rem;box-shadow:0 2px 10px rgba(0,0,0,.05);transition:all .3s ease">
+      </div>
+      <div class="filter-options" style="display:flex;gap:15px">
+        <select id="roomType" style="padding:12px 20px;border:1px solid #ddd;border-radius:30px;background:#fff;cursor:pointer;appearance:none;padding-right:40px;background-image:url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'%3e%3c/polyline%3e%3c/svg%3e');background-repeat:no-repeat;background-position:right 15px center;background-size:15px;box-shadow:0 2px 10px rgba(0,0,0,.05)">
+          <option value="all">All Room Types</option>
+          <option value="deluxe">Deluxe Rooms</option>
+          <option value="suite">Suites</option>
+          <option value="executive">Executive Rooms</option>
+        </select>
+        <select id="priceRange" style="padding:12px 20px;border:1px solid #ddd;border-radius:30px;background:#fff;cursor:pointer;appearance:none;padding-right:40px;background-image:url('data:image/svg+xml;charset=UTF-8,%3csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 24 24\' fill=\'none\' stroke=\'currentColor\' stroke-width=\'2\' stroke-linecap=\'round\' stroke-linejoin=\'round\'%3e%3cpolyline points=\'6 9 12 15 18 9\'%3e%3c/polyline%3e%3c/svg%3e');background-repeat:no-repeat;background-position:right 15px center;background-size:15px;box-shadow:0 2px 10px rgba(0,0,0,.05)">
+          <option value="all">Any Price</option>
+          <option value="0-150">Under $150</option>
+          <option value="150-300">$150 - $300</option>
+          <option value="300+">$300+</option></select>
+        </div>
+      </div>
+      <div class="room-grid" style="display:grid;grid-template-columns:repeat(auto-fill,minmax(350px,1fr));gap:30px">
+        <div class="room-card" data-type="deluxe" data-price="199" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.08);transition:all .3s ease;position:relative">
+          <div class="room-details" style="padding:25px">
+            <h3 class="room-name" style="font-size:1.4rem;margin-bottom:10px;color:#2a3a4a">Deluxe King Room</h3>
+            <div class="room-features" style="display:flex;gap:15px;margin-bottom:15px;color:#666">
+              <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                <i class="fas fa-bed" style="color:#d4af37"></i> King Bed</span>
+              <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                <i class="fas fa-expand" style="color:#d4af37"></i> 350 sq.ft</span>
+              <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                <i class="fas fa-user-friends" style="color:#d4af37"></i> 2 Adults</span>
+              </div>
+              <p class="room-description" style="color:#666;margin-bottom:20px;line-height:1.6">Our Deluxe King Room offers a spacious retreat with premium amenities, perfect for both business and leisure travelers.</p>
+              <div class="room-footer" style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
+              <div class="room-price" style="font-size:1.3rem;color:#2a3a4a;font-weight:700">$199 <span style="font-size:.9rem;color:#666;font-weight:400">/ night</span>
+              </div>
+              <button class="book-btn" style="background:#d4af37;color:#fff;border:none;padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:700;transition:all .3s ease"><a href="properties.html" style="text-decoration: none; color: white;">Book Now</a> </button>
+              </div>
+            </div>
+          </div>
+          <div class="room-card" data-type="suite" data-price="349" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.08);transition:all .3s ease;position:relative">
+          <div class="room-badge" style="position:absolute;top:15px;right:15px;background:#d4af37;color:#fff;padding:5px 15px;border-radius:20px;font-size:.8rem;font-weight:700;z-index:2">PREMIUM</div>
+          <div class="room-details" style="padding:25px">
+            <h3 class="room-name" style="font-size:1.4rem;margin-bottom:10px;color:#2a3a4a">Executive Suite</h3>
+            <div class="room-features" style="display:flex;gap:15px;margin-bottom:15px;color:#666">
+              <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                <i class="fas fa-bed" style="color:#d4af37">
+                </i> King Bed + Sofa</span>
+              <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                <i class="fas fa-expand" style="color:#d4af37">
+                </i> 650 sq.ft</span>
+              <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                <i class="fas fa-user-friends" style="color:#d4af37">
+                </i> 3 Adults</span>
+              </div>
+              <p class="room-description" style="color:#666;margin-bottom:20px;line-height:1.6">Spacious living area with separate bedroom, ideal for extended stays or those seeking extra comfort and space.</p>
+              <div class="room-footer" style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
+                <div class="room-price" style="font-size:1.3rem;color:#2a3a4a;font-weight:700">$349 <span style="font-size:.9rem;color:#666;font-weight:400">/ night</span>
+                </div>
+                <button class="book-btn" style="background:#d4af37;color:#fff;border:none;padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:700;transition:all .3s ease"><a href="properties.html" style="text-decoration: none; color: white;">Book Now</a></button>
+              </div>
+            </div>
+          </div>
+          <div class="room-card" data-type="executive" data-price="279" style="background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 5px 15px rgba(0,0,0,.08);transition:all .3s ease;position:relative">
+            <div class="room-details" style="padding:25px">
+              <h3 class="room-name" style="font-size:1.4rem;margin-bottom:10px;color:#2a3a4a">Executive Double</h3>
+              <div class="room-features" style="display:flex;gap:15px;margin-bottom:15px;color:#666">
+                <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                  <i class="fas fa-bed" style="color:#d4af37">
+                  </i> 2 Queen Beds</span>
+                <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                  <i class="fas fa-expand" style="color:#d4af37">
+                  </i> 450 sq.ft</span>
+                <span style="display:flex;align-items:center;gap:5px;font-size:.9rem">
+                  <i class="fas fa-user-friends" style="color:#d4af37">
+                  </i> 4 Adults</span>
+                </div>
+                <p class="room-description" style="color:#666;margin-bottom:20px;line-height:1.6">Perfect for families or small groups, featuring two comfortable queen beds and a spacious work area.</p>
+                <div class="room-footer" style="display:flex;justify-content:space-between;align-items:center;margin-top:20px">
+                  <div class="room-price" style="font-size:1.3rem;color:#2a3a4a;font-weight:700">$279 <span style="font-size:.9rem;color:#666;font-weight:400">/ night</span>
+                  </div>
+                  <button class="book-btn" style="background:#d4af37;color:#fff;border:none;padding:10px 25px;border-radius:30px;cursor:pointer;font-weight:700;transition:all .3s ease"><a href="properties.html" style="text-decoration: none; color: white;">Book Now</a> </button>
+                </div>
+              </div>
+            </div>
+          </div>
+   </section>
+   
+  <section style="font-family:'Segoe UI',Arial,sans-serif;background:#fff;padding:10px 20px;">
+  <div style="max-width:1200px;margin:auto;display:grid;grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));gap:20px;">
+
+    <!-- About Hitaishi -->
+    <div>
+      <div style="background:#ff6f00;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+        <svg style="width:20px;height:20px;fill:white;" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.48..."/></svg>
+      </div>
+      <h3 style="font-size:16px;color:#333;margin:0 0 8px;">About Hitaishi</h3>
+      <p style="font-size:14px;color:#555;line-height:1.4;">India's fastest-growing hospitality platform since 2018, building smart partnerships with property owners.</p>
+      <a href="/about" style="color:#ff6f00;font-weight:600;font-size:13px;text-decoration:none;">Learn more →</a>
+    </div>
+
+    <!-- List Your Property -->
+    <div>
+      <div style="background:#ff6f00;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+        <svg style="width:20px;height:20px;fill:white;" viewBox="0 0 24 24"><path d="M19 5h-2V3H7v2H5..."/></svg>
+      </div>
+      <h3 style="font-size:16px;color:#333;margin:0 0 8px;">List Your Property</h3>
+      <p style="font-size:14px;color:#555;line-height:1.4;">List in 3 easy steps. Join 10,000+ property owners growing with Hitaishi.</p>
+      <div style="display:flex;gap:8px;margin-top:8px;">
+        <a href="listproperty.html" style="background:#ff6f00;color:white;padding:6px 12px;border-radius:4px;font-size:13px;text-decoration:none;">Start Listing</a>
+        <a href="propertypage.html" style="color:#ff6f00;border:1px solid #ff6f00;padding:6px 12px;border-radius:4px;font-size:13px;text-decoration:none;">See Demo</a>
+      </div>
+    </div>
+
+    <!-- 24/7 Support -->
+    <div>
+      <div style="background:#ff6f00;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin-bottom:10px;">
+        <svg style="width:20px;height:20px;fill:white;" viewBox="0 0 24 24"><path d="M20 2H4c-1.1 0-1.99..."/></svg>
+      </div>
+      <h3 style="font-size:16px;color:#333;margin:0 0 8px;">24/7 Support</h3>
+      <p style="font-size:14px;color:#555;line-height:1.4;">Our expert team is ready 24/7 to help with your questions.</p>
+      <ul style="list-style:none;padding:0;margin:8px 0 0;color:#555;font-size:13px;line-height:1.5;">
+        <li><strong>Phone:</strong> +91 98765 43210</li>
+        <li><strong>Email:</strong> support@hitaishi.com</li>
+        <li><strong>Help:</strong> FAQs & Help Center</li>
+      </ul>
+    </div>
+
+  </div>
+</section>
+
+<script>
+document.getElementById('roomSearch').addEventListener('input',function(e)
+{const t=e.target.value.toLowerCase(),
+n=document.querySelectorAll('.room-card');
+n.forEach(e=>{const n=e.querySelector('.room-name').textContent.toLowerCase();
+n.includes(t)?e.style.display='block':e.style.display='none'})}),
+document.getElementById('roomType').addEventListener('change',function(e){const t=e.target.value,
+n=document.querySelectorAll('.room-card');
+n.forEach(e=>{'all'===t||e.dataset.type===t?e.style.display='block':e.style.display='none'})}),
+document.getElementById('priceRange').addEventListener('change',function(e){const t=e.target.value,n=document.querySelectorAll('.room-card');
+n.forEach(e=>{const n=parseFloat(e.dataset.price);'all'===t||'0-150'===t&&n<150||'150-300'===t&&n>=150&&n<=300||'300+'===t&&n>300?e.style.display='block':e.style.display='none'})});
+
+    // Dynamic background image changer
+    const heroSection = document.querySelector('.hero-section');
+    const bgImages = [
+        'https://images.unsplash.com/photo-1566073771259-6a8506099945?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+        'https://images.unsplash.com/photo-1520250497591-112f2f40a3f4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+    ];
+    let currentBg = 0;
+    
+    function changeBackground() {
+        currentBg = (currentBg + 1) % bgImages.length;
+        heroSection.style.backgroundImage = `linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('${bgImages[currentBg]}')`;
+        
+        // Also change the text image for visual variety
+        const textImage = [
+            'https://images.unsplash.com/photo-1512917774080-9991f1c4c750?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+            'https://images.unsplash.com/photo-1484154218962-a197022b5858?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80',
+            'https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'
+        ];
+        document.querySelector('.hero-content h1').style.backgroundImage = `url('${textImage[currentBg]}')`;
+    }
+    
+    setInterval(changeBackground, 5000);
+    
+    // Button hover effects enhancement
+    const buttons = document.querySelectorAll('.cta-button');
+    buttons.forEach(button => {
+        button.addEventListener('mouseenter', () => {
+            button.style.transform = 'translateY(-5px) scale(1.05)';
+        });
+        button.addEventListener('mouseleave', () => {
+            button.style.transform = 'translateY(0) scale(1)';
+        });
+    });
+    
+    // Floating elements animation enhancement
+    const floatingElements = document.querySelectorAll('.floating-element');
+    floatingElements.forEach((el, index) => {
+        el.style.animationDuration = `${15 + index * 3}s`;
+    });
+    // Dynamic gradient animation for feature cards
+    const featureCards = document.querySelectorAll('.feature-card');
+    const colors = [
+        ['#f26522', '#ffab00'],
+        ['#4a6bdf', '#6a8eff'],
+        ['#00a896', '#02c39a']
+    ];
+    
+    let currentColor = 0;
+    setInterval(() => {
+        document.querySelectorAll('.feature-card').forEach((card, index) => {
+            const colorPair = colors[(currentColor + index) % colors.length];
+            card.querySelector('div:first-child').style.background = `linear-gradient(135deg, ${colorPair[0]}, ${colorPair[1]})`;
+            card.querySelector('div:nth-child(2)').style.background = colorPair[0];
+        });
+        currentColor = (currentColor + 1) % colors.length;
+    }, 3000);
+    
+    // CTA button hover enhancement
+    document.querySelector('a[href="#"]').addEventListener('mouseenter', function() {
+        this.style.transform = 'translateY(-5px) scale(1.05)';
+    });
+    document.querySelector('a[href="#"]').addEventListener('mouseleave', function() {
+        this.style.transform = 'translateY(0) scale(1)';
+    });
+</script>
+
+
+
+
+<!-- Post Footer -->
+<div style="background-color: #333; padding: 20px 0; border-top: 1px solid #ddd; color: #fff;">
+  <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap; gap: 20px;">
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <p style="margin: 0;">Download HRS app for exciting offers.</p>
+      <div>
+        <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/012/871/374/small/app-store-download-button-in-white-colors-download-on-the-apple-app-store-free-png.png" alt="App Store" style="width: 120px; margin-right: 10px;"></a>
+        <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png" alt="Google Play" style="width: 120px; margin-right: 10px;"></a>
+      </div>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">About Us</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Teams/Careers</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Blogs</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Support</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Official HRS Blog</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Investor Relations</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">HRS Circle</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">HRS Frames</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Terms and conditions</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Guest Policies</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Trust And Safety</a></li>
+      </ul>
+    </div>
+    <div style="flex: 1; min-width: 150px; padding: 0 10px;">
+      <ul style="list-style: none; padding: 0;">
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security Awareness</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Responsible Disclosure</a></li>
+        <li style="margin-bottom: 10px;"><a href="#" style="color: #fff; text-decoration: none;">Advertise your Homes</a></li>
+      </ul>
+    </div>
+  </div>
+  <hr style="margin-top: 20px; border: none; height: 1px; background-color: #ddd;">
+  <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap;">
+    <div style="display: flex; align-items: center;">
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-facebook"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-instagram"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-twitter"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-youtube"></i></a>
+      <a href="#" style="color: #fff; text-decoration: none; margin-right: 20px; font-size: 24px;"><i class="fa-brands fa-pinterest"></i></a>
+    </div>
+    <div>
+      <p style="margin: 0; font-size: 14px;">2025 © Hitaishi Rooms & Service Limited. All rights reserved.</p>
+    </div>
+  </div>
+</div>
+
+</body>
+</html>

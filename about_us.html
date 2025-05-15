@@ -1,0 +1,1367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitaishi Room Services</title>
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <script>
+        // Counter animation
+        function animateCounters() {
+            const counters = document.querySelectorAll('.counter');
+            const speed = 200;
+            
+            counters.forEach(counter => {
+                const target = +counter.getAttribute('data-target');
+                const count = +counter.innerText;
+                const increment = target / speed;
+
+                if (count < target) {
+                    counter.innerText = Math.ceil(count + increment);
+                    setTimeout(animateCounters, 1);
+                } else {
+                    counter.innerText = target.toLocaleString();
+                }
+            });
+        }
+
+        // Accordion functionality
+        function setupAccordions() {
+            const accordions = document.getElementsByClassName("accordion");
+            
+            for (let i = 0; i < accordions.length; i++) {
+                accordions[i].addEventListener("click", function() {
+                    this.classList.toggle("active");
+                    const panel = this.nextElementSibling;
+                    
+                    if (panel.style.maxHeight) {
+                        panel.style.maxHeight = null;
+                    } else {
+                        panel.style.maxHeight = panel.scrollHeight + "px";
+                    } 
+                });
+            }
+        }
+
+        // Initialize on load
+        window.onload = function() {
+            setupAccordions();
+            
+            // Trigger counters when section is visible
+            window.addEventListener('scroll', function() {
+                const counterSection = document.getElementById('who-we-are');
+                const sectionPosition = counterSection.getBoundingClientRect().top;
+                const screenPosition = window.innerHeight / 1.3;
+
+                if (sectionPosition < screenPosition) {
+                    animateCounters();
+                    // Remove event listener after triggering once
+                    window.removeEventListener('scroll', arguments.callee);
+                }
+            });
+        };
+    </script>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; line-height: 1.6; color: #333;">
+
+
+
+    <!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+  <section>
+  <div id="hero" style="background: linear-gradient(135deg, #2a4365 0%, #1e3a8a 100%); color: white; text-align: center; padding: 120px 20px; position: relative; overflow: hidden;">
+    <div style="position: relative; z-index: 2; max-width: 800px; margin: 0 auto;">
+      <h1 style="font-size: 3.5rem; margin-bottom: 1rem; animation: fadeInUp 1s ease;">Welcome to Hitaishi Room Services</h1>
+      <p style="font-size: 1.3rem; margin-bottom: 2rem; animation: fadeInUp 1s ease 0.3s forwards; opacity: 0;">Redefining Hospitality with Trust and Excellence</p>
+      <a href="#who-we-are" style="display: inline-block; padding: 12px 30px; background: #f6ad55; color: #333; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; animation: pulse 2s infinite, fadeInUp 1s ease 0.6s forwards; opacity: 0;">Explore More</a>
+    </div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') center/cover; opacity: 0.3; z-index: 1; animation: zoom 20s infinite alternate;"></div>
+  </div>
+</section>
+
+ <section id="who-we-are" style="padding:60px 5%; max-width: 1200px; margin: 60px auto; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-radius: 20px; display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%); position: relative; overflow: hidden;">
+
+  <!-- Decorative elements -->
+  <div style="position: absolute; top: -60px; right: -50px; width: 200px; height: 200px; background: #f6ad55; opacity: 0.1; border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: 30px; left: 10%; width: 100px; height: 100px; border: 2px dashed rgba(42, 67, 101, 0.2); border-radius: 50%;"></div>
+
+  <div style="position: relative; z-index: 2;">
+    <h2 style="font-size: 3rem; margin-bottom: 1.5rem; color: #2a4365; position: relative; line-height: 1.2;">
+      <span style="display: block; font-weight: 300; font-size: 1.2rem; color: #f6ad55; margin-bottom: 10px; letter-spacing: 2px;">ABOUT OUR COMPANY</span>
+      Who We Are
+    </h2>
+    <div style="width: 80px; height: 4px; background: #f6ad55; margin-bottom: 30px;"></div>
+    
+    <p style="margin-bottom: 1.8rem; font-size: 1.15rem; line-height: 1.8; color: #4a5568;">
+      Hitaishi Room Services is an award-winning hospitality provider committed to delivering exceptional guest experiences. Founded in 2010, we combine cutting-edge innovation with time-honored traditions to serve clients across 3 continents.
+    </p>
+    
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 25px; margin-top: 40px;">
+      <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: all 0.4s ease; border-left: 4px solid #f6ad55;">
+        <span class="counter" data-target="500" style="font-size: 2.8rem; font-weight: 700; color: #2a4365; display: block; margin-bottom: 10px; font-family: 'Arial', sans-serif;">0</span>
+        <span style="font-size: 1rem; color: #4a5568; font-weight: 500;">Luxury Properties Worldwide</span>
+      </div>
+      <div style="background: white; padding: 25px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.05); text-align: center; transition: all 0.4s ease; border-left: 4px solid #2a4365;">
+        <span class="counter" data-target="10000" style="font-size: 2.8rem; font-weight: 700; color: #2a4365; display: block; margin-bottom: 10px; font-family: 'Arial', sans-serif;">0</span>
+        <span style="font-size: 1rem; color: #4a5568; font-weight: 500;">Satisfied Guests Annually</span>
+      </div>
+    </div>
+    
+   <button id="storyButton" style="display: inline-flex; align-items: center; padding: 14px 32px; background: #2a4365; color: white; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: none; cursor: pointer; margin-top: 40px; box-shadow: 0 5px 15px rgba(42, 67, 101, 0.2);">
+    Our Story
+    <svg style="margin-left: 8px; transition: transform 0.3s ease;" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M5 12h14M12 5l7 7-7 7"></path>
+    </svg>
+  </button>
+
+  <div id="storyContent" style="display: none; margin-top: 30px; padding: 20px; background: white; border-radius: 12px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); max-width: 700px;">
+    <h2 style="color: #2a4365;">Our Room Service Story</h2>
+    <p style="font-size: 16px; line-height: 1.6;">
+      At our hotel, room service is not just a convenience—it's a tradition of care. From morning coffee delivered with a smile to late-night comfort meals, our service team is available 24/7 to bring a taste of luxury right to your door.
+      Every dish is prepared with the finest ingredients and utmost attention, ensuring your experience is warm, satisfying, and memorable. Whether it's breakfast in bed or a candlelit dinner in your suite, our goal is simple: to make you feel at home, even when you're away.
+    </p>
+  </div>
+  </div>
+
+  <div style="position: relative;">
+    <div style="background: url('https://images.unsplash.com/photo-1582719478250-c89cae4dc85b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') center/cover; height: 500px; border-radius: 12px; box-shadow: 0 25px 50px -12px rgba(0,0,0,0.15); position: relative; overflow: hidden;">
+      <div style="position: absolute; bottom: 0; left: 0; right: 0; background: linear-gradient(to top, rgba(0,0,0,0.7) 0%, transparent 100%); padding: 30px; color: white;">
+        <h3 style="font-size: 1.5rem; margin-bottom: 10px;">Our Signature Property</h3>
+        <p style="opacity: 0.9; font-size: 0.95rem;">Featured in Architectural Digest 2023</p>
+      </div>
+    </div>
+    <div style="position: absolute; bottom: -30px; right: -30px; width: 150px; height: 150px; background: #f6ad55; border-radius: 12px; z-index: -1;"></div>
+  </div>
+
+  <style>
+    #who-we-are div[style*="box-shadow"]:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.1) !important;
+    }
+    button:hover {
+      background: #1e3a8a !important;
+      box-shadow: 0 8px 20px rgba(42, 67, 101, 0.3) !important;
+    }
+    button:hover svg {
+      transform: translateX(5px);
+    }
+  </style>
+</section>
+
+  <section id="how-we-work" style="padding:60px 5%; max-width: 1200px; margin: 60px auto; background: linear-gradient(to bottom, #ffffff 0%, #f8fafc 100%);box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);border-radius: 20px; text-align: center; min-height: 80vh; position: relative; overflow: hidden;">
+
+  <!-- Decorative elements -->
+  <div style="position: absolute; top: 50px; left: 5%; width: 100px; height: 100px; background: #f6ad55; opacity: 0.08; border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: 100px; right: 5%; width: 150px; height: 150px; border: 2px dashed rgba(42, 67, 101, 0.1); border-radius: 50%;"></div>
+
+  <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+    <h2 style="font-size: 2.8rem; margin-bottom: 1rem; color: #2a4365; position: relative; display: inline-block;">
+      <span style="display: block; font-size: 1rem; color: #f6ad55; letter-spacing: 3px; text-transform: uppercase;margin-top:-50px; margin-bottom: 5px;">Our Process</span>
+      How We Work
+    </h2>
+    <div style="width: 80px; height: 4px; background: #f6ad55; margin: 0 auto 40px;"></div>
+
+    <p style="max-width: 700px; margin: 0 auto 60px; font-size: 1.2rem; line-height: 1.8; color: #4a5568;">
+      From discovery to departure, our meticulously crafted process ensures every guest enjoys a seamless, unforgettable experience at every touchpoint.
+    </p>
+
+    <div style="display: flex; justify-content: center; flex-wrap: nowrap; gap: 40px; overflow-x: auto; padding-bottom: 20px;">
+      
+      <!-- Card Style Template -->
+      <div style="background: white; padding: 40px 30px; border-radius: 16px; min-width: 300px; max-width: 280px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: 0.4s ease; border-top: 4px solid #f6ad55; flex-shrink: 0;">
+        <div style="width: 80px; height: 80px; background: #f6ad55; color: white; font-size: 2rem; font-weight: bold; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 20px rgba(246, 173, 85, 0.3);">
+          1
+        </div>
+        <h3 style="font-size: 1.5rem; color: #2a4365;">Discover</h3>
+        <p style="font-size: 1rem; color: #4a5568; line-height: 1.7; margin: 20px 0;">
+          Explore our handpicked collection of luxury properties through immersive virtual tours and detailed descriptions.
+        </p>
+        <div style="background: #f8fafc; padding: 15px; border-radius: 8px;">
+          <svg style="width: 24px; height: 24px; margin-bottom: 8px;" fill="none" stroke="#f6ad55" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+          </svg>
+          <p style="font-size: 0.9rem; color: #718096;">Smart search filters</p>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div style="background: white; padding: 40px 30px; border-radius: 16px; min-width: 300px; max-width: 280px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: 0.4s ease; border-top: 4px solid #2a4365; flex-shrink: 0;">
+        <div style="width: 80px; height: 80px; background: #2a4365; color: white; font-size: 2rem; font-weight: bold; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 20px rgba(42, 67, 101, 0.3);">
+          2
+        </div>
+        <h3 style="font-size: 1.5rem; color: #2a4365;">Book</h3>
+        <p style="font-size: 1rem; color: #4a5568; line-height: 1.7; margin: 20px 0;">
+          Secure your perfect stay with our intuitive booking platform and instant confirmation system.
+        </p>
+        <div style="background: #f8fafc; padding: 15px; border-radius: 8px;">
+          <svg style="width: 24px; height: 24px; margin-bottom: 8px;" fill="none" stroke="#2a4365" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"></path>
+          </svg>
+          <p style="font-size: 0.9rem; color: #718096;">Secure payment gateway</p>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div style="background: white; padding: 40px 30px; border-radius: 16px; min-width: 300px; max-width: 280px; box-shadow: 0 20px 40px rgba(0,0,0,0.08); transition: 0.4s ease; border-top: 4px solid #f6ad55; flex-shrink: 0;">
+        <div style="width: 80px; height: 80px; background: #f6ad55; color: white; font-size: 2rem; font-weight: bold; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px; box-shadow: 0 10px 20px rgba(246, 173, 85, 0.3);">
+          3
+        </div>
+        <h3 style="font-size: 1.5rem; color: #2a4365;">Experience</h3>
+        <p style="font-size: 1rem; color: #4a5568; line-height: 1.7; margin: 20px 0;">
+          Enjoy personalized hospitality with our 24/7 concierge service and premium amenities tailored to your needs.
+        </p>
+        <div style="background: #f8fafc; padding: 15px; border-radius: 8px;">
+          <svg style="width: 24px; height: 24px; margin-bottom: 8px;" fill="none" stroke="#f6ad55" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+          </svg>
+          <p style="font-size: 0.9rem; color: #718096;">24/7 guest support</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <style>
+    #how-we-work div[style*="box-shadow"]:hover {
+      transform: translateY(-10px) scale(1.02);
+      box-shadow: 0 25px 50px rgba(0,0,0,0.12) !important;
+    }
+    button:hover {
+      background: #1e3a8a !important;
+      box-shadow: 0 15px 30px rgba(42, 67, 101, 0.3) !important;
+    }
+    button:hover svg {
+      transform: translateX(8px);
+    }
+  </style>
+  </section>
+
+  <section style="padding: 60px 5%;max-width: 70%; margin: 60px auto;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);border-radius: 20px; max-height: auto;">
+  <div id="investor-relations" style="  background: linear-gradient(to bottom right, #ffffff, #bfcced);">
+    <div style="max-width: 100%; margin: 0 auto;">
+      <h2 style="font-size: 2.8rem; margin-bottom: 1rem; color: #1e293b; text-align: center;">
+        <span style="display: block; font-size: 1rem; color: #6366f1; letter-spacing: 3px; text-transform: uppercase;margin-top:-60px; margin-bottom: 15px;">Investor Relations</span>
+        Transparency Meets Growth
+      </h2>
+      <div style="width: 80px; height: 4px; background: #6366f1; margin: 0 auto 40px;"></div>
+
+      <p style="max-width: 700px; margin: 0 auto 50px; font-size: 1.15rem; line-height: 1.8; color: #475569; text-align: center;">
+        Transparency and growth define our investor strategy. Access financial updates, performance metrics, and official documents below.
+      </p>
+
+      <div style="display: flex; gap: 30px; overflow-x: auto; padding-bottom: 20px; flex-wrap: nowrap; scrollbar-width: thin;">
+        <!-- Cards -->
+        <a href="#" style="flex: 0 0 auto; background: #f3f4f6; padding: 40px 30px; border-radius: 10px; width: 300px; box-shadow: 0 12px 35px rgba(0,0,0,0.05); text-decoration: none; color: #1e293b; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.04)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 12px 35px rgba(0,0,0,0.05)';">
+          <i class="fas fa-file-alt" style="font-size: 2.5rem; margin-bottom: 20px; color: #6366f1;"></i>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Annual Report 2023</h3>
+          <p style="font-size: 0.95rem; color: #64748b;">View our detailed financials, strategy, and growth highlights for FY23.</p>
+        </a>
+
+        <a href="#" style="flex: 0 0 auto; background: #e0f2fe; padding: 40px 30px; border-radius: 10px; width: 300px; box-shadow: 0 12px 35px rgba(0,0,0,0.05); text-decoration: none; color: #1e293b; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.04)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 12px 35px rgba(0,0,0,0.05)';">
+          <i class="fas fa-chart-line" style="font-size: 2.5rem; margin-bottom: 20px; color: #0ea5e9;"></i>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Stock Performance</h3>
+          <p style="font-size: 0.95rem; color: #64748b;">Track our market performance, key trends, and stock metrics in real-time.</p>
+        </a>
+
+        <a href="#" style="flex: 0 0 auto; background: #fff7ed; padding: 40px 30px; border-radius: 10px; width: 300px; box-shadow: 0 12px 35px rgba(0,0,0,0.05); text-decoration: none; color: #1e293b; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.04)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 12px 35px rgba(0,0,0,0.05)';">
+          <i class="fas fa-presentation" style="font-size: 2.5rem; margin-bottom: 20px; color: #f97316;"></i>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Investor Presentation</h3>
+          <p style="font-size: 0.95rem; color: #64748b;">Download the latest investor decks for quarterly and annual briefings.</p>
+        </a>
+
+        <a href="#" style="flex: 0 0 auto; background: #ecfdf5; padding: 40px 30px; border-radius: 10px; width: 300px; box-shadow: 0 12px 35px rgba(0,0,0,0.05); text-decoration: none; color: #1e293b; text-align: center; transition: all 0.3s ease;" onmouseover="this.style.transform='translateY(-10px) scale(1.04)'; this.style.boxShadow='0 20px 45px rgba(0,0,0,0.1)';" onmouseout="this.style.transform='none'; this.style.boxShadow='0 12px 35px rgba(0,0,0,0.05)';">
+          <i class="fas fa-briefcase" style="font-size: 2.5rem; margin-bottom: 20px; color: #14b8a6;"></i>
+          <h3 style="font-size: 1.3rem; margin-bottom: 10px;">Financial Highlights</h3>
+          <p style="font-size: 0.95rem; color: #64748b;">Explore quarterly and annual performance indicators across business units.</p>
+        </a>
+
+       
+      </div>
+    </div>
+  </div>
+  </section>
+
+ <section id="price-match" style="padding: 60px 5%; max-width: 1200px; margin: 40px auto; background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%); color: #2d3748; text-align: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1); border-radius: 20px; position: relative; overflow: hidden;">
+
+  <!-- Decorative elements -->
+  <div style="position: absolute; top: -100px; left: -100px; width: 300px; height: 300px; background: rgba(246, 173, 85, 0.08); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -50px; right: -50px; width: 200px; height: 200px; border: 2px dashed rgba(45, 55, 72, 0.1); border-radius: 50%;"></div>
+
+  <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+    <div style="background: white; padding: 60px 40px; border-radius: 20px; border: 1px solid rgba(45, 55, 72, 0.1); box-shadow: 0 20px 50px rgba(0,0,0,0.08);">
+      <span style="display: inline-block; background: rgba(246, 173, 85, 0.1); color: #c05621; padding: 8px 20px; border-radius: 50px; font-size: 0.9rem; font-weight: 600; letter-spacing: 1px; margin-bottom: 20px;">
+        <i class="fas fa-percentage" style="margin-right: 8px;"></i> BEST PRICE GUARANTEE
+      </span>
+      
+      <h2 style="font-size: 3rem;margin-top:-30px; margin-bottom: 1.5rem; color: #2a4365; line-height: 1.3; position: relative;">
+        We'll Match Any <span style="color: #dd6b20;">Competitor's Price</span>
+      </h2>
+      
+      <p style="font-size: 1.5rem; margin-bottom: 2rem; line-height: 1.8; max-width: 600px; margin-left: auto; margin-right: auto; color: #4a5568;">
+        Find a lower rate for the same property within 24 hours of booking with us, and we'll not only match it - we'll give you an additional 10% off the difference!
+      </p>
+      
+      <div style="display: flex; justify-content: center; gap: 30px; margin-bottom: 40px; flex-wrap: wrap;">
+        <div style="background: #f7fafc; padding: 20px; border-radius: 12px; width: 200px; border-left: 4px solid #dd6b20; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <div style="font-size: 2.5rem; font-weight: 700; color: #dd6b20; margin-bottom: 10px;">24h</div>
+          <div style="font-size: 0.9rem; color: #718096;">To claim after booking</div>
+        </div>
+        <div style="background: #f7fafc; padding: 20px; border-radius: 12px; width: 200px; border-left: 4px solid #dd6b20; box-shadow: 0 5px 15px rgba(0,0,0,0.05);">
+          <div style="font-size: 2.5rem; font-weight: 700; color: #dd6b20; margin-bottom: 10px;">110%</div>
+          <div style="font-size: 0.9rem; color: #718096;">Of the difference back</div>
+        </div>
+      </div>
+      
+      <button id="priceMatchBtn" style="display: inline-flex; align-items: center; padding: 18px 40px; background: #dd6b20; color: white; border-radius: 50px; font-weight: 700; transition: all 0.3s ease; border: none; cursor: pointer; font-size: 1.1rem; box-shadow: 0 10px 30px rgba(221, 107, 32, 0.3); position: relative; overflow: hidden;">
+    <span style="position: relative; z-index: 2;">Claim Your Price Match</span>
+    <svg style="margin-left: 12px; width: 20px; height: 20px; position: relative; z-index: 2;" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M14 5l7 7m0 0l-7 7m7-7H3"></path>
+    </svg>
+    <span style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: white; opacity: 0; transition: opacity 0.3s ease; z-index: 1;"></span>
+  </button>
+
+  <!-- Modal Overlay -->
+  <div id="modal" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.5); z-index: 9999; align-items: center; justify-content: center;">
+    <div style="background: white; padding: 30px; border-radius: 12px; max-width: 600px; width: 90%; box-shadow: 0 10px 40px rgba(0,0,0,0.2); position: relative;">
+      <h2 style="color: #dd6b20;">Our Price Match Promise</h2>
+      <p style="font-size: 16px; line-height: 1.6;">
+        We believe in providing the best value for your stay. If you find a lower price for the same room on another website, let us know—and we’ll match it! Our Price Match Guarantee ensures you never overpay when booking with us.
+        Simply provide the details of the competitor's offer, and our team will verify and match the price, no questions asked.
+      </p>
+      <button onclick="closeModal()" style="margin-top: 20px; background: #dd6b20; color: white; border: none; padding: 10px 20px; border-radius: 8px; font-weight: bold; cursor: pointer;">Close</button>
+    </div>
+  </div>
+
+  <!-- JavaScript -->
+  <script>
+    const btn = document.getElementById('priceMatchBtn');
+    const modal = document.getElementById('modal');
+
+    btn.addEventListener('click', () => {
+      modal.style.display = 'flex';
+    });
+
+    function closeModal() {
+      modal.style.display = 'none';
+    }
+
+    // Optional: Close modal when clicking outside content
+    modal.addEventListener('click', (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+  </script>
+
+      
+      <p style="font-size: 1.3rem; margin-top: 30px; color: #718096;">
+        <i class="fas fa-info-circle" style="margin-right: 8px; color: #dd6b20;"></i> Terms and conditions apply. Valid for identical properties and dates.
+      </p>
+    </div>
+  </div>
+
+  <style>
+    #price-match button:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 15px 40px rgba(221, 107, 32, 0.4) !important;
+    }
+    #price-match button:hover span:last-child {
+      opacity: 0.1;
+    }
+    #price-match div[style*="background: #f7fafc"]:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.1) !important;
+    }
+  </style>
+  </section>
+
+  <section id="modern-slavery" style="padding: 60px 5%; max-width: 62%; margin: 60px auto;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);border-radius: 20px; background: linear-gradient(135deg, #f0f4f8 0%, #dfe8f1 100%); min-height: auto; position: relative; overflow: hidden;">
+    <!-- Decorative elements -->
+    <div style="position: absolute; top: -50px; right: -50px; width: 200px; height: 200px; background: rgba(42, 67, 101, 0.05); border-radius: 50%;"></div>
+    
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+        <div style="display: flex; flex-wrap: wrap; gap: 50px; align-items: center;">
+            <!-- Text Content -->
+            <div style="flex: 1; min-width: 300px;">
+                <h2 style="font-size: 2.8rem; margin-bottom: 1.5rem; color: #1a365d; position: relative; line-height: 1.3;">
+                    <span style="position: relative; display: inline-block;">
+                        Modern Slavery Statement
+                        <span style="position: absolute; bottom: -10px; left: 0; width: 70px; height: 4px; background: #2a4365; border-radius: 2px;"></span>
+                    </span>
+                </h2>
+                
+                <p style="margin-bottom: 2rem; font-size: 1.2rem; line-height: 1.6; color: #4a5568;">
+                    We are committed to ethical labor practices across our entire supply chain. Our zero-tolerance policy against modern slavery ensures:
+                </p>
+                
+                <ul style="margin-left: 0; margin-bottom: 40px; list-style: none; padding: 0;">
+                    <li style="margin-bottom: 15px; font-size: 1.1rem; position: relative; padding-left: 35px; color: #2d3748;">
+                        <span style="position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background-color: #2a4365; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 0.8rem;">✓</span>
+                        </span>
+                        Fair wages and working conditions across all operations
+                    </li>
+                    <li style="margin-bottom: 15px; font-size: 1.1rem; position: relative; padding-left: 35px; color: #2d3748;">
+                        <span style="position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background-color: #2a4365; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 0.8rem;">✓</span>
+                        </span>
+                        Regular independent third-party audits
+                    </li>
+                    <li style="margin-bottom: 15px; font-size: 1.1rem; position: relative; padding-left: 35px; color: #2d3748;">
+                        <span style="position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background-color: #2a4365; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 0.8rem;">✓</span>
+                        </span>
+                        Protected whistleblower reporting channels
+                    </li>
+                    <li style="margin-bottom: 15px; font-size: 1.1rem; position: relative; padding-left: 35px; color: #2d3748;">
+                        <span style="position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background-color: #2a4365; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 0.8rem;">✓</span>
+                        </span>
+                        Strict enforcement of supplier code of conduct
+                    </li>
+                    <li style="margin-bottom: 15px; font-size: 1.1rem; position: relative; padding-left: 35px; color: #2d3748;">
+                        <span style="position: absolute; left: 0; top: 2px; width: 24px; height: 24px; background-color: #2a4365; border-radius: 50%; display: flex; align-items: center; justify-content: center;">
+                            <span style="color: white; font-size: 0.8rem;">✓</span>
+                        </span>
+                        Employee training and awareness programs
+                    </li>
+                </ul>
+                
+              <div style="display: flex; gap: 20px; flex-wrap: nowrap; justify-content: center; flex-direction: row; margin-top: 40px;">
+                <a href="#terms" style="display: inline-flex; align-items: center; padding: 15px 35px; background: #2a4365; color: white; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; box-shadow: 0 4px 15px rgba(42, 67, 101, 0.3); white-space: nowrap;">
+                    Download Full Report
+                    <span style="margin-left: 10px; transition: transform 0.3s ease;">↓</span>
+                </a>
+
+                <a href="#terms" style="display: inline-flex; align-items: center; padding: 15px 35px; background: white; color: #2a4365; border: 2px solid #2a4365; border-radius: 50px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; white-space: nowrap;">
+                    Learn About Our Policies
+                    <span style="margin-left: 10px; transition: transform 0.3s ease;">→</span>
+                </a>
+                </div>
+
+            </div>
+            
+            <!-- Visual Element -->
+            <div style="flex: 1; min-width: 300px; position: relative;">
+                <div style="background: white; border-radius: 20px; padding: 30px; box-shadow: 0 20px 40px rgba(0,0,0,0.1); transform: perspective(1000px) rotateY(-5deg); transition: transform 0.5s ease;">
+                    <div style="background: #f8fafc; border-radius: 15px; padding: 25px; margin-bottom: 20px; border-left: 5px solid #2a4365;">
+                        <h4 style="margin-top: 0; margin-bottom: 10px; color: #1a365d;">Our Commitment</h4>
+                        <p style="margin: 0; color: #4a5568; line-height: 1.6;">We annually review our supply chain to identify and address any risks of modern slavery, publishing transparent reports on our findings.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 15px; margin-bottom: 20px;">
+                        <div style="flex: 1; background: #f8fafc; border-radius: 15px; padding: 20px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #2a4365; margin-bottom: 5px;">100%</div>
+                            <div style="font-size: 0.9rem; color: #4a5568;">Supplier Compliance</div>
+                        </div>
+                        <div style="flex: 1; background: #f8fafc; border-radius: 15px; padding: 20px; text-align: center;">
+                            <div style="font-size: 2rem; font-weight: 700; color: #2a4365; margin-bottom: 5px;">24/7</div>
+                            <div style="font-size: 0.9rem; color: #4a5568;">Reporting Hotline</div>
+                        </div>
+                    </div>
+                    
+                    <div style="background: #2a4365; border-radius: 15px; padding: 20px; color: white;">
+                        <h4 style="margin-top: 0; margin-bottom: 10px;">Report Concerns</h4>
+                        <p style="margin: 0 0 15px 0; line-height: 1.6; opacity: 0.9;">We encourage anyone to report suspected unethical practices in our operations or supply chain.</p>
+                        <a href="#corporate-contact" style="display: inline-block; padding: 10px 20px; background: white; color: #2a4365; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 0.9rem;">Contact Ethics Team</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+        /* Hover effects */
+        #modern-slavery a:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 7px 20px rgba(42, 67, 101, 0.4);
+        }
+        
+        #modern-slavery a:hover span {
+            transform: translateX(5px);
+        }
+        
+        #modern-slavery a:nth-child(2):hover {
+            background: #f0f4f8;
+        }
+        
+        /* Animation for the visual element */
+        @keyframes float {
+            0% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
+            50% { transform: perspective(1000px) rotateY(-5deg) translateY(-10px); }
+            100% { transform: perspective(1000px) rotateY(-5deg) translateY(0); }
+        }
+        
+        #modern-slavery div[style*="perspective"] {
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #modern-slavery {
+                padding: 60px 5%;
+            }
+            
+            #modern-slavery h2 {
+                font-size: 2.2rem;
+            }
+        }
+    </style>
+  </section>
+
+  <section id="human-rights" style="padding: 60px 5%; max-width: 62%; margin: 60px auto;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);border-radius: 20px; min-height: auto; background: linear-gradient(to bottom, #f8fafc 0%, #e2e8f0 100%); position: relative; overflow: hidden;">
+    <!-- Decorative elements -->
+    <div style="position: absolute; top: 50px; right: 5%; width: 150px; height: 150px; background: rgba(42, 67, 101, 0.05); border-radius: 50%;"></div>
+    <div style="position: absolute; bottom: 100px; left: 5%; width: 100px; height: 100px; background: rgba(246, 173, 85, 0.08); border-radius: 50%;"></div>
+    
+    <div style="max-width: 1200px; margin: 0 auto; position: relative; z-index: 2;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.8rem; margin-bottom: 1rem; color: #1a365d; position: relative;margin-top: -50px; display: inline-block;">
+                Human Rights Commitment
+                <span style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: #f6ad55; border-radius: 2px;"></span>
+            </h2>
+            <p style="font-size: 1.2rem; color: #4a5568; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                We uphold the highest standards of human rights in alignment with the UN Global Compact principles, 
+                with particular emphasis on these fundamental areas:
+            </p>
+        </div>
+        
+        <div style="display: flex; justify-content: center; gap: 30px; margin-top: 50px; flex-wrap: wrap;">
+            <!-- Diversity & Inclusion Card -->
+            <div class="rights-card" style="background: white; padding: 40px 30px; border-radius: 15px; width: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; transition: all 0.4s ease; border-top: 4px solid #f6ad55;">
+                <div style="width: 70px; height: 70px; background: rgba(246, 173, 85, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#f6ad55" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3 style="margin-bottom: 20px; color: #1a365d; font-size: 1.4rem; text-align: center;">Diversity & Inclusion</h3>
+                <p style="font-size: 1rem; color: #4a5568; line-height: 1.6; margin-bottom: 25px;">
+                    We champion equal opportunities regardless of gender, race, religion, age, disability, 
+                    or sexual orientation through comprehensive policies and training.
+                </p>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 8px; text-align: center; font-size: 0.9rem; color: #4a5568;">
+                    <span style="font-weight: 600; color: #f6ad55;">42%</span> of leadership roles held by women
+                </div>
+            </div>
+            
+            <!-- Safe Working Conditions Card -->
+            <div class="rights-card" style="background: white; padding: 40px 30px; border-radius: 15px; width: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; transition: all 0.4s ease; border-top: 4px solid #4299e1;">
+                <div style="width: 70px; height: 70px; background: rgba(66, 153, 225, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#4299e1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    </svg>
+                </div>
+                <h3 style="margin-bottom: 20px; color: #1a365d; font-size: 1.4rem; text-align: center;">Safe Working Conditions</h3>
+                <p style="font-size: 1rem; color: #4a5568; line-height: 1.6; margin-bottom: 25px;">
+                    We conduct bi-annual safety audits across all facilities and maintain a 24/7 reporting 
+                    system for any workplace concerns or violations.
+                </p>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 8px; text-align: center; font-size: 0.9rem; color: #4a5568;">
+                    <span style="font-weight: 600; color: #4299e1;">0.2</span> recordable incidents per 100 workers (industry avg: 2.7)
+                </div>
+            </div>
+            
+            <!-- Community Impact Card -->
+            <div class="rights-card" style="background: white; padding: 40px 30px; border-radius: 15px; width: 280px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); position: relative; transition: all 0.4s ease; border-top: 4px solid #48bb78;">
+                <div style="width: 70px; height: 70px; background: rgba(72, 187, 120, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 25px;">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="#48bb78" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                        <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                        <circle cx="9" cy="7" r="4"></circle>
+                        <path d="M23 21v-2a4 4 0 0 0-3-3.87"></path>
+                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                    </svg>
+                </div>
+                <h3 style="margin-bottom: 20px; color: #1a365d; font-size: 1.4rem; text-align: center;">Community Impact</h3>
+                <p style="font-size: 1rem; color: #4a5568; line-height: 1.6; margin-bottom: 25px;">
+                    Beyond donating 5% of profits, we empower employees with 2 paid volunteer days annually 
+                    and match charitable donations up to $1,000 per employee.
+                </p>
+                <div style="background: #f8fafc; padding: 12px; border-radius: 8px; text-align: center; font-size: 0.9rem; color: #4a5568;">
+                    <span style="font-weight: 600; color: #48bb78;">$2.4M</span> contributed to communities in 2023
+                </div>
+            </div>
+        </div>
+    </div>
+    <style>
+    /* Hover effects */
+    .rights-card:hover {
+        transform: translateY(-10px) scale(1.02);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12);
+    }
+    
+    #human-rights a:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 20px rgba(42, 67, 101, 0.4);
+    }
+    
+    #human-rights a:hover svg {
+        transform: translateX(5px);
+    }
+    
+    /* Animation for cards */
+    @keyframes fadeInUp {
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
+    }
+    
+    .rights-card {
+        animation: fadeInUp 0.6s ease-out forwards;
+        opacity: 0;
+    }
+    
+    .rights-card:nth-child(1) { animation-delay: 0.1s; }
+    .rights-card:nth-child(2) { animation-delay: 0.3s; }
+    .rights-card:nth-child(3) { animation-delay: 0.5s; }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        #human-rights {
+            padding: 60px 5%;
+        }
+        
+        #human-rights h2 {
+            font-size: 2.2rem;
+        }
+        
+        .rights-card {
+            width: 100%;
+            max-width: 350px;
+        }
+    }
+</style>
+  </section>
+  
+  <section>
+    <div id="terms" style="padding: 60px 5%; max-width: 62%; margin: 60px auto; background: linear-gradient(135deg, #e6effa 0%, #f7fafc 100%); min-height: auto; display: flex; justify-content: center; box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);border-radius: 20px;align-items: center;">
+        <div style="max-width: 900px; width: 100%;">
+            <h2 style="font-size: 2.8rem; font-weight: 700; margin-bottom: 2rem;margin-top: -50px; color: #1a3554; text-align: center; position: relative; letter-spacing: -0.02em;">
+                Terms & Conditions
+                <span style="display: block; width: 80px; height: 4px; background: #3b82f6; margin: 0.5rem auto; border-radius: 2px;"></span>
+            </h2>
+            <div style="background: #ffffff; padding: 40px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.08); max-height: 600px; overflow-y: auto; font-family: 'Inter', sans-serif; line-height: 1.7;">
+                <p style="margin-bottom: 1.5rem; color: #4a5568; font-size: 1rem;"><strong>Last Updated:</strong> January 1, 2023</p>
+                
+                <h3 style="margin-bottom: 1rem; color: #1a3554; font-size: 1.5rem; font-weight: 600;">1. Booking Policies</h3>
+                <p style="margin-bottom: 1.5rem; color: #4a5568;">All bookings are subject to availability and must be made through our official channels. Prices may vary based on seasonality, demand, or special promotions.</p>
+                
+                <h3 style="margin-bottom: 1rem; color: #1a3554; font-size: 1.5rem; font-weight: 600;">2. Cancellation Policy</h3>
+                <p style="margin-bottom: 1.5rem; color: #4a5568;">Cancellations made at least 48 hours prior to check-in are eligible for a full refund. Cancellations within 48 hours incur a 50% charge of the booking amount.</p>
+                
+                <h3 style="margin-bottom: 1rem; color: #1a3554; font-size: 1.5rem; font-weight: 600;">3. Guest Responsibilities</h3>
+                <p style="margin-bottom: 1.5rem; color: #4a5568;">Guests are liable for any damage to the property beyond normal wear and tear. Repair or replacement costs may be charged accordingly.</p>
+                
+                <h3 style="margin-bottom: 1rem; color: #1a3554; font-size: 1.5rem; font-weight: 600;">4. Liability Limitations</h3>
+                <p style="margin-bottom: 1.5rem; color: #4a5568;">Hitaishi Room Services is not responsible for lost or stolen items, nor for disruptions caused by natural disasters or unforeseen circumstances.</p>
+            </div>
+        </div>
+    </div>
+    <style>
+    @media (max-width: 768px) {
+        #terms {
+            padding: 40px 5%;
+        }
+        h2 {
+            font-size: 2.2rem;
+        }
+        div[style*="padding: 40px"] {
+            padding: 20px;
+        }
+    }
+    ::-webkit-scrollbar {
+        width: 8px;
+    }
+    ::-webkit-scrollbar-track {
+        background: #f1f5f9;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb {
+        background: #3b82f6;
+        border-radius: 4px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+        background: #2563eb;
+    }
+</style>
+  </section>
+
+  <section>
+    <div id="partner-dispute" style="padding: 60px 5%;max-width: 1200px; margin: 60px auto;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);border-radius: 20px; background: linear-gradient(135deg, #f9fafb 0%, #e5e7eb 100%); min-height: auto; display: flex; justify-content: center; align-items: center;">
+        <div style="max-width: 1200px;margin-top: -50px; width: 100%;">
+            <h2 style="font-size: 3.2rem; font-weight: 700; margin-bottom: 1rem; color: #1f2937; text-align: center; letter-spacing: -0.02em;">
+                Partner Dispute Resolution
+                <span style="display: block; width: 80px; height: 4px; background: #3b82f6; margin: 0.5rem auto; border-radius: 2px;"></span>
+            </h2>
+            <p style="margin-bottom: 2rem; font-size: 1.3rem; color: #4b5563; text-align: center; max-width: 600px; margin-left: auto; margin-right: auto;">
+                Our streamlined mediation process ensures fair and timely resolution of partner disputes.
+            </p>
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; margin-top: 40px;">
+                <div style="background: #ffffff; padding: 24px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease;">
+                    <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                        <div style="width: 48px; height: 48px; background: #f59e0b; color: white; font-size: 1.6rem; font-weight: 600; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">1</div>
+                        <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: #1f2937;">Submit Dispute</h3>
+                    </div>
+                    <p style="color: #4b5563; font-size: 1.1rem; line-height: 1.6;">
+                        File your dispute via our secure online portal, including all relevant documentation, within 30 days of the incident.
+                    </p>
+                </div>
+                <div style="background: #ffffff; padding: 24px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease;">
+                    <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                        <div style="width: 48px; height: 48px; background: #f59e0b; color: white; font-size: 1.6rem; font-weight: 600; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">2</div>
+                        <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: #1f2937;">Mediation</h3>
+                    </div>
+                    <p style="color: #4b5563; font-size: 1.1rem; line-height: 1.6;">
+                        Our experienced team facilitates a resolution within 7 business days of receiving your submission.
+                    </p>
+                </div>
+                <div style="background: #ffffff; padding: 24px; border-radius: 12px; box-shadow: 0 6px 20px rgba(0,0,0,0.06); transition: transform 0.3s ease;">
+                    <div style="display: flex; align-items: center; margin-bottom: 16px;">
+                        <div style="width: 48px; height: 48px; background: #f59e0b; color: white; font-size: 1.6rem; font-weight: 600; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 12px;">3</div>
+                        <h3 style="margin: 0; font-size: 1.5rem; font-weight: 600; color: #1f2937;">Arbitration</h3>
+                    </div>
+                    <p style="color: #4b5563; font-size: 1.1rem; line-height: 1.6;">
+                        If mediation does not resolve the issue, binding arbitration will be conducted by a neutral third party.
+                    </p>
+                </div>
+            </div>
+            <p style="margin-top: 48px; text-align: center; font-size: 1.3rem; color: #4b5563;">
+                For assistance, contact us at: 
+                <a href="mailto:hitaishi@roomservices.com" style="color: #3b82f6; font-weight: 600; text-decoration: none; transition: color 0.2s ease;">hitaishi@roomservices.com</a>
+            </p>
+        </div>
+    </div>
+    <style>
+    @media (max-width: 768px) {
+        #partner-dispute {
+            padding: 40px 5%;
+        }
+        h2 {
+            font-size: 2.6rem;
+        }
+        div[style*="padding: 24px"] {
+            padding: 20px;
+        }
+    }
+    div[style*="box-shadow"]:hover {
+        transform: translateY(-4px);
+    }
+    a:hover {
+        color: #2563eb;
+    }
+</style>
+  </section>
+  
+   <section id="content-guidelines" style="padding: 60px 5%; max-width: 1200px; margin: 60px auto;box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);border-radius: 20px; min-height: 80vh; background: linear-gradient(to bottom, #f8fafc 0%, #edf2f7 100%);">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 60px;">
+            <h2 style="font-size: 2.8rem;margin-top: -50px; margin-bottom: 1rem; color: #1a365d; position: relative; display: inline-block;">
+                Content Guidelines & Reporting
+                <span style="position: absolute; bottom: -10px; left: 50%; transform: translateX(-50%); width: 80px; height: 4px; background: #2b6cb0; border-radius: 2px;"></span>
+            </h2>
+            <p style="font-size: 1.2rem; color: #4a5568; max-width: 800px; margin: 0 auto; line-height: 1.6;">
+                We maintain the highest content quality standards to ensure a safe and valuable experience for all users.
+            </p>
+        </div>
+
+        <div style="display: flex; gap: 30px; flex-wrap: wrap; justify-content: center; margin-bottom: 40px;">
+            <!-- Prohibited Content Card -->
+           <div style="flex: 1; min-width: 300px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease; border-top: 4px solid #e53e3e;">
+  <div style="display: flex; align-items: center; margin-bottom: 25px;">
+    <div style="width: 50px; height: 50px; background: rgba(229, 62, 62, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#e53e3e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+        <circle cx="12" cy="12" r="10"></circle>
+        <line x1="4.93" y1="4.93" x2="19.07" y2="19.07"></line>
+      </svg>
+    </div>
+    <h3 style="margin: 0; color: #1a365d; font-size: 1.4rem;">Prohibited Content</h3>
+  </div>
+  <ul style="margin: 0; padding: 0; list-style: none; columns: 2; column-gap: 30px;">
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      False/misleading information
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Discriminatory language
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Illegal activities
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Spam/advertisements
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Copyright violations
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Personal attacks
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Explicit adult content
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Hate speech
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Harassment or bullying
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Promotion of self-harm or suicide
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Deepfakes or manipulated media
+    </li>
+    <li style="margin-bottom: 15px; position: relative; padding-left: 25px; color: #4a5568;">
+      <span style="position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background-color: #e53e3e; border-radius: 50%;"></span>
+      Impersonation or identity fraud
+    </li>
+  </ul>
+      </div>
+            <!-- Reporting Process Card -->
+            <div style="flex: 1; min-width: 300px; background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); transition: all 0.3s ease; border-top: 4px solid #3182ce;">
+                <div style="display: flex; align-items: center; margin-bottom: 25px;">
+                    <div style="width: 50px; height: 50px; background: rgba(49, 130, 206, 0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; margin-right: 15px;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#3182ce" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
+                        </svg>
+                    </div>
+                    <h3 style="margin: 0; color: #1a365d; font-size: 1.4rem;">Reporting Process</h3>
+                </div>
+                <ol style="margin: 0; padding: 0; list-style: none; counter-reset: step-counter;">
+                    <li style="margin-bottom: 25px; position: relative; padding-left: 50px; counter-increment: step-counter;">
+                        <div style="position: absolute; left: 0; top: 0; width: 32px; height: 32px; background-color: #3182ce; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            <span style="display: block; transform: translateY(1px);">1</span>
+                        </div>
+                        <strong style="display: block; margin-bottom: 5px; color: #1a365d;">Identify Content</strong>
+                        <p style="margin: 0; color: #4a5568; line-height: 1.6;">Note the exact URL and describe the specific policy violation.</p>
+                    </li>
+                    <li style="margin-bottom: 25px; position: relative; padding-left: 50px; counter-increment: step-counter;">
+                        <div style="position: absolute; left: 0; top: 0; width: 32px; height: 32px; background-color: #3182ce; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            <span style="display: block; transform: translateY(1px);">2</span>
+                        </div>
+                        <strong style="display: block; margin-bottom: 5px; color: #1a365d;">Gather Evidence</strong>
+                        <p style="margin: 0; color: #4a5568; line-height: 1.6;">Take screenshots or record timestamps for time-sensitive content.</p>
+                    </li>
+                    <li style="margin-bottom: 25px; position: relative; padding-left: 50px; counter-increment: step-counter;">
+                        <div style="position: absolute; left: 0; top: 0; width: 32px; height: 32px; background-color: #3182ce; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: white; font-weight: bold;">
+                            <span style="display: block; transform: translateY(1px);">3</span>
+                        </div>
+                        <strong style="display: block; margin-bottom: 5px; color: #1a365d;">Submit Report</strong>
+                        <p style="margin: 0; color: #4a5568; line-height: 1.6;">Use our secure reporting form below with all relevant details.</p>
+                    </li>
+                </ol>
+                <div style="display: flex; gap: 15px; flex-wrap: wrap; margin-top: 30px;">
+                    <a href ="#corporate-contact " style="align-items: center; padding: 15px 30px; background: white; color: #3182ce; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid #3182ce; cursor: pointer;">
+                    <button style="display: inline-flex; align-items: center; padding: 15px 30px; background: #3182ce; color: white; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: none; cursor: pointer;">
+                        Report Content
+                    </button>
+                    </a>
+                    <a href ="#terms " style="align-items: center; padding: 15px 30px; background: white; color: #3182ce; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid #3182ce; cursor: pointer;">
+                    <button style="display: inline-flex; align-items: center; padding: 15px 30px; background: white; color: #3182ce; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; border: 2px solid #3182ce; cursor: pointer;">
+                        View Full Policy
+                    </button>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <div style="background: white; padding: 40px; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.08); margin-top: 40px; text-align: center;">
+            <h3 style="margin-top: 0; margin-bottom: 20px; color: #1a365d; font-size: 1.5rem;">Response Timeline</h3>
+            <div style="display: flex; justify-content: center; gap: 30px; flex-wrap: wrap;">
+                <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #3182ce; margin-bottom: 10px;">24h</div>
+                    <div style="font-size: 1rem; color: #4a5568;">Initial response time for urgent reports</div>
+                </div>
+                <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #3182ce; margin-bottom: 10px;">3-5d</div>
+                    <div style="font-size: 1rem; color: #4a5568;">Standard investigation period</div>
+                </div>
+                <div style="flex: 1; min-width: 200px; max-width: 300px;">
+                    <div style="font-size: 2.5rem; font-weight: 700; color: #3182ce; margin-bottom: 10px;">100%</div>
+                    <div style="font-size: 1rem; color: #4a5568;">Reports reviewed by human moderators</div>
+                </div>
+            </div>
+        </div>
+    </div>
+   </section>
+
+ <section style="position: relative; overflow: hidden;">
+  <!-- Decorative Bubbles -->
+  <div style="position: absolute; top: -30px; right: 5%; width: 120px; height: 120px; background: rgba(255, 255, 255, 0.05); border-radius: 50%;"></div>
+  <div style="position: absolute; bottom: -40px; left: 10%; width: 180px; height: 180px; background: rgba(246, 173, 85, 0.1); border-radius: 50%;"></div>
+  <div style="position: absolute; top: 30%; left: -60px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.03); border-radius: 50%;"></div>
+  <div style="position: absolute; top: 60%; right: -30px; width: 100px; height: 100px; background: rgba(255, 255, 255, 0.03); border-radius: 50%;"></div>
+  <div style="position: absolute; top: 30px; right: 10%; width: 180px; height: 180px; background: rgba(246, 173, 85, 0.1); border-radius: 50%;"></div>
+  <!-- Contact Section -->
+  <div id="corporate-contact" style="padding: 40px 5%; background: #2a4365; color: white;">
+    <div style="max-width: 600px; margin: 0 auto;">
+      <h2 style="font-size: 2rem; margin-bottom: 1rem; color: white; text-align: center;">Corporate Contact</h2>
+      <form style="display: grid; gap: 12px;">
+        <div>
+          <input type="text" placeholder="Your Name" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.95rem;">
+        </div>
+        <div>
+          <input type="email" placeholder="Email Address" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.95rem;">
+        </div>
+        <div>
+          <input type="text" placeholder="Subject" style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.95rem;">
+        </div>
+        <div>
+          <textarea placeholder="Your Message" required style="width: 100%; padding: 10px; border: 1px solid #ccc; border-radius: 5px; font-size: 0.95rem; min-height: 100px;"></textarea>
+        </div>
+        <button type="submit" style="padding: 10px 24px; background: #f6ad55; color: #1a202c; border-radius: 30px; font-weight: 600; border: none; cursor: pointer; justify-self: center;">Send</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+   <style>
+    /* Hover effects */
+    #content-guidelines [style*="box-shadow"]:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 15px 40px rgba(0,0,0,0.12) !important;
+    }
+    
+    #content-guidelines button:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 7px 20px rgba(49, 130, 206, 0.3);
+    }
+    
+    #content-guidelines button:nth-child(2):hover {
+        background: #f8fafc;
+    }
+    
+    /* Animation for cards */
+    @keyframes fadeIn {
+        from { opacity: 0; }
+        to { opacity: 1; }
+    }
+    
+    #content-guidelines > div > div > div {
+        animation: fadeIn 0.6s ease-out forwards;
+    }
+    
+    /* Responsive adjustments */
+    @media (max-width: 768px) {
+        #content-guidelines {
+            padding: 60px 5%;
+        }
+        
+        #content-guidelines h2 {
+            font-size: 2.2rem;
+        }
+        
+        #content-guidelines ul {
+            columns: 1 !important;
+        }
+    }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes zoom {
+            from { transform: scale(1); }
+            to { transform: scale(1.1); }
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            #who-we-are {
+                grid-template-columns: 1fr !important;
+            }
+            .process-steps {
+                flex-direction: column !important;
+                align-items: center !important;
+            }
+            section {
+                padding: 60px 5% !important;
+            }
+            h1 {
+                font-size: 2.5rem !important;
+            }
+            h2 {
+                font-size: 2rem !important;
+            }
+        }
+   </style>
+   
+    <script>
+    const button = document.getElementById('storyButton');
+    const story = document.getElementById('storyContent');
+
+    button.addEventListener('click', () => {
+      // Toggle display
+      if (story.style.display === 'none') {
+        story.style.display = 'block';
+        button.querySelector('svg').style.transform = 'rotate(90deg)';
+      } else {
+        story.style.display = 'none';
+        button.querySelector('svg').style.transform = 'rotate(0deg)';
+      }
+    });
+
+function toggleAccordion(element) {
+    // Toggle the active class
+    element.classList.toggle("active");
+    
+    // Toggle the icon
+    const icon = element.querySelector(".accordion-icon");
+    if (element.classList.contains("active")) {
+        icon.textContent = "-";
+        icon.style.transform = "rotate(0deg)";
+    } else {
+        icon.textContent = "+";
+        icon.style.transform = "rotate(0deg)";
+    }
+    
+    // Toggle the panel
+    const panel = element.nextElementSibling;
+    if (panel.style.maxHeight) {
+        panel.style.maxHeight = null;
+    } else {
+        panel.style.maxHeight = panel.scrollHeight + "px";
+    }
+}
+  </script>
+
+
+<!-- post footer -->
+    <footer style="background-color: #333; padding: 20px 0; border-top: 1px solid #ddd;">
+        <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <p style="margin-bottom: 10px; color: #fff;">Download  HRS app for exciting offers.</p>
+                <div>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/012/871/374/small/app-store-download-button-in-white-colors-download-on-the-apple-app-store-free-png.png" alt="App Store" style="width: 120px; margin-right: 10px;"></a>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png" alt="Google Play" style="width: 120px;"></a>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Teams/Careers</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Blogs</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Support</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Official  HRS Blog</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Investor Relations</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;"> HRS Circle</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;"> HRS Frames</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Terms and conditions</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Guest Policies</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Trust And Safety</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security Awareness</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Responsible Disclosure</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Advertise your Homes</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr style="margin-top: 20px; border: none; height: 1px; background-color: #ddd;">
+
+
+        <div style="background-color: #333; padding: 20px 0;">
+            <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center;">
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 14px; color: #fff;">2025 © Hitaishi Rooms & Service Limited. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+       
+       
+    </footer>
+   
+</body>
+</html>

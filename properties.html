@@ -1,0 +1,1093 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flyderabad - Hotel Booking</title>
+    <style>
+        .price-slider {
+            width: 100%;
+            margin: 10px 0;
+        }
+        .price-display {
+            font-size: 0.9em;
+            color: #333;
+            margin-top: 5px;
+        }
+        #resetFilters {
+            background: #e60000;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 10px;
+        }
+        #resetFilters:hover {
+            background: #c40000;
+        }
+        .filter-count {
+            font-size: 0.9em;
+            color: #e60000;
+            margin-top: 10px;
+        }
+        .search-active {
+            border: 2px solid #e60000 !important;
+        }
+        .no-results {
+            padding: 20px;
+            background: #fff;
+            border-radius: 8px;
+            text-align: center;
+            color: #e60000;
+        }
+    </style>
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f5f5f5;">
+
+<!-- Header -->
+<!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+<!-- Main Container -->
+<div style="display: grid; grid-template-columns: 250px 1fr; gap: 30px; max-width: 1200px; margin: 30px auto; padding: 0 20px;">
+
+    <!-- Filters Sidebar -->
+    <div style="background: #ffffff; padding: 20px; border-radius: 8px; max-height: auto; overflow-y: auto; position: sticky; top: 70px; z-index: 10;">
+        <h3 style="margin: 0 0 15px 0;">Filters</h3>
+        <div class="filter-count" id="filterCount">0 filters applied</div>
+        
+        <!-- Price -->
+        <div style="margin-bottom: 25px;">
+            <h4 style="margin: 0 0 10px 0;">Price (per night)</h4>
+            <input type="range" class="price-slider" min="0" max="3500" value="3500" id="priceFilter">
+            <div class="price-display" id="priceValue">Up to ₹3500</div>
+        </div>
+
+        <!-- Collections -->
+        <div class="filter-section collections" style="margin-bottom: 25px;">
+            <h4 style="margin: 0 0 10px 0;">Collections</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Family Rooms"> Family Rooms</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Group Travellers"> Group Travellers</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Local IDs Accepted"> Local IDs Accepted</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Couples Allowed"> Couples Allowed</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="International Guests"> International Guests</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Business Travellers"> Business Travellers</label>
+            </div>
+        </div>
+
+        <!-- Categories -->
+        <div class="filter-section categories" style="margin-bottom: 25px;">
+            <h4 style="margin: 0 0 10px 0;">Categories</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Budget"> Budget</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Mid-range"> Mid-range</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Luxury"> Luxury</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Premium"> Premium</label>
+            </div>
+        </div>
+
+        <!-- Accommodation Type -->
+        <div class="filter-section accommodation" style="margin-bottom: 25px;">
+            <h4 style="margin: 0 0 10px 0;">Accommodation Type</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Hotel"> Hotel</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Guest House"> Guest House</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Apartment"> Apartment</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Hostel"> Hostel</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Resort"> Resort</label>
+            </div>
+        </div>
+
+        <!-- Hotel Facilities -->
+        <div class="filter-section facilities" style="margin-bottom: 25px;">
+            <h4 style="margin: 0 0 10px 0;">Hotel Facilities</h4>
+            <div style="display: flex; flex-direction: column; gap: 8px;">
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Free Wifi"> Free Wifi</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Parking"> Parking</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Power Backup"> Power Backup</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="AC"> AC</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Swimming Pool"> Swimming Pool</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Pet Friendly"> Pet Friendly</label>
+                <label><input type="checkbox" style="accent-color: #e60000;" value="Restaurant"> Restaurant</label>
+            </div>
+        </div>
+
+        <!-- Reset Button -->
+        <button id="resetFilters">Reset Filters</button>
+    </div>
+
+    <!-- Main Content -->
+    <div>
+        <!-- Search Bar -->
+        <div style="background: #ffffff; padding: 15px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 15px;">
+            <input type="text" id="citySearch" placeholder="Hyderabad" style="padding: 8px; border: 1px solid #ddd; border-radius: 4px; flex: 1;">
+            <input type="date" id="checkInDate" style="padding: 8px; border: 1px solid #ddd;">
+            <select id="roomGuest" style="padding: 8px; border: 1px solid #ddd;">
+                <option value="1-1">1 Room, 1 Guest</option>
+                <option value="1-2">1 Room, 2 Guests</option>
+                <option value="2-4">2 Rooms, 4 Guests</option>
+            </select>
+            <button id="searchButton" style="background: #e60000; color: white; border: none; padding: 8px 20px; border-radius: 4px;">Search</button>
+        </div>
+
+        <!-- Promo Banner -->
+        <div style="background: #fff3f3; padding: 15px; border-radius: 8px; margin-bottom: 20px;">
+            🎉 up to 80% off. Valid until 12th May 2025
+        </div>
+
+        <!-- Hotel Listings -->
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px; align-items: flex-start;">
+            <img src="images/begumpet.png" alt="Hotel Sunrise Residency" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Hotel Sunrise Residency</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Begumpet, Opposite Lifestyle Mall, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 142 Ratings</span>
+                    <span style="color: #666;">Free Wifi</span>
+                    <span style="color: #666;">AC</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹1320</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/madhapur.png" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Silver Stay Inn</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Madhapur, Near Inorbit Mall, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 98 Ratings</span>
+                    <span style="color: #666;">Parking</span>
+                    <span style="color: #666;">Pet Friendly</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹1645</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/banjara.png" alt="Green Leaf Boutique Hotel" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Green Leaf Boutique Hotel</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Banjara Hills, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 187 Ratings</span>
+                    <span style="color: #666;">Breakfast Included</span>
+                    <span style="color: #666;">Free Wifi</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹2110</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/secundrabad.png" alt="Royal Orchid Elite" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Royal Orchid Elite</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Secunderabad Railway Station, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 213 Ratings</span>
+                    <span style="color: #666;">24x7 Room Service</span>
+                    <span style="color: #666;">Power Backup</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹1899</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/LBnagar.png" alt="Hotel Sapphire Grand" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Hotel Sapphire Grand</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">LB Nagar, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 65 Ratings</span>
+                    <span style="color: #666;">Gym Facility</span>
+                    <span style="color: #666;">AC</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹1240</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/kukatpally.png" alt="Comfort Stay Inn" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Comfort Stay Inn</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Kukatpally, Near Forum Mall</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 77 Ratings</span>
+                    <span style="color: #666;">AC</span>
+                    <span style="color: #666;">Power Backup</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹990</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/Hi-techcity.png" alt="Skyline Business Hotel" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Skyline Business Hotel</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">HiTech City, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 305 Ratings</span>
+                    <span style="color: #666;">Business Center</span>
+                    <span style="color: #666;">Free Wifi</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹2780</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/mehdipatnam.png" alt="Pearl Continental Stay" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Pearl Continental Stay</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Mehdipatnam, Near Bus Depot</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 114 Ratings</span>
+                    <span style="color: #666;">Free Breakfast</span>
+                    <span style="color: #666;">AC</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹1399</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/rajendranagar.png" alt="The Grand Lotus Hotel" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">The Grand Lotus Hotel</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Rajendra Nagar, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 162 Ratings</span>
+                    <span style="color: #666;">Spa</span>
+                    <span style="color: #666;">AC</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹1725</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/gachibowli.png" alt="Elite Urban Stay" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Elite Urban Stay</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Gachibowli, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 140 Ratings</span>
+                    <span style="color: #666;">Free Wifi</span>
+                    <span style="color: #666;">Lift Access</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹1888</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="hotel-listing" style="background: #ffffff; padding: 20px; border-radius: 8px; margin-bottom: 20px; display: flex; gap: 20px;">
+            <img src="images/luxury_resort.png" alt="Paradise Resort & Spa" style="width: 30%; border-radius: 8px;">
+            <div style="width: 70%;">
+                <h3 style="margin: 0 0 10px 0;">Paradise Resort & Spa</h3>
+                <p style="color: #666; margin: 0 0 10px 0;">Shamshabad, Near Airport, Hyderabad</p>
+                <div style="display: flex; gap: 15px; margin-bottom: 15px;">
+                    <span style="background: #f0f0f0; padding: 4px 8px; border-radius: 4px;">⭐ 250 Ratings</span>
+                    <span style="color: #666;">Restaurant</span>
+                    <span style="color: #666;">Swimming Pool</span>
+                </div>
+                <div style="display: flex; justify-content: space-between; align-items: center;">
+                    <a href="view-details-page.html" style="text-decoration: none;">
+                        <button style="background: none; border: 1px solid #ddd; padding: 8px 15px; border-radius: 4px;">View Details</button>
+                    </a>
+                    <a href="book-now-page.html" style="text-decoration: none;">
+                        <button style="background: #e60000; color: #fff; border: none; padding: 8px 15px; border-radius: 4px; font-weight: bold;">Book Now</button>
+                    </a>
+                    <div>
+                        <div style="color: #e60000; font-size: 1.2em;">₹3500</div>
+                        <div style="color: #666; font-size: 0.9em;">per night</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Footer -->
+<footer style="background: #2c3e50; color: white; padding: 40px 20px; margin-top: 50px;">
+    <div style="max-width: 1200px; margin: 0 auto;">
+        <div style="background: #34495e; padding: 30px; border-radius: 10px; margin-bottom: 40px; text-align: center;">
+            <h3 style="margin-top: 0; margin-bottom: 20px; font-size: 24px;">Find Your Perfect Stay</h3>
+            <div style="display: flex; justify-content: center; gap: 10px; flex-wrap: wrap;">
+                <input type="text" placeholder="Destination" style="padding: 12px 15px; border: none; border-radius: 5px; width: 250px;">
+                <input type="date" style="padding: 12px 15px; border: none; border-radius: 5px;">
+                <select style="padding: 12px 15px; border: none; border-radius: 5px; width: 180px;">
+                    <option>1 Room, 1 Guest</option>
+                    <option>1 Room, 2 Guests</option>
+                    <option>2 Rooms, 2 Guests</option>
+                </select>
+                <button style="background: #e74c3c; color: white; border: none; padding: 12px 25px; border-radius: 5px; cursor: pointer; font-weight: bold;">Search Hotels</button>
+            </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 30px;">
+            <div>
+                <h4 style="margin-top: 0; margin-bottom: 20px; font-size: 18px;">Company</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Careers</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Press</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="margin-top: 0; margin-bottom: 20px; font-size: 18px;">Support</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Help Center</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Safety Information</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Cancellation Options</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="margin-top: 0; margin-bottom: 20px; font-size: 18px;">Legal</h4>
+                <ul style="list-style: none; padding: 0; margin: 0;">
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Terms of Service</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 10px;"><a href="#" style="color: #ecf0f1; text-decoration: none;">Cookie Policy</a></li>
+                </ul>
+            </div>
+            
+            <div>
+                <h4 style="margin-top: 0; margin-bottom: 20px; font-size: 18px;">Contact Us</h4>
+                <div style="margin-bottom: 15px;">
+                    <span style="display: block; margin-bottom: 5px;">✉️ info@flyderabad.com</span>
+                    <span style="display: block;">📞 +91 9876543210</span>
+                </div>
+                <div>
+                    <a href="#" style="color: white; margin-right: 15px; font-size: 20px;">📱</a>
+                    <a href="#" style="color: white; margin-right: 15px; font-size: 20px;">📘</a>
+                    <a href="#" style="color: white; margin-right: 15px; font-size: 20px;">📸</a>
+                    <a href="#" style="color: white; font-size: 20px;">🐦</a>
+                </div>
+            </div>
+        </div>
+        
+        <div style="border-top: 1px solid #34495e; margin-top: 40px; padding-top: 20px; text-align: center;">
+            <p style="margin: 0;">© 2023 Flyderabad. All rights reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+    // Hotel data with location and capacity for search filtering
+    const hotels = [
+        {
+            name: 'Hotel Sunrise Residency',
+            price: 1320,
+            collections: ['Family Rooms', 'Local IDs Accepted'],
+            category: 'Budget',
+            type: 'Hotel',
+            facilities: ['Free Wifi', 'AC'],
+            location: 'Begumpet, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'Silver Stay Inn',
+            price: 1645,
+            collections: ['Group Travellers', 'Couples Allowed'],
+            category: 'Mid-range',
+            type: 'Hotel',
+            facilities: ['Parking', 'Pet Friendly'],
+            location: 'Madhapur, Hyderabad',
+            maxGuests: 4
+        },
+        {
+            name: 'Green Leaf Boutique Hotel',
+            price: 2110,
+            collections: ['International Guests'],
+            category: 'Mid-range',
+            type: 'Hotel',
+            facilities: ['Breakfast Included', 'Free Wifi'],
+            location: 'Banjara Hills, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'Royal Orchid Elite',
+            price: 1899,
+            collections: ['Local IDs Accepted'],
+            category: 'Mid-range',
+            type: 'Hotel',
+            facilities: ['24x7 Room Service', 'Power Backup'],
+            location: 'Secunderabad, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'Hotel Sapphire Grand',
+            price: 1240,
+            collections: ['Family Rooms'],
+            category: 'Budget',
+            type: 'Hotel',
+            facilities: ['Gym Facility', 'AC'],
+            location: 'LB Nagar, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'Comfort Stay Inn',
+            price: 990,
+            collections: ['Couples Allowed'],
+            category: 'Budget',
+            type: 'Hotel',
+            facilities: ['AC', 'Power Backup'],
+            location: 'Kukatpally, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'Skyline Business Hotel',
+            price: 2780,
+            collections: ['International Guests'],
+            category: 'Luxury',
+            type: 'Hotel',
+            facilities: ['Business Center', 'Free Wifi'],
+            location: 'HiTech City, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'Pearl Continental Stay',
+            price: 1399,
+            collections: ['Family Rooms'],
+            category: 'Budget',
+            type: 'Hotel',
+            facilities: ['Free Breakfast', 'AC'],
+            location: 'Mehdipatnam, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'The Grand Lotus Hotel',
+            price: 1725,
+            collections: ['Group Travellers'],
+            category: 'Mid-range',
+            type: 'Hotel',
+            facilities: ['Spa', 'AC'],
+            location: 'Rajendra Nagar, Hyderabad',
+            maxGuests: 4
+        },
+        {
+            name: 'Elite Urban Stay',
+            price: 1888,
+            collections: ['Local IDs Accepted'],
+            category: 'Mid-range',
+            type: 'Hotel',
+            facilities: ['Free Wifi', 'Lift Access'],
+            location: 'Gachibowli, Hyderabad',
+            maxGuests: 2
+        },
+        {
+            name: 'Paradise Resort & Spa',
+            price: 3500,
+            collections: ['Business Travellers'],
+            category: 'Premium',
+            type: 'Resort',
+            facilities: ['Restaurant', 'Swimming Pool'],
+            location: 'Shamshabad, Hyderabad',
+            maxGuests: 4
+        }
+    ];
+
+    // DOM elements
+    const priceSlider = document.getElementById('priceFilter');
+    const priceDisplay = document.getElementById('priceValue');
+    const filterCount = document.getElementById('filterCount');
+    const collectionCheckboxes = document.querySelectorAll('.filter-section.collections input[type="checkbox"]');
+    const categoryCheckboxes = document.querySelectorAll('.filter-section.categories input[type="checkbox"]');
+    const typeCheckboxes = document.querySelectorAll('.filter-section.accommodation input[type="checkbox"]');
+    const facilityCheckboxes = document.querySelectorAll('.filter-section.facilities input[type="checkbox"]');
+    const hotelListings = document.querySelectorAll('.hotel-listing');
+    const resetButton = document.getElementById('resetFilters');
+    const citySearch = document.getElementById('citySearch');
+    const checkInDate = document.getElementById('checkInDate');
+    const roomGuest = document.getElementById('roomGuest');
+    const searchButton = document.getElementById('searchButton');
+
+    // Filter states
+    let selectedPrice = 3500;
+    const selectedCollections = new Set();
+    const selectedCategories = new Set();
+    const selectedTypes = new Set();
+    const selectedFacilities = new Set();
+    let searchCity = '';
+    let checkIn = '';
+    let guestCount = 1;
+
+    // Debounce function to limit filter updates
+    function debounce(func, wait) {
+        let timeout;
+        return function executedFunction(...args) {
+            const later = () => {
+                clearTimeout(timeout);
+                func(...args);
+            };
+            clearTimeout(timeout);
+            timeout = setTimeout(later, wait);
+        };
+    }
+
+    // Update filter count
+    function updateFilterCount() {
+        const count = selectedCollections.size + selectedCategories.size + selectedTypes.size + selectedFacilities.size + (selectedPrice < 3500 ? 1 : 0);
+        filterCount.textContent = `${count} filter${count === 1 ? '' : 's'} applied`;
+    }
+
+    // Update price filter
+    priceSlider.addEventListener('input', () => {
+        selectedPrice = parseInt(priceSlider.value);
+        priceDisplay.textContent = `Up to ₹${selectedPrice}`;
+        console.log(`Price filter updated: ₹${selectedPrice}`);
+        debouncedFilterHotels();
+        updateFilterCount();
+    });
+
+    // Add event listeners for checkboxes
+    collectionCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const value = checkbox.value;
+            if (checkbox.checked) {
+                selectedCollections.add(value);
+            } else {
+                selectedCollections.delete(value);
+            }
+            console.log(`Collection filter updated: ${value} - ${checkbox.checked ? 'checked' : 'unchecked'}`);
+            debouncedFilterHotels();
+            updateFilterCount();
+        });
+    });
+
+    categoryCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const value = checkbox.value;
+            if (checkbox.checked) {
+                selectedCategories.add(value);
+            } else {
+                selectedCategories.delete(value);
+            }
+            console.log(`Category filter updated: ${value} - ${checkbox.checked ? 'checked' : 'unchecked'}`);
+            debouncedFilterHotels();
+            updateFilterCount();
+        });
+    });
+
+    typeCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const value = checkbox.value;
+            if (checkbox.checked) {
+                selectedTypes.add(value);
+            } else {
+                selectedTypes.delete(value);
+            }
+            console.log(`Type filter updated: ${value} - ${checkbox.checked ? 'checked' : 'unchecked'}`);
+            debouncedFilterHotels();
+            updateFilterCount();
+        });
+    });
+
+    facilityCheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', () => {
+            const value = checkbox.value;
+            if (checkbox.checked) {
+                selectedFacilities.add(value);
+            } else {
+                selectedFacilities.delete(value);
+            }
+            console.log(`Facility filter updated: ${value} - ${checkbox.checked ? 'checked' : 'unchecked'}`);
+            debouncedFilterHotels();
+            updateFilterCount();
+        });
+    });
+
+    // Search bar functionality
+    citySearch.addEventListener('input', () => {
+        citySearch.classList.add('search-active');
+        searchCity = citySearch.value.trim().toLowerCase();
+        console.log(`City search updated: ${searchCity}`);
+        debouncedFilterHotels();
+    });
+
+    checkInDate.addEventListener('change', () => {
+        checkInDate.classList.add('search-active');
+        checkIn = checkInDate.value;
+        const today = new Date('2025-05-13');
+        const selectedDate = new Date(checkIn);
+        if (selectedDate < today) {
+            alert('Check-in date must be today or later.');
+            checkInDate.value = '';
+            checkIn = '';
+        }
+        console.log(`Check-in date updated: ${checkIn}`);
+        debouncedFilterHotels();
+    });
+
+    roomGuest.addEventListener('change', () => {
+        roomGuest.classList.add('search-active');
+        const [rooms, guests] = roomGuest.value.split('-').map(Number);
+        guestCount = guests;
+        console.log(`Room/Guest updated: ${rooms} rooms, ${guests} guests`);
+        debouncedFilterHotels();
+    });
+
+    searchButton.addEventListener('click', () => {
+        console.log('Search button clicked');
+        debouncedFilterHotels();
+    });
+
+    // Reset filters
+    resetButton.addEventListener('click', () => {
+        selectedPrice = 3500;
+        selectedCollections.clear();
+        selectedCategories.clear();
+        selectedTypes.clear();
+        selectedFacilities.clear();
+        searchCity = '';
+        checkIn = '';
+        guestCount = 1;
+
+        // Reset UI
+        priceSlider.value = 3500;
+        priceDisplay.textContent = `Up to ₹3500`;
+        collectionCheckboxes.forEach(checkbox => checkbox.checked = false);
+        categoryCheckboxes.forEach(checkbox => checkbox.checked = false);
+        typeCheckboxes.forEach(checkbox => checkbox.checked = false);
+        facilityCheckboxes.forEach(checkbox => checkbox.checked = false);
+        citySearch.value = '';
+        checkInDate.value = '';
+        roomGuest.value = '1-1';
+        citySearch.classList.remove('search-active');
+        checkInDate.classList.remove('search-active');
+        roomGuest.classList.remove('search-active');
+
+        console.log('Filters and search reset');
+        filterHotels();
+        updateFilterCount();
+    });
+
+    // Filter hotels
+    function filterHotels() {
+        let visibleHotels = 0;
+        const noResultsMessage = document.querySelector('.no-results');
+        if (noResultsMessage) noResultsMessage.remove();
+
+        hotels.forEach((hotel, index) => {
+            let showHotel = true;
+
+            // Price filter
+            if (hotel.price > selectedPrice) {
+                showHotel = false;
+            }
+
+            // Collections filter
+            if (selectedCollections.size > 0) {
+                const hasCollection = Array.from(selectedCollections).every(collection =>
+                    hotel.collections.includes(collection)
+                );
+                if (!hasCollection) showHotel = false;
+            }
+
+            // Category filter
+            if (selectedCategories.size > 0 && !selectedCategories.has(hotel.category)) {
+                showHotel = false;
+            }
+
+            // Type filter
+            if (selectedTypes.size > 0 && !selectedTypes.has(hotel.type)) {
+                showHotel = false;
+            }
+
+            // Facilities filter
+            if (selectedFacilities.size > 0) {
+                const hasFacility = Array.from(selectedFacilities).every(facility =>
+                    hotel.facilities.includes(facility)
+                );
+                if (!hasFacility) showHotel = false;
+            }
+
+            // City search filter
+            if (searchCity && !hotel.location.toLowerCase().includes(searchCity)) {
+                showHotel = false;
+            }
+
+            // Guest count filter
+            if (guestCount > hotel.maxGuests) {
+                showHotel = false;
+            }
+
+            // Update UI
+            hotelListings[index].style.display = showHotel ? 'flex' : 'none';
+            if (showHotel) visibleHotels++;
+        });
+
+        // No results message
+        if (visibleHotels === 0) {
+            const message = document.createElement('div');
+            message.className = 'no-results';
+            message.textContent = 'No hotels match your filters or search. Try resetting filters or adjusting your search.';
+            hotelListings[0].parentNode.appendChild(message);
+        }
+    }
+
+    // Debounced filter function
+    const debouncedFilterHotels = debounce(filterHotels, 300);
+
+    // Initial filter count
+    updateFilterCount();
+});
+</script>
+</body>
+</html>

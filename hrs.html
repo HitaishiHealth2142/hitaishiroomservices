@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HRS Header</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body style="font-family: Arial, sans-serif; margin: 0; padding: 0; background-color: #f4f4f4;">
+
+
+    <!-- Header -->
+<!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+
+
+    <!-- banner -->
+    <div style="height: 240px; background-color: hsl(0, 0%, 60%); width: 100%;">
+        <h1 style="padding-top: 30px;  margin-left: 200px;">Over 174,000+ hotels and homes across 35+ countries</h1>
+        <div style="background-color: #fff; padding: 20px; border-radius: 8px; box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); max-width: 850px; margin: 50px auto; display: flex; align-items: center; gap: 10px; flex-wrap: wrap; justify-content: center;">
+
+
+            <input type="text" placeholder="Search by city, hotel, or neighborhood" style="flex: 2; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%;">
+
+
+            <input type="text" placeholder="Near me" style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%;">
+
+
+            <input type="date" placeholder="Check-in" style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%;">
+
+
+            <input type="date" placeholder="Check-out" style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%;">
+
+
+            <select style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%; cursor: pointer;">
+                <option>1 Room</option>
+                <option>2 Rooms</option>
+                <option>3 Rooms</option>
+            </select>
+
+
+            <select style="flex: 1; padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%; cursor: pointer;">
+                <option>1 Guest</option>
+                <option>2 Guests</option>
+                <option>3 Guests</option>
+            </select>
+
+
+            <button style="padding: 12px 20px; background-color: #007bff; color: white; border: none; border-radius: 6px; font-size: 16px; cursor: pointer; flex: 1; width: 100%; transition: 0.3s;">
+                Search
+            </button>
+
+
+        </div>
+    </div>
+
+
+
+
+    <!-- PRICESS -->
+    <div style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+                url('https://www.hilton.com/im/en/NoHotel/22385235/q1-jan-web-new-hotels-for-2025-a.png?impolicy=crop&cw=4500&ch=1928&gravity=NorthWest&xposition=0&yposition=535&rw=1920&rh=823')
+                no-repeat center center/cover;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+                width: 80%;
+                margin: 50px auto;
+                position: relative;
+                z-index: 1;
+                color: white;
+                text-align: center;">
+            <!-- Flex Container for 3 Sections -->
+            <div style="display: flex; justify-content: space-between; gap: 20px;">
+
+
+                <!-- Section 1: Features -->
+                <div style="flex: 1;">
+                    <h2 style="font-size: 20px; color: #fff; margin-bottom: 15px;">Features</h2>
+                    <div style="text-align: left;">
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="font-size: 16px; color: #fff;">✔️ 8 Company-Serviced</span>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="font-size: 16px; color: #fff;">✔️ Assured Check-in</span>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="font-size: 16px; color: #fff;">✔️ Spacious Clean Rooms</span>
+                        </div>
+                        <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                            <span style="font-size: 16px; color: #fff;">✔️ 1000+ New Properties</span>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Section 2: Price -->
+                <div style="flex: 1; text-align: center;">
+                    <h1>World's Premium Valuable Hotels</h1>
+                    <h2 style="font-size: 20px; color: #fff; margin-bottom: 15px;">Starting From</h2>
+                    <div style="font-size: 24px; color: #e67e22; font-weight: bold; margin-bottom: 20px;">
+                        $99
+                    </div>
+                </div>
+
+
+                <!-- Section 3: Book Now -->
+                <div style="flex: 1; text-align: center;">
+                    <h1>want to stay</h1>
+                    <h2 style="font-size: 20px; color: #fff; margin-bottom: 15px;">Book Now</h2>
+                    <button style="background-color: #e67e22; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer;">
+                        Book Now
+                    </button>
+                </div>
+            </div>
+    </div>
+
+
+    <!-- subscribe -->
+    <div style="background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSQLNkuFpqVAmQCj_BFhiVu3hZu5ElAgw2x0n89gZC1rk2wkymNP8tj6wBcoka6I6Isrog&usqp=CAU')
+    no-repeat center center/cover;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 80%;
+    margin: 50px auto;
+    position: relative;
+    z-index: 1;
+    color: white;
+    text-align: center;">
+    <!-- Flex Container for 3 Sections -->
+    <div style="display: flex; justify-content: space-between; gap: 20px;">
+
+
+        <!-- Section 1: Features -->
+        <div style=" display: flex;">
+            <img src="https://storage.needpix.com/rsynced_images/deal-of-the-day-1438910_1280.png" alt="deals png" style="height: 100px;">
+            <h2>Get access to <br> exclusive deals</h2>
+        </div>
+
+
+        <!-- Section 2: Price -->
+        <div style="flex: 1; text-align: center;">
+            <input type="text" placeholder="Enter your email" style="padding: 12px; border: 1px solid #ccc; border-radius: 6px; font-size: 14px; width: 100%; margin-top: 20px; margin-left: 90px;">
+        </div>
+
+
+        <!-- Section 3: Book Now -->
+        <div style="flex: 1; text-align: center;">
+            <button style="background-color: #e67e22; color: #fff; border: none; padding: 10px 20px; font-size: 16px; border-radius: 5px; cursor: pointer; margin-top: 20px;">
+                Notify me
+            </button>
+        </div>
+    </div>
+    </div>
+   
+    <!-- Cards -->
+    <div>
+        <style>
+            .description {
+                color: #555;
+                font-size: 14px;
+                line-height: 1.4;
+                overflow: hidden;
+                display: -webkit-box;
+                -webkit-line-clamp: 2; /* Limit to 2 lines */
+                -webkit-box-orient: vertical;
+            }
+            .description.full {
+                -webkit-line-clamp: unset; /* Show full description */
+            }
+            .show-more {
+                color: #007bff;
+                font-size: 14px;
+                cursor: pointer;
+                display: block;
+                margin-top: 10px;
+            }
+        </style>
+        <div style="background-color: #fff; padding: 20px; box-shadow: 0 2px 4px rgba(0,0,0,0.1); position: relative;">
+            <h2 style="margin-top: 0; color: #333; margin-left: 150px;">Find the Perfect B&B in Eilat</h2>
+            <button id="prevBtn" style="position: absolute; left: 10px; top: 50%; transform: translateY(-50%); background: #007bff; color: #fff; border: none; padding: 10px; cursor: pointer; border-radius: 5px; display: none;">&#10094;</button>
+            <div style="display: flex; overflow: hidden; padding-bottom: 20px; width: 920px; margin: auto; position: relative;">
+                <div id="card-container" style="display: flex; gap: 20px; transition: transform 0.5s ease-in-out;">
+                    <!-- Six cards added dynamically using JavaScript -->
+                </div>
+            </div>
+            <button id="nextBtn" style="position: absolute; right: 10px; top: 50%; transform: translateY(-50%); background: #007bff; color: #fff; border: none; padding: 10px; cursor: pointer; border-radius: 5px;">&#10095;</button>
+        </div>
+        <script>
+            const cardData = [
+                {image: 'https://cf.bstatic.com/xdata/images/hotel/max300/473227221.webp?k=d61fd25de24e1569dfd0b563c6740d3be3aa566395d46a604b1a1512e9c7b073&o=', title: 'Eilat Beachfront Retreat', rating: '9.7', reviews: '161', desc: 'Wake up to stunning views of the Red Sea at this charming beachfront B&B. Enjoy modern amenities, including air conditioning, a flat-screen TV with streaming services, and a cozy atmosphere perfect for relaxation.'},
+                {image: 'https://cf.bstatic.com/xdata/images/hotel/max300/554653274.webp?k=902c399b0082616a5e5476adcc05043fc9823956e343097a28d8f3162b490541&o=', title: 'Sunset Paradise B&B', rating: '9.1', reviews: '388', desc: 'Experience the magic of Eilat sunsets at this centrally located B&B. Featuring free WiFi, barbecue facilities, and air-conditioned rooms, it’s the ideal spot for both relaxation and adventure.'},
+                {image: 'https://cf.bstatic.com/xdata/images/hotel/max300/586727216.webp?k=bec37049f689b05858e2edf10607da24b7607ebad36b1c6491055578727d9288&o=', title: 'Sweet Escape Suites', rating: '9.6', reviews: '27', desc: 'Indulge in spacious, air-conditioned suites designed for comfort and style. Perfect for couples or small families, this B&B offers a peaceful retreat with all the amenities you need for a memorable stay.'},
+                {image: 'https://cf.bstatic.com/xdata/images/hotel/max300/570073929.webp?k=1965dbed39c835a08e1e013e355a4a46257fc2721bcfa9f81a76becfacb25a3c&o=', title: 'Sea Breeze Haven', rating: '9.4', reviews: '205', desc: 'Relax in comfort at this serene B&B, offering breathtaking sea views and top-notch amenities. Whether you’re here for the beaches or the nightlife, this is the perfect home base for your Eilat getaway.'},
+                {image: 'https://cf.bstatic.com/xdata/images/hotel/max300/395181587.webp?k=7be853417b048f01f1f5bad4e3af13d6b75296f26136e65c624bac6e736dde68&o=', title: 'Palm Oasis Resort', rating: '9.2', reviews: '312', desc: 'Unwind in style at this luxurious resort-style B&B. Enjoy a refreshing pool, air-conditioned rooms, and a tranquil environment that will make you feel right at home.'},
+                {image: 'https://cf.bstatic.com/xdata/images/hotel/max300/473227221.webp?k=d61fd25de24e1569dfd0b563c6740d3be3aa566395d46a604b1a1512e9c7b073&o=', title: 'Red Sea Sunset Suites', rating: '9.3', reviews: '157', desc: 'Modern suites with panoramic views of the Red Sea. Perfect for romantic getaways or solo travelers seeking a peaceful retreat with easy access to Eilat’s top attractions.'}
+            ];
+           
+            const container = document.getElementById('card-container');
+            const nextBtn = document.getElementById('nextBtn');
+            const prevBtn = document.getElementById('prevBtn');
+            let position = 0;
+           
+            function createCards() {
+                cardData.forEach(card => {
+                    let cardDiv = document.createElement('div');
+                    cardDiv.style = 'border: 1px solid #ddd; border-radius: 8px; width: 300px; flex-shrink: 0; background-color: #fff;';
+                    cardDiv.innerHTML = `
+                        <img src="${card.image}" alt="${card.title}" style="width: 100%; border-top-left-radius: 8px; border-top-right-radius: 8px; height: 200px; object-fit: cover;">
+                        <div style="padding: 15px;">
+                            <h3 style="margin-top: 0; color: #333;">${card.title}</h3>
+                            <div style="display: flex; align-items: center; margin-bottom: 10px;">
+                                <span style="background-color: #eee; padding: 3px 6px; border-radius: 4px; font-size: 12px; color: #333; font-weight: bold;">${card.rating}</span>
+                                <span style="margin-left: 5px; color: #666; font-size: 12px;">Exceptional - ${card.reviews} reviews</span>
+                            </div>
+                            <p class="description">${card.desc}</p>
+                            <span class="show-more">Show more</span>
+                            <button style="background-color: #007bff; color: #fff; padding: 8px 16px; border: none; border-radius: 4px; margin-top: 15px; cursor: pointer;">Reserve this B&B</button>
+                        </div>`;
+                    container.appendChild(cardDiv);
+   
+                    // Add event listener for "Show more" / "Show less"
+                    const description = cardDiv.querySelector('.description');
+                    const showMore = cardDiv.querySelector('.show-more');
+                    showMore.addEventListener('click', () => {
+                        if (description.classList.contains('full')) {
+                            description.classList.remove('full');
+                            showMore.textContent = 'Show more';
+                        } else {
+                            description.classList.add('full');
+                            showMore.textContent = 'Show less';
+                        }
+                    });
+                });
+            }
+           
+            createCards();
+           
+            nextBtn.addEventListener('click', () => {
+                if (position < cardData.length - 3) {
+                    position++;
+                    container.style.transform = `translateX(-${position * 320}px)`;
+                    prevBtn.style.display = 'block';
+                }
+                if (position >= cardData.length - 3) {
+                    nextBtn.style.display = 'none';
+                }
+            });
+           
+            prevBtn.addEventListener('click', () => {
+                if (position > 0) {
+                    position--;
+                    container.style.transform = `translateX(-${position * 320}px)`;
+                    nextBtn.style.display = 'block';
+                }
+                if (position === 0) {
+                    prevBtn.style.display = 'none';
+                }
+            });
+        </script>
+    </div>
+
+
+    <!-- locations -->
+    <div>
+        <div style="font-family: Arial, sans-serif; margin: 0; padding: 20px; background-color: #f4f4f4;">
+
+
+            <h2 style="text-align: left; color: #333; margin-bottom: 20px;">Most booked B&Bs this month</h2>
+       
+            <div style="display: grid; grid-template-columns: repeat(2, 1fr); grid-gap: 15px;">
+               
+                <div style="border: 1px solid #ddd; background-color: white; padding: 10px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/square128/49467398.webp?k=e84d9f5019df7b3849f3c0b6a8319e13d23467cdd251a5d6753c953e0e731794&o="
+                        alt="Rambuttri Village Plaza" style="width: 80px; height: 80px; border-radius: 5px; margin-right: 10px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 16px;"><a href="#" style="text-decoration: none;">Rambuttri Village Plaza</a></h3>
+                        <p style="color: #777; margin: 3px 0;">Bangkok, Thailand</p>
+                        <span style="background-color: #eee; padding: 3px 6px; border-radius: 4px; font-size: 12px;">7.7</span>
+                        <span style="color: #777; font-size: 12px;">13887 B&B reviews</span>
+                    </div>
+                </div>
+       
+                <div style="border: 1px solid #ddd; background-color: white; padding: 10px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/square128/507977337.webp?k=488975673cfe615aeca35541efa85c0ad1092cf7603bbb98423df2a3489df1c7&o="
+                        alt="NingCui Business Hotel" style="width: 80px; height: 80px; border-radius: 5px; margin-right: 10px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 16px;"><a href="#" style="text-decoration: none;">NingCui Business Hotel</a></h3>
+                        <p style="color: #777; margin: 3px 0;">Taichung, Taiwan</p>
+                        <span style="background-color: #eee; padding: 3px 6px; border-radius: 4px; font-size: 12px;">8.1</span>
+                        <span style="color: #777; font-size: 12px;">3701 B&B reviews</span>
+                    </div>
+                </div>
+       
+                <div style="border: 1px solid #ddd; background-color: white; padding: 10px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/square128/303681705.webp?k=b1da10ee6e11dece63ce7433bf387072b633aa4790ce515d17e21de4d248a82c&o="
+                        alt="Vértice Roomspace" style="width: 80px; height: 80px; border-radius: 5px; margin-right: 10px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 16px;"><a href="#" style="text-decoration: none;">Vértice Roomspace</a></h3>
+                        <p style="color: #777; margin: 3px 0;">Madrid, Spain</p>
+                        <span style="background-color: #eee; padding: 3px 6px; border-radius: 4px; font-size: 12px;">8.1</span>
+                        <span style="color: #777; font-size: 12px;">12725 B&B reviews</span>
+                    </div>
+                </div>
+       
+                <div style="border: 1px solid #ddd; background-color: white; padding: 10px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                    <img src="https://cf.bstatic.com/xdata/images/hotel/square128/313039307.webp?k=57b200067783a062f9e961982355140ce5215f8af198c47dc3e7fb2565efbb7d&o="
+                        alt="Walker Hotel - Sanchong" style="width: 80px; height: 80px; border-radius: 5px; margin-right: 10px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 16px;"><a href="#" style="text-decoration: none;">Walker Hotel - Sanchong</a></h3>
+                        <p style="color: #777; margin: 3px 0;">Taipei, Taiwan</p>
+                        <span style="background-color: #eee; padding: 3px 6px; border-radius: 4px; font-size: 12px;">7.3</span>
+                        <span style="color: #777; font-size: 12px;">3709 B&B reviews</span>
+                    </div>
+                </div>
+       
+                <div style="border: 1px solid #ddd; background-color: white; padding: 10px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                    <img src="https://privebywhiteflower.com/assets/img/resort-in-goa-with-private-pool.webp"
+                        alt="Motel One Paris-Porte Dorée" style="width: 80px; height: 80px; border-radius: 5px; margin-right: 10px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 16px;"><a href="#" style="text-decoration: none;">Prive | Luxury Resort </a></h3>
+                        <p style="color: #777; margin: 3px 0;">Goa, India</p>
+                        <span style="background-color: #eee; padding: 3px 6px; border-radius: 4px; font-size: 12px;">9.0</span>
+                        <span style="color: #777; font-size: 12px;">5289 B&B reviews</span>
+                    </div>
+                </div>
+       
+                <div style="border: 1px solid #ddd; background-color: white; padding: 10px; border-radius: 8px; box-shadow: 2px 2px 5px rgba(0,0,0,0.1); display: flex; align-items: center;">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTh3cgIBldFGbBVsW1jcynf67wrixAK6Hx05g&s"
+                        alt="Vértice Roomspace" style="width: 80px; height: 80px; border-radius: 5px; margin-right: 10px;">
+                    <div>
+                        <h3 style="margin: 0; font-size: 16px;"><a href="#" style="text-decoration: none;">Underwater bedroom</a>
+                        </h3>
+                        <p style="color: #777; margin: 3px 0;">Maldivs, Maldivs</p>
+                        <span style="background-color: #eee; padding: 3px 6px; border-radius: 4px; font-size: 12px;">8.1</span>
+                        <span style="color: #777; font-size: 12px;">12725 B&B reviews</span>    
+                    </div>
+                </div>
+       
+            </div>
+       
+        </div>
+    </div>
+
+
+    <!-- pre-footer -->
+    <div>
+        <div style="background-color: #003580; color: white; padding: 10px 0; text-align: center;">
+            <a href="#" style="border: 1px solid white; padding: 5px 15px; text-decoration: none; color: white; border-radius: 3px; transition: background-color 0.3s;"
+               onmouseover="this.style.backgroundColor='#0056b3'"
+               onmouseout="this.style.backgroundColor='transparent'">
+                List your property
+            </a>
+        </div>
+   
+        <!-- Underline Divider -->
+        <div style="border-bottom: 2px solid white;"></div>
+   
+        <!-- Navigation Bar -->
+        <div style="background-color: #003580; padding: 10px 0;">
+            <div style="width: auto; margin-left: 10px ; display: flex; justify-content: space-between; align-items: center;">
+               
+                <div>
+                    <a href="properties.html" style="color: white; text-decoration: none; margin: 0 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='#ffcc00'"
+                       onmouseout="this.style.color='white'">Find Hotel near me</a>
+                    <a href="#" style="color: white; text-decoration: none; margin: 0 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='#ffcc00'"
+                       onmouseout="this.style.color='white'">Mobile version</a>
+   
+                    <a href="login.html" style="color: white; text-decoration: none; margin: 0 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='#ffcc00'"
+                       onmouseout="this.style.color='white'">Your account</a>
+   
+                    <a href="properties.html" style="color: white; text-decoration: none; margin: 0 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='#ffcc00'"
+                       onmouseout="this.style.color='white'">Make changes to your booking online</a>
+               
+                    <a href="customerservicehelp.html" style="color: white; text-decoration: none; margin: 0 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='#ffcc00'"
+                       onmouseout="this.style.color='white'">Customer Service help</a>
+   
+                    <a href="becomeanaffiliate.html" style="color: white; text-decoration: none; margin: 0 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='#ffcc00'"
+                       onmouseout="this.style.color='white'">Become an affiliate</a>
+   
+                    <a href="visitsiteforbussiness.html" style="color: white; text-decoration: none; margin: 0 10px; transition: color 0.3s;"
+                       onmouseover="this.style.color='#ffcc00'"
+                       onmouseout="this.style.color='white'">visit site for Business</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <!-- footer -->
+    <footer style="background-color: #f0f0f0; padding: 20px;">
+        <div style="width: auto; margin: 0 auto;">
+            <div style="display: flex; justify-content: space-between; align-items: flex-start; flex-wrap: wrap; gap: 30px;">
+               
+                <div style="flex: 1; min-width: 150px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="famousplaces.html" style="text-decoration: none;">Countries</a></li>
+                        <li style="margin-bottom: 10px;"><a href="propertypage.html" style="text-decoration: none;">Regions</a></li>
+                        <li style="margin-bottom: 10px;"><a href="famousplaces.html" style="text-decoration: none;">Districts</a></li>
+                        <li style="margin-bottom: 10px;"><a href="propertypage.html" style="text-decoration: none;">Airports</a></li>
+                        <li style="margin-bottom: 10px;"><a href="properties.html" style="text-decoration: none;">Hotels</a></li>
+                        <li style="margin-bottom: 10px;"><a href="famousplaces.html" style="text-decoration: none;">Places of interest</a></li>
+                    </ul>
+                </div>
+   
+                <div style="flex: 1; min-width: 150px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">Apartments</a></li>
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">Resorts</a></li>
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">Villas</a></li>
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">Hostels</a></li>
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">B&Bs</a></li>
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">Guest Houses</a></li>
+                    </ul>
+                </div>
+   
+                <div style="flex: 1; min-width: 150px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="famousplaces.html" style="text-decoration: none;">Unique places to stay</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Reviews</a></li>
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">Discover monthly stays</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Travel articles</a></li>
+                        <li style="margin-bottom: 10px;"><a href="roomtypes.html" style="text-decoration: none;">Seasonal and holiday deals</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Traveller Review Awards</a></li>
+                    </ul>
+                </div>
+   
+                <div style="flex: 1; min-width: 150px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="customerservicehelp.html" style="text-decoration: none;">Car hire</a></li>
+                        <li style="margin-bottom: 10px;"><a href="customerservicehelp.html" style="text-decoration: none;">Flight finder</a></li>
+                        <li style="margin-bottom: 10px;"><a href="properties.html" style="text-decoration: none;">Restaurant reservations</a></li>
+                        <li style="margin-bottom: 10px;"><a href="" style="text-decoration: none;">hrs.com for Travel Agents</a></li>
+                    </ul>
+                </div>
+   
+                <div style="flex: 1; min-width: 150px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="customerservicehelp.html#faq" style="text-decoration: none;">Coronavirus (COVID-19) FAQs</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">About hrs.com</a></li>
+                        <li style="margin-bottom: 10px;"><a href="customerservicehelp.html" style="text-decoration: none;">Customer Service help</a></li>
+                        <li style="margin-bottom: 10px;"><a href="customerservicehelp.html" style="text-decoration: none;">Partner help</a></li>
+                        <li style="margin-bottom: 10px;"><a href="" style="text-decoration: none;">Careers</a></li>
+                        <li style="margin-bottom: 10px;"><a href="propertypage.html" style="text-decoration: none;">Sustainability</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Press centre</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Safety resource centre</a></li>
+                    </ul>
+                </div>
+                <div style="flex: 1; min-width: 150px;">
+                    <ul style="list-style: none; padding: 0;">
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Investor relations</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Terms & Conditions</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Partner dispute</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">How we work</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Privacy & Cookie Statement</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Modern Slavery Statement</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Human Rights Statement</a></li>
+                        <li style="margin-bottom: 10px;"><a href="contact.html" style="text-decoration: none;">Corporate contact</a></li>
+                        <li style="margin-bottom: 10px;"><a href="about_us.html" style="text-decoration: none;">Content guidelines and reporting</a></li>
+                        <li style="margin-bottom: 10px;"><a href="properties.html" style="text-decoration: none;">We Price Match</a></li>
+                    </ul>
+                </div>
+   
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- post footer -->
+    <footer style="background-color: #333; padding: 20px 0; border-top: 1px solid #ddd;">
+        <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <p style="margin-bottom: 10px; color: #fff;">Download  HRS app for exciting offers.</p>
+                <div>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/012/871/374/small/app-store-download-button-in-white-colors-download-on-the-apple-app-store-free-png.png" alt="App Store" style="width: 120px; margin-right: 10px;"></a>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png" alt="Google Play" style="width: 120px;"></a>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Teams/Careers</a></li>
+                    <li style="margin-bottom: 5px;"><a href="propertypage.html" style="color: #fff; text-decoration: none;">Blogs</a></li>
+                    <li style="margin-bottom: 5px;"><a href="customerservicehelp.html" style="color: #fff; text-decoration: none;">Support</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="propertypage.html" style="color: #fff; text-decoration: none;">Official  HRS Blog</a></li>
+                    <li style="margin-bottom: 5px;"><a href="" style="color: #fff; text-decoration: none;">Investor Relations</a></li>
+                    <li style="margin-bottom: 5px;"><a href="hrsbusiness.html" style="color: #fff; text-decoration: none;"> HRS Circle</a></li>
+                    <li style="margin-bottom: 5px;"><a href="hrsbusiness.html" style="color: #fff; text-decoration: none;"> HRS Frames</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Terms and conditions</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Guest Policies</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Trust And Safety</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="propertypage.html" style="color: #fff; text-decoration: none;">Cyber Security</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Cyber Security Awareness</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Responsible Disclosure</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Advertise your Homes</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr style="margin-top: 20px; border: none; height: 1px; background-color: #ddd;">
+
+
+        <div style="background-color: #333; padding: 20px 0;">
+            <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center;">
+                    <a href="https://www.facebook.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.twitter.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/" style="display: inline-block; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 14px; color: #fff;">2025 © Hitaishi Rooms & Service Limited. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+       
+       
+    </footer>
+   
+
+
+</body>
+</html>

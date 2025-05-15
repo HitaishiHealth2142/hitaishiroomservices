@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - Hitaishi Rooms and Services</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        .animate-slide-in {
+            animation: slideIn 0.5s ease-out;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(20px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+        .hover-scale {
+            transition: transform 0.2s ease;
+        }
+        .hover-scale:hover {
+            transform: scale(1.05);
+        }
+        .faq-item {
+            transition: all 0.3s ease;
+        }
+        .faq-item.active .faq-answer {
+            max-height: 200px;
+        }
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 flex flex-col min-h-screen">
+    <!-- Header -->
+    <!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0; font-size: 32px; font-weight: bolder;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+
+    <!-- Contact Section -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8 animate-slide-in">Contact Us</h2>
+            <p class="text-center text-gray-600 mb-12 max-w-2xl mx-auto">We're here to help with your bookings, inquiries, or feedback. Reach out to us through the form or contact details below!</p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Left Side: Location, Address, Contact Details -->
+                <div class="bg-white p-6 rounded-lg shadow-lg animate-slide-in">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Our Office</h3>
+                    <!-- Google Maps Embed -->
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3506.143350297175!2d77.09161467614716!3d28.50517158982442!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390d1e9a2a7d8f7b%3A0x4c5b2b3f4f7b8e2b!2sSector%2045%2C%20Gurugram%2C%20Haryana%20122003%2C%20India!5e0!3m2!1sen!2sus!4v1698765432109!5m2!1sen!2sus" 
+                        width="100%" height="200" style="border:0;" allowfullscreen="" loading="lazy" class="rounded-md mb-4"></iframe>
+                    <p class="text-gray-600 mb-2"><strong>Address:</strong> 123 Comfort Lane, Sector 45, Gurugram, Haryana 122003, India</p>
+                    <p class="text-gray-600 mb-2"><strong>Phone:</strong> +91 9345-678-901</p>
+                    <p class="text-gray-600 mb-2"><strong>WhatsApp:</strong> +91 9345-678-901</p>
+                    <p class="text-gray-600 mb-2"><strong>Email:</strong> support@hitaishirooms.com</p>
+                    <div class="mt-4">
+                        <h4 class="text-lg font-semibold text-gray-800 mb-2">Follow Us</h4>
+                        <div class="flex gap-4">
+                            <a href="https://facebook.com/hitaishirooms" target="_blank"
+                                class="px-3 py-1 bg-blue-800 text-white rounded-md hover:bg-blue-900 hover-scale">Facebook</a>
+                            <a href="https://twitter.com/hitaishirooms" target="_blank"
+                                class="px-3 py-1 bg-blue-400 text-white rounded-md hover:bg-blue-500 hover-scale">Twitter</a>
+                            <a href="https://instagram.com/hitaishirooms" target="_blank"
+                                class="px-3 py-1 bg-pink-600 text-white rounded-md hover:bg-pink-700 hover-scale">Instagram</a>
+                        </div>
+                    </div>
+                </div>
+                <!-- Right Side: Contact Form -->
+                <div class="bg-white p-6 rounded-lg shadow-lg animate-slide-in">
+                    <h3 class="text-xl font-semibold text-gray-800 mb-4">Send Us a Message</h3>
+                    <form id="contactForm" class="space-y-6">
+                        <div>
+                            <label for="name" class="block text-sm font-medium text-gray-700">Name</label>
+                            <input type="text" id="name" required
+                                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter your name">
+                        </div>
+                        <div>
+                            <label for="email" class="block text-sm font-medium text-gray-700">Email</label>
+                            <input type="email" id="email" required
+                                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                placeholder="Enter your email">
+                        </div>
+                        <div>
+                            <label for="message" class="block text-sm font-medium text-gray-700">Message</label>
+                            <textarea id="message" required
+                                class="mt-1 w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                rows="4" placeholder="How can we help you?"></textarea>
+                        </div>
+                        <button type="submit"
+                            class="w-full py-2 px-4 bg-blue-600 text-white font-semibold rounded-md hover:bg-blue-700 hover-scale transition-colors">
+                            Send Message
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="bg-gray-50 py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8 animate-slide-in">Frequently Asked Questions</h2>
+            <div class="space-y-4 max-w-3xl mx-auto">
+                <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
+                    <button class="faq-question w-full text-left text-lg font-semibold text-gray-800 flex justify-between items-center">
+                        How do I book a room with Hitaishi?
+                        <span class="text-blue-600">➕</span>
+                    </button>
+                    <div class="faq-answer text-gray-600 mt-2">
+                        You can book a room directly on our website by selecting your destination, dates, and preferred room type. Alternatively, use our mobile app or call our support team at +91 9345-678-901.
+                    </div>
+                </div>
+                <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
+                    <button class="faq-question w-full text-left text-lg font-semibold text-gray-800 flex justify-between items-center">
+                        What is your cancellation policy?
+                        <span class="text-blue-600">➕</span>
+                    </button>
+                    <div class="faq-answer text-gray-600 mt-2">
+                        Cancellations made 48 hours before check-in are eligible for a full refund. For more details, visit our <a href="/policies.html" class="text-blue-600 hover:underline">policies page</a>.
+                    </div>
+                </div>
+                <div class="faq-item bg-white p-4 rounded-lg shadow-sm">
+                    <button class="faq-question w-full text-left text-lg font-semibold text-gray-800 flex justify-between items-center">
+                        Can I modify my booking?
+                        <span class="text-blue-600">➕</span>
+                    </button>
+                    <div class="faq-answer text-gray-600 mt-2">
+                        Yes, you can modify your booking through your account on our website or by contacting our support team via WhatsApp or email.
+                    </div>
+                </div>
+            </div>
+            <p class="text-center mt-6 text-gray-600">Have more questions? Visit our <a href="/faq.html" class="text-blue-600 hover:underline">FAQ page</a>.</p>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-12">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center text-gray-800 mb-8 animate-slide-in">What Our Guests Say</h2>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <div class="bg-white p-6 rounded-lg shadow-lg animate-slide-in">
+                    <p class="text-gray-600 italic">"Hitaishi made my stay in Gurugram seamless! The rooms were clean, and the staff was incredibly helpful."</p>
+                    <p class="mt-4 text-gray-800 font-semibold">Priya Sharma</p>
+                    <p class="text-gray-500 text-sm">Mumbai, India</p>
+                </div>
+                <div class="bg-white p-6 rounded-lg shadow-lg animate-slide-in">
+                    <p class="text-gray-600 italic">"Booking was super easy, and the customer support team resolved my query in minutes. Highly recommend!"</p>
+                    <p class="mt-4 text-gray-800 font-semibold">Rahul Verma</p>
+                    <p class="text-gray-500 text-sm">Delhi, India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup Section -->
+    <section class="bg-blue-600 py-12">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-white mb-4 animate-slide-in">Stay Updated</h2>
+            <p class="text-white mb-6">Subscribe to our newsletter for exclusive offers and updates from Hitaishi Rooms and Services.</p>
+            <form id="newsletterForm" class="max-w-md mx-auto flex gap-2">
+                <input type="email" id="newsletterEmail" required
+                    class="flex-1 px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+                    placeholder="Enter your email">
+                <button type="submit"
+                    class="px-4 py-2 bg-white text-blue-600 font-semibold rounded-md hover:bg-gray-100 hover-scale transition-colors">
+                    Subscribe
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer style="background-color: #333; padding: 20px 0; border-top: 1px solid #ddd;">
+        <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <p style="margin-bottom: 10px; color: #fff;">Download  HRS app for exciting offers.</p>
+                <div>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/012/871/374/small/app-store-download-button-in-white-colors-download-on-the-apple-app-store-free-png.png" alt="App Store" style="width: 120px; margin-right: 10px;"></a>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png" alt="Google Play" style="width: 120px;"></a>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Teams/Careers</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Blogs</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Support</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Official  HRS Blog</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Investor Relations</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;"> HRS Circle</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;"> HRS Frames</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Terms and conditions</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Guest Policies</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Trust And Safety</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Cyber Security Awareness</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Responsible Disclosure</a></li>
+                    <li style="margin-bottom: 5px;"><a href="#" style="color: #fff; text-decoration: none;">Advertise your Homes</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr style="margin-top: 20px; border: none; height: 1px; background-color: #ddd;">
+
+
+        <div style="background-color: #333; padding: 20px 0;">
+            <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center;">
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="#" style="display: inline-block; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 14px; color: #fff;">2025 © Hitaishi Rooms & Service Limited. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+       
+       
+    </footer>
+
+    <script>
+        // Contact Form Submission
+        document.getElementById('contactForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const contactData = {
+                name: document.getElementById('name').value,
+                email: document.getElementById('email').value,
+                message: document.getElementById('message').value
+            };
+
+            try {
+                const response = await fetch('/api/contact', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify(contactData)
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert('Your message has been sent successfully!');
+                    document.getElementById('contactForm').reset();
+                } else {
+                    alert(data.message || 'Failed to send message');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred');
+            }
+        });
+
+        // Newsletter Form Submission
+        document.getElementById('newsletterForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+
+            const email = document.getElementById('newsletterEmail').value;
+
+            try {
+                const response = await fetch('/api/newsletter', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({ email })
+                });
+
+                const data = await response.json();
+                if (response.ok) {
+                    alert('Subscribed successfully!');
+                    document.getElementById('newsletterForm').reset();
+                } else {
+                    alert(data.message || 'Failed to subscribe');
+                }
+            } catch (error) {
+                console.error('Error:', error);
+                alert('An error occurred');
+            }
+        });
+
+        // FAQ Toggle
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const faqItem = button.parentElement;
+                const isActive = faqItem.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(item => item.classList.remove('active'));
+                if (!isActive) {
+                    faqItem.classList.add('active');
+                    button.querySelector('span').textContent = '➖';
+                } else {
+                    button.querySelector('span').textContent = '➕';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
