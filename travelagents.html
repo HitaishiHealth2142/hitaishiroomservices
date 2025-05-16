@@ -1,0 +1,826 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hitaishi Rooms and Services - Partners</title>
+</head>
+<body style="width:100%; margin:0; padding:0; font-family:Arial, sans-serif; background-color:#f5f5f5; color:#333; line-height:1.6;">
+
+
+
+
+
+
+<!-- First Navbar -->
+    <div style="background-color: #fff; padding: 15px 30px; display: flex; align-items: center; justify-content: space-between; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+
+
+        <!-- Logo -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html">
+                <img src="images/H.png" alt="HRS Logo" style="height: 66px;">
+            </a>
+        </div>
+
+        <!-- add home button here -->
+        <div style="flex: 1; text-align: left;">
+            <a href="hrs.html" style="text-decoration: none; color: #000;">
+                <h2 style="margin: 0;">HOME</h2>
+            </a>
+        </div>
+
+
+        <!-- Navigation Links -->
+        <div style="flex: 3;margin-left: -120px; display: flex; align-items: center; justify-content: space-around; gap: 20px;">
+
+
+           
+            <div style="text-align: center;">
+                <a href="hrsbusiness.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">HRS for Business</span>
+                    <div style="font-size: 14px; color: #777;">Trusted by 6000 Corporates</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="propertypage.html"  style="text-decoration: none; color: #000;">
+                    <span style="font-weight: bold; font-size: 24px;">List your property</span>
+                    <div style="font-size: 14px; color: #777;">Start earning in 30 mins</div>
+                </a>
+            </div>
+
+
+            <div style="text-align: center;">
+                <a href="https://wa.me/918790170525" target="_blank" style="text-decoration: none; color: inherit;">
+                    <span style="font-weight: bold; font-size: 24px;">+91-8790170525</span>
+                    <div style="font-size: 14px; color: #777;">Message us on WhatsApp to book now</div>
+                </a>
+            </div>
+
+
+
+            <!-- Country Selector with Globe Icon -->
+            <div class="country-selector" style="position: relative; display: flex; align-items: center; cursor: pointer;">
+                <img src="https://static.vecteezy.com/system/resources/previews/022/159/692/non_2x/earth-globe-icon-black-earth-icon-globe-icon-world-symbol-vector.jpg" alt="Globe" style="width: 16px; margin-right: 6px;">
+                <span style="font-weight: bold; font-size: 24px;">India ▾</span>
+
+
+                <div class="dropdown-content" style="display: none; position: absolute; top: 30px; left: 0; background-color: #fff; min-width: 160px; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10;">
+                    <a href="#" data-country="India" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">India</a>
+                    <a href="#" data-country="United States" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United States</a>
+                    <a href="#" data-country="United Kingdom" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">United Kingdom</a>
+                    <a href="#" data-country="Canada" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Canada</a>
+                    <a href="#" data-country="Australia" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Australia</a>
+                    <a href="#" data-country="Germany" style="color: black; padding: 10px 16px; text-decoration: none; display: block;">Germany</a>
+                </div>
+            </div>
+
+
+            <!-- Login/Signup -->
+            <div style="font-weight: bold; font-size: 24px; cursor: pointer;">
+                <a href="login.html">Login</a>
+            </div>
+        </div>
+    </div>
+
+
+    <hr style="width: 100%; background-color: #fff; border: 1px solid rgb(221, 220, 220);">
+
+
+    <!-- Second Navbar -->
+    <div id="city-navbar" style="background-color: #fff; padding: 10px 30px; display: flex; align-items: center; justify-content: space-around; box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); width: 100%; box-sizing: border-box;">
+        <!-- Default cities for India -->
+        <span class="city" data-city="Delhi" style="cursor: pointer;">Delhi</span>
+        <span class="city" data-city="Hyderabad" style="cursor: pointer;">Hyderabad</span>
+        <span class="city" data-city="Mumbai" style="cursor: pointer;">Mumbai</span>
+        <span class="city" data-city="Kolkata" style="cursor: pointer;">Kolkata</span>
+        <span class="city" data-city="Bangalore" style="cursor: pointer;">Bangalore</span>
+        <span class="city" data-city="Chennai" style="cursor: pointer;">Chennai</span>
+        <span class="city" data-city="Gurgaon" style="cursor: pointer;">Gurgaon</span>
+        <span class="city" data-city="Noida" style="cursor: pointer;">Noida</span>
+        <span class="city" data-city="Pune" style="cursor: pointer;">Pune</span>
+    </div>
+
+
+    <!-- City Localities Dropdown -->
+    <div id="city-dropdown" style="display: none; position: absolute; background-color: #fff; box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); border-radius: 5px; z-index: 10; padding: 10px;">
+        <div style="font-weight: bold; margin-bottom: 10px;">Popular Localities</div>
+        <div id="localities-list"></div>
+    </div>
+
+
+    <script>
+        // Data for cities and their localities
+        const localitiesData = {
+            "Delhi": ["Connaught Place", "Karol Bagh", "Paharganj", "Dwarka", "Rohini", "Saket", "Lajpat Nagar", "Chanakyapuri", "Vasant Kunj", "All of Delhi"],
+            "Hyderabad": ["Secunderabad Railway Station", "Gachibowli", "Ameerpet", "Kukatpally", "Rajiv Gandhi International Airport", "Begumpet", "Madhapur", "Chanda Nagar", "LB Nagar", "Abids", "All of Hyderabad"],
+            "Mumbai": ["Andheri", "Bandra", "Colaba", "Dadar", "Juhu", "Marine Lines", "Powai", "Thane", "Vashi", "All of Mumbai"],
+            "Kolkata": ["Park Street", "Salt Lake", "Howrah", "New Town", "Dum Dum", "Esplanade", "Ballygunge", "Rajarhat", "Behala", "All of Kolkata"],
+            "Bangalore": ["Koramangala", "Mg Road", "Rajaji Nagar", "Indiranagar", "Jayanagar", "Madiwala", "Majestic", "Yesvantpur Railway Station", "Marathahalli", "Hsr Layout", "All of Bangalore"],
+            "Chennai": ["T Nagar", "Anna Nagar", "Adyar", "Velachery", "Egmore", "Guindy", "OMR", "Porur", "Thiruvanmiyur", "All of Chennai"],
+            "Gurgaon": ["Cyber City", "Sohna Road", "MG Road", "Sector 14", "Sector 29", "DLF Phase 1", "Udyog Vihar", "Sikanderpur", "All of Gurgaon"],
+            "Noida": ["Sector 18", "Sector 62", "Sector 128", "Sector 50", "Sector 76", "Sector 137", "Sector 104", "Sector 63", "All of Noida"],
+            "Pune": ["Koregaon Park", "Hinjewadi", "Viman Nagar", "Baner", "Aundh", "Kothrud", "Wakad", "Pimple Saudagar", "All of Pune"],
+            "New York": ["Manhattan", "Brooklyn", "Queens", "The Bronx", "Staten Island", "Times Square", "Central Park", "Wall Street", "All of New York"],
+            "Los Angeles": ["Downtown LA", "Hollywood", "Santa Monica", "Beverly Hills", "Westwood", "Venice Beach", "Koreatown", "All of Los Angeles"],
+            "Chicago": ["The Loop", "River North", "Lincoln Park", "Wicker Park", "Lakeview", "Hyde Park", "All of Chicago"],
+            "Houston": ["Downtown", "Uptown", "Midtown", "Galleria", "Greenway Plaza", "All of Houston"],
+            "Phoenix": ["Downtown Phoenix", "Scottsdale", "Tempe", "Mesa", "Glendale", "All of Phoenix"],
+            "Philadelphia": ["Center City", "University City", "Fishtown", "Northern Liberties", "All of Philadelphia"],
+            "San Antonio": ["Downtown", "Alamo Heights", "Stone Oak", "Medical Center", "All of San Antonio"],
+            "San Diego": ["Downtown", "La Jolla", "Gaslamp Quarter", "Pacific Beach", "All of San Diego"],
+            "Dallas": ["Downtown", "Uptown", "Deep Ellum", "Bishop Arts District", "All of Dallas"],
+            "London": ["West End", "East End", "Soho", "Camden", "Shoreditch", "All of London"],
+            "Manchester": ["City Centre", "Salford", "Chorlton", "Didsbury", "All of Manchester"],
+            "Birmingham": ["City Centre", "Jewellery Quarter", "Edgbaston", "Digbeth", "All of Birmingham"],
+            "Liverpool": ["City Centre", "Albert Dock", "Baltic Triangle", "All of Liverpool"],
+            "Glasgow": ["City Centre", "West End", "East End", "All of Glasgow"],
+            "Edinburgh": ["Old Town", "New Town", "Leith", "All of Edinburgh"],
+            "Bristol": ["City Centre", "Clifton", "Redland", "All of Bristol"],
+            "Leeds": ["City Centre", "Headingley", "Chapel Allerton", "All of Leeds"],
+            "Sheffield": ["City Centre", "Ecclesall", "Kelham Island", "All of Sheffield"],
+            "Toronto": ["Downtown", "North York", "Scarborough", "Etobicoke", "All of Toronto"],
+            "Montreal": ["Downtown", "Old Montreal", "Plateau", "All of Montreal"],
+            "Vancouver": ["Downtown", "Gastown", "Yaletown", "Kitsilano", "All of Vancouver"],
+            "Calgary": ["Downtown", "Beltline", "Kensington", "All of Calgary"],
+            "Edmonton": ["Downtown", "Old Strathcona", "Whyte Avenue", "All of Edmonton"],
+            "Ottawa": ["Downtown", "ByWard Market", "Glebe", "All of Ottawa"],
+            "Winnipeg": ["Downtown", "The Forks", "Exchange District", "All of Winnipeg"],
+            "Quebec City": ["Old Quebec", "Upper Town", "Lower Town", "All of Quebec City"],
+            "Hamilton": ["Downtown", "Dundas", "Ancaster", "All of Hamilton"],
+            "Sydney": ["CBD", "Bondi", "Manly", "Darling Harbour", "All of Sydney"],
+            "Melbourne": ["CBD", "Southbank", "Fitzroy", "St Kilda", "All of Melbourne"],
+            "Brisbane": ["CBD", "South Bank", "Fortitude Valley", "All of Brisbane"],
+            "Perth": ["CBD", "Northbridge", "Fremantle", "All of Perth"],
+            "Adelaide": ["CBD", "North Adelaide", "Glenelg", "All of Adelaide"],
+            "Gold Coast": ["Surfers Paradise", "Broadbeach", "Southport", "All of Gold Coast"],
+            "Canberra": ["City Centre", "Parliamentary Triangle", "All of Canberra"],
+            "Newcastle": ["City Centre", "The Junction", "All of Newcastle"],
+            "Wollongong": ["City Centre", "North Wollongong", "All of Wollongong"],
+            "Berlin": ["Mitte", "Kreuzberg", "Prenzlauer Berg", "All of Berlin"],
+            "Hamburg": ["St. Pauli", "Altona", "HafenCity", "All of Hamburg"],
+            "Munich": ["Altstadt", "Schwabing", "Maxvorstadt", "All of Munich"],
+            "Cologne": ["Altstadt", "Ehrenfeld", "Belgium Quarter", "All of Cologne"],
+            "Frankfurt": ["Innenstadt", "Sachsenhausen", "All of Frankfurt"],
+            "Stuttgart": ["City Centre", "Bad Cannstatt", "All of Stuttgart"],
+            "Düsseldorf": ["Altstadt", "MedienHafen", "All of Düsseldorf"],
+            "Dortmund": ["City Centre", "Kreuzviertel", "All of Dortmund"],
+            "Essen": ["City Centre", "Rüttenscheid", "All of Essen"]
+        };
+
+
+        // Data for cities in each country
+        const countryCitiesData = {
+            "India": ["Delhi", "Hyderabad", "Mumbai", "Kolkata", "Bangalore", "Chennai", "Gurgaon", "Noida", "Pune"],
+            "United States": ["New York", "Los Angeles", "Chicago", "Houston", "Phoenix", "Philadelphia", "San Antonio", "San Diego", "Dallas"],
+            "United Kingdom": ["London", "Manchester", "Birmingham", "Liverpool", "Glasgow", "Edinburgh", "Bristol", "Leeds", "Sheffield"],
+            "Canada": ["Toronto", "Montreal", "Vancouver", "Calgary", "Edmonton", "Ottawa", "Winnipeg", "Quebec City", "Hamilton"],
+            "Australia": ["Sydney", "Melbourne", "Brisbane", "Perth", "Adelaide", "Gold Coast", "Canberra", "Newcastle", "Wollongong"],
+            "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt", "Stuttgart", "Düsseldorf", "Dortmund", "Essen"]
+        };
+
+
+        // JavaScript to handle city selection and localities dropdown
+        const cityNavbar = document.getElementById('city-navbar');
+        const cityDropdown = document.getElementById('city-dropdown');
+        const localitiesList = document.getElementById('localities-list');
+
+
+        // Function to show localities dropdown
+        const showLocalities = (city) => {
+            const localities = localitiesData[city] || [];
+            localitiesList.innerHTML = localities.map(locality => `<div style="padding: 5px 0;">${locality}</div>`).join('');
+            cityDropdown.style.display = 'block';
+            cityDropdown.style.left = `${event.target.offsetLeft}px`;
+            cityDropdown.style.top = `${event.target.offsetTop + 30}px`;
+        };
+
+
+        // Function to update cities in the second navbar based on the selected country
+        const updateCitiesForCountry = (country) => {
+            const cities = countryCitiesData[country] || [];
+            cityNavbar.innerHTML = cities.map(city => `<span class="city" data-city="${city}" style="cursor: pointer;">${city}</span>`).join('');
+        };
+
+
+        // Add click event to cities
+        cityNavbar.addEventListener('click', (event) => {
+            if (event.target.classList.contains('city')) {
+                const selectedCity = event.target.getAttribute('data-city');
+                showLocalities(selectedCity);
+            }
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!cityDropdown.contains(event.target) && !cityNavbar.contains(event.target)) {
+                cityDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Country dropdown handling
+        const countrySelector = document.querySelector('.country-selector');
+        const countryDropdown = countrySelector.querySelector('.dropdown-content');
+        const countryText = countrySelector.querySelector('span');
+
+
+        // Toggle country dropdown on click
+        countrySelector.addEventListener('click', (event) => {
+            event.stopPropagation(); // Prevent closing when clicking inside
+            countryDropdown.style.display = countryDropdown.style.display === 'block' ? 'none' : 'block';
+        });
+
+
+        // Handle country selection
+        countryDropdown.querySelectorAll('a').forEach(option => {
+            option.addEventListener('click', (event) => {
+                event.preventDefault();
+                const selectedCountry = event.target.dataset.country;
+                countryText.innerHTML = `${selectedCountry} ▾`; // Update selected country
+                updateCitiesForCountry(selectedCountry); // Update cities in the second navbar
+                countryDropdown.style.display = 'none'; // Hide dropdown after selection
+            });
+        });
+
+
+        // Close dropdown when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!countrySelector.contains(event.target)) {
+                countryDropdown.style.display = 'none';
+            }
+        });
+
+
+        // Set default country to India
+        updateCitiesForCountry("India");
+    </script>
+<!-- Navbar ends -->
+
+
+
+    <!-- Header Section -->
+<div style="position: relative; width: 100%; height: 80vh; overflow: hidden;">
+    <img src="https://img.freepik.com/free-photo/front-view-woman-working-as-travel-agent_23-2150455579.jpg?ga=GA1.1.1578275414.1747226771&semt=ais_hybrid&w=740" style="width: 100%; height: 100%; object-fit: cover; display: block;" alt="Background Image">
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); display: flex; justify-content: center; align-items: center;">
+        <h1 style="color: white; font-size: 48px; font-family: Arial, sans-serif; text-align: center; margin: 0; text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);">Welcome Travel Agents And Investors In hitaishi Rooms And Services</h1>
+    </div>
+</div>
+
+
+     <h2 style="text-align: center; font-family: Arial, sans-serif; position: relative; margin: 40px 0; font-size: 34px;color: #16a085;">
+        <span style="display: inline-block; position: relative; padding: 0 20px;">
+            <span style="position: absolute; top: 50%; left: -100px; width: 80px; height: 2px; background: #ccc;"></span>
+            <span style="position: absolute; top: 50%; right: -100px; width: 80px; height: 2px; background: #ccc;"></span>
+            Meet Our Travel Agents
+        </span>
+    </h2>
+             <br><br>
+
+        <!-- Agent Cards Section -->
+<section style="display: flex; justify-content: center; gap: 50px; flex-wrap: wrap; max-width: 80%; margin: auto;">
+
+    <!-- Agent 1 Card -->
+    <div style="background-color: #fdf2f8; width: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; margin-bottom: 30px; transition: transform 0.3s, box-shadow 0.3s;" 
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';">
+        <img src="images/johndoe.png" alt="Agent Photo" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #eee;">
+        <div style="padding: 15px;">
+            <h3 style="color: #333;">John Doe</h3>
+            <p style="color: #777;">Tour Guide Expert</p>
+            <p style="color: #555; font-size: 14px;">Specializes in cultural tours and adventure trips around the world.</p>
+            <p style="margin-top: 10px;"><strong>Contact:</strong> john.doe@example.com</p>
+            <button onclick="openModal('modal1')" 
+                    style="display: inline-block; background-color: #e91e63; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; margin-top: 10px;">Get in Touch</button>
+        </div>
+    </div>
+
+    <!-- Agent 2 Card -->
+    <div style="background-color: #f0f8ff; width: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; margin-bottom: 30px; transition: transform 0.3s, box-shadow 0.3s;" 
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';">
+        <img src="images/janesmith.png" alt="Agent Photo" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #eee;">
+        <div style="padding: 15px;">
+            <h3 style="color: #333;">Jane Smith</h3>
+            <p style="color: #777;">Luxury Travel Specialist</p>
+            <p style="color: #555; font-size: 14px;">Specializes in luxury vacations, cruise bookings, and premium travel experiences.</p>
+            <p style="margin-top: 10px;"><strong>Contact:</strong> jane.smith@example.com</p>
+            <button onclick="openModal('modal2')" 
+                    style="display: inline-block; background-color: #007acc; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; margin-top: 10px;">Get in Touch</button>
+        </div>
+    </div>
+
+    <!-- Agent 3 Card -->
+    <div style="background-color: #f1f8e9; width: auto; border-radius: 8px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); overflow: hidden; text-align: center; margin-bottom: 30px; transition: transform 0.3s, box-shadow 0.3s;" 
+        onmouseover="this.style.transform='scale(1.05)'; this.style.boxShadow='0 6px 12px rgba(0, 0, 0, 0.2)';" 
+        onmouseout="this.style.transform='scale(1)'; this.style.boxShadow='0 4px 8px rgba(0, 0, 0, 0.1)';">
+        <img src="images/emilyclark.png" alt="Agent Photo" style="width: 100%; height: 200px; object-fit: cover; border-bottom: 2px solid #eee;">
+        <div style="padding: 15px;">
+            <h3 style="color: #333;">Emily Clark</h3>
+            <p style="color: #777;">Family Travel Advisor</p>
+            <p style="color: #555; font-size: 14px;">Expert in family vacations, kids-friendly tours, and family packages.</p>
+            <p style="margin-top: 10px;"><strong>Contact:</strong> emily.clark@example.com</p>
+            <button onclick="openModal('modal3')" 
+                    style="display: inline-block; background-color: #689f38; color: white; text-decoration: none; padding: 8px 15px; border-radius: 5px; margin-top: 10px;">Get in Touch</button>
+        </div>
+    </div>
+
+</section>
+
+
+<!-- Modal for Agent 1 -->
+<div id="modal1" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; padding: 20px;">
+    <div style="background-color: white; border-radius: 8px; width: 300px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; color: #333;">Contact John Doe</h3>
+        <form style="display: flex; flex-direction: column; background-color: rgba(240, 240, 240, 0.9); padding: 15px; border-radius: 5px;">
+            <label for="name1" style="margin-bottom: 8px; color: #333;">Your Name</label>
+            <input type="text" id="name1" placeholder="Your Name" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <label for="email1" style="margin-bottom: 8px; color: #333;">Your Email</label>
+            <input type="email" id="email1" placeholder="Your Email" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <label for="message1" style="margin-bottom: 8px; color: #333;">Message</label>
+            <textarea id="message1" placeholder="Your Message" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; min-height: 80px;"></textarea>
+            <button type="submit" style="background-color: #e91e63; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+        </form>
+        <button onclick="closeModal('modal1')" style="background-color: #ccc; padding: 10px; border: none; border-radius: 5px; width: 100%; margin-top: 15px; cursor: pointer;">Close</button>
+    </div>
+</div>
+
+<!-- Modal for Agent 2 -->
+<div id="modal2" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; padding: 20px;">
+    <div style="background-color: white; border-radius: 8px; width: 300px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; color: #333;">Contact Jane Smith</h3>
+        <form style="display: flex; flex-direction: column; background-color: rgba(240, 240, 240, 0.9); padding: 15px; border-radius: 5px;">
+            <label for="name2" style="margin-bottom: 8px; color: #333;">Your Name</label>
+            <input type="text" id="name2" placeholder="Your Name" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <label for="email2" style="margin-bottom: 8px; color: #333;">Your Email</label>
+            <input type="email" id="email2" placeholder="Your Email" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <label for="message2" style="margin-bottom: 8px; color: #333;">Message</label>
+            <textarea id="message2" placeholder="Your Message" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; min-height: 80px;"></textarea>
+            <button type="submit" style="background-color: #007acc; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+        </form>
+        <button onclick="closeModal('modal2')" style="background-color: #ccc; padding: 10px; border: none; border-radius: 5px; width: 100%; margin-top: 15px; cursor: pointer;">Close</button>
+    </div>
+</div>
+
+<!-- Modal for Agent 3 -->
+<div id="modal3" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.5); justify-content: center; align-items: center; padding: 20px;">
+    <div style="background-color: white; border-radius: 8px; width: 300px; padding: 20px; box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);">
+        <h3 style="text-align: center; color: #333;">Contact Emily Clark</h3>
+        <form style="display: flex; flex-direction: column; background-color: rgba(240, 240, 240, 0.9); padding: 15px; border-radius: 5px;">
+            <label for="name3" style="margin-bottom: 8px; color: #333;">Your Name</label>
+            <input type="text" id="name3" placeholder="Your Name" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <label for="email3" style="margin-bottom: 8px; color: #333;">Your Email</label>
+            <input type="email" id="email3" placeholder="Your Email" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc;">
+            <label for="message3" style="margin-bottom: 8px; color: #333;">Message</label>
+            <textarea id="message3" placeholder="Your Message" style="padding: 8px; margin-bottom: 10px; border-radius: 5px; border: 1px solid #ccc; min-height: 80px;"></textarea>
+            <button type="submit" style="background-color: #689f38; color: white; padding: 10px; border: none; border-radius: 5px; cursor: pointer;">Send Message</button>
+        </form>
+        <button onclick="closeModal('modal3')" style="background-color: #ccc; padding: 10px; border: none; border-radius: 5px; width: 100%; margin-top: 15px; cursor: pointer;">Close</button>
+    </div>
+</div>
+<!-- JavaScript to control the modals -->
+<script>
+    function openModal(modalId) {
+        document.getElementById(modalId).style.display = 'flex';
+    }
+    
+    function closeModal(modalId) {
+        document.getElementById(modalId).style.display = 'none';
+    }
+</script>
+
+
+<!-- Travel Agents Section -->
+<div style="display: flex; align-items: center; justify-content: center; margin-bottom: 40px;">
+  <div style="flex: 1; height: 1px; background-color: #3498db; margin-right: 15px;"></div>
+  <h2 style="margin: 0; font-size: 2rem; color: #2c3e50; white-space: nowrap;">Travel Agent Partnerships</h2>
+  <div style="flex: 1; height: 1px; background-color: #3498db; margin-left: 15px;"></div>
+</div>
+
+<div style="width: 80%; margin: 0 auto; display: flex; flex-wrap: wrap; justify-content: space-between; row-gap: 30px;">
+    <!-- Agent Benefit 1 -->
+    <div style="width: 42%; background: #e6f0fa; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;" 
+        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.15)';" 
+        onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+        <img src="images/compitativecommition.png" alt="Commission Rates" style="width: 100%; height: 200px; border-radius: 8px; margin-bottom: 20px;">
+        <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 22px; font-weight: 600;">Competitive Commission Rates</h3>
+        <p style="color: #34495e; font-size: 16px; line-height: 1.6;">Enjoy industry-leading commission rates when you book your clients with Hitaishi. Our transparent payment system ensures you get paid on time, every time.</p>
+    </div>
+
+    <!-- Agent Benefit 2 -->
+    <div style="width: 42%; background: #e6f3ea; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;" 
+        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.15)';" 
+        onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+        <img src="images/dedicatedsupportiveteam.png" alt="Support Team" style="width: 100%; height: 200px; border-radius: 8px; margin-bottom: 20px;">
+        <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 22px; font-weight: 600;">Dedicated Support Team</h3>
+        <p style="color: #34495e; font-size: 16px; line-height: 1.6;">Our 24/7 agent support line ensures you always have someone to help with bookings, special requests, or any issues that may arise for your clients.</p>
+    </div>
+
+    <!-- Agent Benefit 3 -->
+    <div style="width: 42%; background: #ffe6e6; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;" 
+        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.15)';" 
+        onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+        <img src="images/exclusive deals and packages.png" alt="Exclusive Deals" style="width: 100%; height: 200px; border-radius: 8px; margin-bottom: 20px;">
+        <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 22px; font-weight: 600;">Exclusive Deals & Packages</h3>
+        <p style="color: #34495e; font-size: 16px; line-height: 1.6;">Access special rates and packages available only to our partner agents, giving your clients more value and you more booking opportunities.</p>
+    </div>
+
+    <!-- Agent Benefit 4 -->
+    <div style="width: 42%; background: #f3e8ff; padding: 20px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease;" 
+        onmouseover="this.style.transform='translateY(-5px)'; this.style.boxShadow='0 10px 20px rgba(0,0,0,0.15)';" 
+        onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+        <img src="images/marketingsupport.png" alt="Marketing Support" style="width: 100%; height: 200px; border-radius: 8px; margin-bottom: 20px;">
+        <h3 style="color: #2c3e50; margin-bottom: 15px; font-size: 22px; font-weight: 600;">Marketing Support</h3>
+        <p style="color: #34495e; font-size: 16px; line-height: 1.6;">We provide co-branded marketing materials, social media assets, and training to help you promote our properties effectively to your clients.</p>
+    </div>
+</div>
+<h2 style="text-align:center; color:#2c3e50;">For Travel Agents</h2>
+
+<!-- Concept 1: Commission Benefits -->
+<div style="margin-bottom:60px;">
+  <!-- <h3 style="color:#34495e; text-align: center;">1. Commission & Payment Benefits</h3> -->
+  
+  <!-- Wrapper with 80% width -->
+  <div style="width:80%; margin:0 auto; display:flex; gap:30px; margin-top:20px; justify-content:space-between; flex-wrap:nowrap;">
+    
+    <!-- Card 1 -->
+    <div style="flex:1; background:#ecf0f1; padding:25px; border-radius:10px; box-shadow:0 5px 10px rgba(0,0,0,0.1); transition:all 0.3s ease; cursor:pointer;" 
+         onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 20px rgba(0,0,0,0.2)';" 
+         onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 10px rgba(0,0,0,0.1)';">
+      <h4 style="color:#2980b9;">High Commissions</h4>
+      <p>Earn competitive commission rates on all bookings across hotels, flights, and holiday packages.</p>
+      <p style="font-size: 14px; color:#555;">No caps, no thresholds — the more you sell, the more you earn.</p>
+    </div>
+
+    <!-- Card 2 -->
+    <div style="flex:1; background:#fef9e7; padding:25px; border-radius:10px; box-shadow:0 5px 10px rgba(0,0,0,0.1); transition:all 0.3s ease; cursor:pointer;" 
+         onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 20px rgba(0,0,0,0.2)';" 
+         onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 10px rgba(0,0,0,0.1)';">
+      <h4 style="color:#d4ac0d;">On-Time Payments</h4>
+      <p>Receive reliable, automated payments every month with detailed statements and payout tracking.</p>
+      <p style="font-size: 14px; color:#555;">We ensure full transparency and no delays in settlements.</p>
+    </div>
+
+    <!-- Card 3 -->
+    <div style="flex:1; background:#e8f8f5; padding:25px; border-radius:10px; box-shadow:0 5px 10px rgba(0,0,0,0.1); transition:all 0.3s ease; cursor:pointer;" 
+         onmouseover="this.style.transform='translateY(-8px)'; this.style.boxShadow='0 12px 20px rgba(0,0,0,0.2)';" 
+         onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 10px rgba(0,0,0,0.1)';">
+      <h4 style="color:#16a085;">Incentive Bonuses</h4>
+      <p>Reach your sales goals and get rewarded with quarterly bonuses, gift vouchers, or exclusive trips.</p>
+      <p style="font-size: 14px; color:#555;">We value your efforts and reward performance consistently.</p>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- Why Invest Section -->
+<section id="opportunities" style="padding: 60px 20px; width: 80%; margin: 0 auto;">
+    <div style="display: flex; align-items: center; margin-bottom: 50px;">
+  <div style="flex: 1; height: 2px; background: #3498db; margin-right: 15px;"></div>
+  <h2 style="text-align: center; color: #2c3e50; font-size: 36px; margin: 0; white-space: nowrap;">Why Invest with Hitaishi?</h2>
+  <div style="flex: 1; height: 2px; background: #3498db; margin-left: 15px;"></div>
+</div>
+    
+    <div style="display: flex; justify-content: space-between; flex-wrap: nowrap; gap: 30px; overflow-x: auto;">
+        <!-- Benefit 1 -->
+        <div style="flex: 1; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; min-width: 0;"
+             onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+             onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+            <div style="background-color: #E3F2FD; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <span style="font-size: 30px; color: #1976D2;">1</span>
+            </div>
+            <h3 style="text-align: center; color: #1976D2;">Proven Business Model</h3>
+            <p style="text-align: center; color: #555;">Our established hospitality model delivers consistent returns with multiple revenue streams from rooms, F&amp;B, and services.</p>
+        </div>
+        
+        <!-- Benefit 2 -->
+        <div style="flex: 1; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; min-width: 0;" 
+             onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+             onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+            <div style="background-color: #E8F5E9; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <span style="font-size: 30px; color: #388E3C;">2</span>
+            </div>
+            <h3 style="text-align: center; color: #388E3C;">High ROI Potential</h3>
+            <p style="text-align: center; color: #555;">Average returns of 15-25% annually with various investment tiers to match your financial goals.</p>
+        </div>
+        
+        <!-- Benefit 3 -->
+        <div style="flex: 1; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.1); transition: all 0.3s ease; min-width: 0;" 
+             onmouseover="this.style.transform='translateY(-10px)'; this.style.boxShadow='0 15px 30px rgba(0,0,0,0.2)';" 
+             onmouseout="this.style.transform=''; this.style.boxShadow='0 5px 15px rgba(0,0,0,0.1)';">
+            <div style="background-color: #FFF3E0; width: 70px; height: 70px; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 20px;">
+                <span style="font-size: 30px; color: #E64A19;">3</span>
+            </div>
+            <h3 style="text-align: center; color: #E64A19;">Professional Management</h3>
+            <p style="text-align: center; color: #555;">Our experienced team handles all operations, maintenance, and marketing so you can be a passive investor.</p>
+        </div>
+    </div>
+</section>
+ <!-------------our investing planss------------->        
+
+<section style="background-color: #f9f9f9; padding: 60px 20px;">
+    <div style="width: 80%; margin: 0 auto;">
+        <h2 style="text-align: center; color: #2c3e50; font-size: 36px; margin-bottom: 50px;">Our Investment Plans</h2>
+        
+        <div style="display: flex; justify-content: space-between; gap: 30px; flex-wrap: nowrap;">
+            <!-- Plan Card -->
+            <style>
+                .plan-card {
+                    flex: 1;
+                    background: white;
+                    border-radius: 8px;
+                    overflow: hidden;
+                    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+                    display: flex;
+                    flex-direction: column;
+                    transition: all 0.3s ease;
+                    cursor: pointer;
+                }
+                .plan-card:hover {
+                    transform: translateY(-10px);
+                    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                }
+            </style>
+
+            <!-- Plan 1 -->
+            <div class="plan-card">
+                <div style="background: linear-gradient(135deg, #4CAF50, #8BC34A); padding: 20px; text-align: center; color: white;">
+                    <h3 style="margin: 0; font-size: 24px;">Silver Plan</h3>
+                    <p style="margin: 5px 0 0; font-size: 16px;">Entry-Level Investment</p>
+                </div>
+                <div style="padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <p style="font-size: 36px; text-align: center; margin: 20px 0; color: #333;">₹5-25 Lakhs</p>
+                        <ul style="padding-left: 20px; color: #555;">
+                            <li style="margin-bottom: 10px;">15-18% annual returns</li>
+                            <li style="margin-bottom: 10px;">3-year commitment</li>
+                            <li style="margin-bottom: 10px;">Quarterly payouts</li>
+                            <li style="margin-bottom: 10px;">Basic reporting</li>
+                            <li>1 property investment</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="#contact" style="display: inline-block; background-color: #4CAF50; color: white; text-decoration: none; padding: 10px 25px; border-radius: 5px; font-weight: bold;">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan 2 -->
+            <div class="plan-card" style="transform: scale(1.05);">
+                <div style="background: linear-gradient(135deg, #2196F3, #1976D2); padding: 20px; text-align: center; color: white;">
+                    <h3 style="margin: 0; font-size: 24px;">Gold Plan</h3>
+                    <p style="margin: 5px 0 0; font-size: 16px;">Preferred Investment</p>
+                </div>
+                <div style="padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <p style="font-size: 36px; text-align: center; margin: 20px 0; color: #333;">₹25-75 Lakhs</p>
+                        <ul style="padding-left: 20px; color: #555;">
+                            <li style="margin-bottom: 10px;">18-22% annual returns</li>
+                            <li style="margin-bottom: 10px;">5-year commitment</li>
+                            <li style="margin-bottom: 10px;">Monthly payouts</li>
+                            <li style="margin-bottom: 10px;">Detailed reporting</li>
+                            <li>Multi-property portfolio</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="#contact" style="display: inline-block; background-color: #2196F3; color: white; text-decoration: none; padding: 10px 25px; border-radius: 5px; font-weight: bold;">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Plan 3 -->
+            <div class="plan-card">
+                <div style="background: linear-gradient(135deg, #9C27B0, #7B1FA2); padding: 20px; text-align: center; color: white;">
+                    <h3 style="margin: 0; font-size: 24px;">Platinum Plan</h3>
+                    <p style="margin: 5px 0 0; font-size: 16px;">Premium Investment</p>
+                </div>
+                <div style="padding: 20px; flex: 1; display: flex; flex-direction: column; justify-content: space-between;">
+                    <div>
+                        <p style="font-size: 36px; text-align: center; margin: 20px 0; color: #333;">₹75 Lakhs+</p>
+                        <ul style="padding-left: 20px; color: #555;">
+                            <li style="margin-bottom: 10px;">22-25% annual returns</li>
+                            <li style="margin-bottom: 10px;">7-year commitment</li>
+                            <li style="margin-bottom: 10px;">Monthly payouts + bonus</li>
+                            <li style="margin-bottom: 10px;">VIP reporting</li>
+                            <li>Nationwide portfolio</li>
+                        </ul>
+                    </div>
+                    <div style="text-align: center; margin-top: 30px;">
+                        <a href="#contact" style="display: inline-block; background-color: #9C27B0; color: white; text-decoration: none; padding: 10px 25px; border-radius: 5px; font-weight: bold;">Invest Now</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-----------ready to invest----------------->
+
+<section id="contact" style="width: 80%; margin: 0 auto; padding: 60px 20px; background: linear-gradient(135deg, #673AB7, #512DA8); color: white;">
+    <div style="max-width: 1000px; margin: 0 auto; display: flex; flex-wrap: wrap; gap: 40px; justify-content: center;">
+        <div style="flex: 1; min-width: 300px;">
+            <h2 style="font-size: 36px; margin-bottom: 30px;">Ready to Invest?</h2>
+            <p style="line-height: 1.6; margin-bottom: 30px;">Our investment team is ready to discuss opportunities tailored to your financial goals. Contact us today to schedule a consultation.</p>
+            <div style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px;">Email</h3>
+                <p>investors@hitaishi.com</p>
+            </div>
+            <div style="margin-bottom: 20px;">
+                <h3 style="margin-bottom: 10px;">Phone</h3>
+                <p>+91 98765 43210</p>
+            </div>
+            <div>
+                <h3 style="margin-bottom: 10px;">Office</h3>
+                <p>Hitaishi Corporate Office<br>123 Business District<br>Mumbai, Maharashtra 400001</p>
+            </div>
+        </div>
+        
+        <div style="flex: 1; min-width: 300px; background: white; padding: 30px; border-radius: 8px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+            <h3 style="color: #333; font-size: 24px; margin-bottom: 20px; text-align: center;">Schedule a Consultation</h3>
+            <form>
+                <div style="margin-bottom: 20px;">
+                    <input type="text" placeholder="Your Name" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="email" placeholder="Email Address" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <input type="tel" placeholder="Phone Number" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px;">
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <select style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; color: #555;">
+                        <option>Investment Interest</option>
+                        <option>Silver Plan (₹5-25 Lakhs)</option>
+                        <option>Gold Plan (₹25-75 Lakhs)</option>
+                        <option>Platinum Plan (₹75 Lakhs+)</option>
+                        <option>Not Sure - Need Advice</option>
+                    </select>
+                </div>
+                <div style="margin-bottom: 20px;">
+                    <textarea placeholder="Your Message or Questions" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 5px; font-size: 16px; min-height: 50px;"></textarea>
+                </div>
+                <button type="submit" style="width: 100%; padding: 10px; background-color: #673AB7; color: white; border: none; border-radius: 5px; font-size: 18px; cursor: pointer;">Submit Inquiry</button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-----Faq----------->
+<section style="background-color: #f2f2f2; padding: 60px 20px;">
+  <div style="width: 80%; margin: auto;">
+    <h2 style="text-align: center; color: #2c3e50; font-size: 36px; margin-bottom: 40px;">Frequently Asked Questions</h2>
+
+    <div id="faq-container">
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">What investment returns can I expect as an investor?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Depending on the plan, annual returns range between 15% and 25%.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">How do travel agents benefit from this platform?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Travel agents earn commissions and access premium deals for their clients.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">Is there a minimum investment amount required?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Yes, the minimum starts at ₹5 lakhs under the Silver Plan.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">How often are investor payouts made?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Payouts vary by plan — quarterly for Silver, monthly for Gold & Platinum.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">Can travel agents track their bookings?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Yes, agents have dashboard access to monitor all transactions and bookings.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">What is the lock-in period for investments?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Lock-in periods range from 3 to 7 years depending on the chosen plan.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">Are there any referral rewards for agents?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Yes, agents earn bonus incentives for successful client referrals.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">How secure are my investments?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Investments are backed by tangible assets and legal agreements.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">Can I upgrade my plan later?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Yes, investors can shift to a higher plan after meeting basic conditions.</div>
+      </div>
+
+      <div style="margin-bottom: 10px; border-radius: 5px; overflow: hidden; background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.05);">
+        <div style="padding: 15px 20px; background-color: #2196F3; color: white; font-weight: bold; cursor: pointer; transition: background-color 0.3s;" onmouseover="this.style.backgroundColor='#1976D2'" onmouseout="this.style.backgroundColor='#2196F3'" onclick="toggleFAQ(this)">Is customer support available for agents and investors?</div>
+        <div style="display: none; padding: 15px 20px; color: #333;">Absolutely! Our support team is available 24/7 for both agents and investors.</div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    function toggleFAQ(element) {
+      const allAnswers = document.querySelectorAll('#faq-container > div > div:nth-child(2)');
+      const currentAnswer = element.nextElementSibling;
+
+      // Close all answers except the one clicked
+      allAnswers.forEach(answer => {
+        if (answer !== currentAnswer) {
+          answer.style.display = 'none';
+        }
+      });
+
+      // Toggle the clicked answer
+      currentAnswer.style.display = currentAnswer.style.display === 'block' ? 'none' : 'block';
+    }
+  </script>
+</section>
+
+
+
+ <!-- post footer -->
+    <footer style="background-color: #333; padding: 20px 0; border-top: 1px solid #ddd;">
+        <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <p style="margin-bottom: 10px; color: #fff;">Download  HRS app for exciting offers.</p>
+                <div>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/thumbnails/012/871/374/small/app-store-download-button-in-white-colors-download-on-the-apple-app-store-free-png.png" alt="App Store" style="width: 120px; margin-right: 10px;"></a>
+                    <a href="#"><img src="https://static.vecteezy.com/system/resources/previews/012/871/364/non_2x/google-play-store-download-button-in-white-colors-download-on-the-google-play-store-free-png.png" alt="Google Play" style="width: 120px;"></a>
+                </div>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">About Us</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Teams/Careers</a></li>
+                    <li style="margin-bottom: 5px;"><a href="propertypage.html" style="color: #fff; text-decoration: none;">Blogs</a></li>
+                    <li style="margin-bottom: 5px;"><a href="customerservicehelp.html" style="color: #fff; text-decoration: none;">Support</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="propertypage.html" style="color: #fff; text-decoration: none;">Official  HRS Blog</a></li>
+                    <li style="margin-bottom: 5px;"><a href="travelagents.html" style="color: #fff; text-decoration: none;">Investor Relations</a></li>
+                    <li style="margin-bottom: 5px;"><a href="hrsbusiness.html" style="color: #fff; text-decoration: none;"> HRS Circle</a></li>
+                    <li style="margin-bottom: 5px;"><a href="hrsbusiness.html" style="color: #fff; text-decoration: none;"> HRS Frames</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Terms and conditions</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Guest Policies</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Privacy Policy</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Trust And Safety</a></li>
+                </ul>
+            </div>
+            <div style="flex: 1; padding: 0 10px; min-width: 150px;">
+                <ul style="list-style: none; padding: 0;">
+                    <li style="margin-bottom: 5px;"><a href="propertypage.html" style="color: #fff; text-decoration: none;">Cyber Security</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Cyber Security Awareness</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Responsible Disclosure</a></li>
+                    <li style="margin-bottom: 5px;"><a href="about_us.html" style="color: #fff; text-decoration: none;">Advertise your Homes</a></li>
+                </ul>
+            </div>
+        </div>
+        <hr style="margin-top: 20px; border: none; height: 1px; background-color: #ddd;">
+
+
+        <div style="background-color: #333; padding: 20px 0;">
+            <div style="max-width: 960px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center;">
+                    <a href="https://www.facebook.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-instagram"></i>
+                    </a>
+                    <a href="https://www.twitter.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                    <a href="https://www.youtube.com/" style="display: inline-block; margin-right: 20px; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-youtube"></i>
+                    </a>
+                    <a href="https://www.pinterest.com/" style="display: inline-block; color: #fff; font-size: 24px;">
+                        <i class="fa-brands fa-pinterest"></i>
+                    </a>
+                </div>
+                <div>
+                    <p style="margin: 0; font-size: 14px; color: #fff;">2025 © Hitaishi Rooms & Service Limited. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+       
+       
+    </footer>
+
+
+</body>
+</html>
